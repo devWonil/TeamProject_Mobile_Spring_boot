@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CDDC39"
+    tools:context=".BookDetailActivity">
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/backgroundImageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/bookImage"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/book"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintVertical_bias="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintHorizontal_bias="0.2"/>
+
+        <TextView
+            android:id="@+id/bookTitle"
+            tools:text="플러터 UI 실전"
+            tools:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/bookImage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintVertical_bias="0.2"
+            android:layout_marginStart="20dp"/>
+
+        <TextView
+            android:id="@+id/author"
+            tools:text="김근호"
+            tools:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/bookTitle"
+            app:layout_constraintTop_toBottomOf="@id/bookTitle"
+            android:layout_marginTop="20sp"/>
+
+        <TextView
+            android:id="@+id/publishDate"
+            tools:text="2021. 08. 20"
+            tools:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/author"
+            app:layout_constraintTop_toBottomOf="@id/author"
+            android:layout_marginTop="20sp"/>
+
+        <ImageButton
+            android:background="#CDDC39"
+            android:id="@+id/likeButton"
+            android:src="@drawable/ic_baseline_favorite_border_24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/publishDate"
+            app:layout_constraintTop_toBottomOf="@id/publishDate"
+            android:layout_marginTop="30sp"/>
+
+        <Button
+            android:id="@+id/purchaseBtn"
+            android:text="구매하기"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/likeButton"
+           app:layout_constraintTop_toBottomOf="@id/publishDate"
+            android:layout_marginTop="20sp"
+            android:layout_marginStart="20sp"/>
+
+        <TextView
+            android:id="@+id/summary"
+            android:text="줄거리"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/bookImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintHorizontal_bias="0.2"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            tools:text="fsdfsdfsdfsdfsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsddfsssssssssssssssfsddddddddddd"
+            android:id="@+id/summaryText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/summary"
+            app:layout_constraintStart_toStartOf="@+id/summary"
+            app:layout_constraintEnd_toEndOf="@+id/purchaseBtn"
+            android:maxWidth="300dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
