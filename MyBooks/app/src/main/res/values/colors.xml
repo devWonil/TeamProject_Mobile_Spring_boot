@@ -9,8 +9,11 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="m_primary">#58B970</color>
+<<<<<<< HEAD
     <color name="success">#8FD624</color>
     <color name="info">#4460FF</color>
     <color name="warning">#FFDC00</color>
     <color name="danger">#FF4248</color>
+=======
+>>>>>>> e95f0c1183f70a7275bfa79ae14725afd5122309
 </resources>
