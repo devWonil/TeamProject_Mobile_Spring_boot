@@ -35,9 +35,5 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-<<<<<<< HEAD
-
-=======
     implementation 'me.relex:circleindicator:2.1.4'
->>>>>>> e95f0c1183f70a7275bfa79ae14725afd5122309
 }
