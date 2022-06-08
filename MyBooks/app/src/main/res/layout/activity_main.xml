@@ -51,7 +51,7 @@
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:background="@color/m_primary"
-            app:itemTextColor="#FFC107"
+            app:itemTextColor="@color/black"
             app:itemIconTint="#FFEB3B"
             android:id="@+id/bottomNavigation"
             android:layout_width="match_parent"
