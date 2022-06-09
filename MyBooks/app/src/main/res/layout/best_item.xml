@@ -19,7 +19,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/newBookImageView"
+                android:id="@+id/bestBookImageView"
                 android:layout_width="130dp"
                 android:layout_height="180dp"
                 android:layout_margin="20dp"
@@ -41,8 +41,8 @@
                 android:textColor="@color/white"
                 android:textSize="18dp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@id/newBookImageView"
-                app:layout_constraintTop_toTopOf="@id/newBookImageView"
+                app:layout_constraintStart_toStartOf="@id/bestBookImageView"
+                app:layout_constraintTop_toTopOf="@id/bestBookImageView"
                 tools:text="1" />
 
             <TextView
@@ -56,8 +56,8 @@
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@id/bestBookAuthorTextView"
-                app:layout_constraintStart_toEndOf="@id/newBookImageView"
-                app:layout_constraintTop_toTopOf="@id/newBookImageView"
+                app:layout_constraintStart_toEndOf="@id/bestBookImageView"
+                app:layout_constraintTop_toTopOf="@id/bestBookImageView"
                 tools:text="책 제목" />
 
             <TextView
@@ -125,7 +125,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/rating_img"
-                app:layout_constraintBottom_toBottomOf="@id/newBookImageView"
+                app:layout_constraintBottom_toBottomOf="@id/bestBookImageView"
                 app:layout_constraintEnd_toStartOf="@id/bestBookRatingTextView"
                 app:layout_constraintStart_toStartOf="@id/bestBookTitleTextView"
                 app:layout_constraintTop_toBottomOf="@id/bestBookDiscountTextView" />

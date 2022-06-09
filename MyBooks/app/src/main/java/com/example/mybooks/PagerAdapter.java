@@ -19,7 +19,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
                 fragment = new HomeFragment();
                 break;
             case 1:
-                fragment = new BestSellerFragment();
+                fragment = BestSellerFragment.getInstance();
                 break;
             case 2:
                 fragment = new NewFragment();
