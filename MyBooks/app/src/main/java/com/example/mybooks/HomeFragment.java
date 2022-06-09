@@ -30,8 +30,9 @@ public class HomeFragment extends Fragment {
     public HomeFragment() {
 
     }
+
     public static HomeFragment newInstance() {
-        if(fragment == null) {
+        if (fragment == null) {
             fragment = new HomeFragment();
         }
         return fragment;
@@ -40,7 +41,12 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        // 샘플이미지 넣어주기
+        imageURL.add("https://cdn.pixabay.com/photo/2022/05/20/13/29/dogs-7209506__340.jpg");
+        imageURL.add("https://cdn.pixabay.com/photo/2022/05/20/13/29/dogs-7209506__340.jpg");
+        imageURL.add("https://cdn.pixabay.com/photo/2022/05/20/13/29/dogs-7209506__340.jpg");
+        imageURL.add("https://cdn.pixabay.com/photo/2022/05/20/13/29/dogs-7209506__340.jpg");
+        imageURL.add("https://cdn.pixabay.com/photo/2022/05/20/13/29/dogs-7209506__340.jpg");
     }
 
     @Override
@@ -48,21 +54,12 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);
         initData();
-        // Inflate the layout for this fragment
         return viewGroup;
     }
 
     // SliderImageView 설정
     private void initData() {
         ViewPager2 viewPager2 = viewGroup.findViewById(R.id.slideViewPager);
-        // 샘플이미지 넣어주기
-        imageURL.add("https://cdn.pixabay.com/photo/2022/05/20/13/29/dogs-7209506__340.jpg");
-        imageURL.add("https://cdn.pixabay.com/photo/2022/05/20/13/29/dogs-7209506__340.jpg");
-        imageURL.add("https://cdn.pixabay.com/photo/2022/05/20/13/29/dogs-7209506__340.jpg");
-        imageURL.add("https://cdn.pixabay.com/photo/2022/05/20/13/29/dogs-7209506__340.jpg");
-        imageURL.add("https://cdn.pixabay.com/photo/2022/05/20/13/29/dogs-7209506__340.jpg");
-//        layoutIndicatorsContainer = container.findViewById(R.id.indicatorContainer);
-//        sliderImageViewPager = container.findViewById(R.id.sliderImageView);
         viewPager2.setOffscreenPageLimit(2);
         viewPager2.setAdapter(new SliderImageAdapter(getActivity(), imageURL));
         viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
@@ -77,7 +74,7 @@ public class HomeFragment extends Fragment {
         setIndicators(imageURL.size());
     }
 
-//     indicator 띄우기
+    //     indicator 띄우기
     private void setIndicators(int count) {
         layoutIndicatorsContainer = viewGroup.findViewById(R.id.indicatorContainer);
         ImageView[] indicators = new ImageView[count];
@@ -95,14 +92,13 @@ public class HomeFragment extends Fragment {
     // 현재 띄우고 있는 indicator 연결
     private void setCurrentIndicator(int position) {
         int count = layoutIndicatorsContainer.getChildCount();
-        for(int i = 0; i < count; i++) {
+        for (int i = 0; i < count; i++) {
             ImageView imageView = (ImageView) layoutIndicatorsContainer.getChildAt(i);
-            if(i == position) {
+            if (i == position) {
                 imageView.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.bg_indicator_active));
             } else {
                 imageView.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.bg_indicator_inactive));
             }
-
         }
     }
 
