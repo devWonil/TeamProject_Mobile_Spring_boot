@@ -5,6 +5,10 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+
+import android.os.Bundle;
+
+import com.example.mybooks.adapter.PagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
@@ -12,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private TabLayout tabLayout;
     private PagerAdapter pagerAdapter;
-    static final int TAB_COUNT = 4;
+    public static final int TAB_COUNT = 4;
     private String tabTitle[] = {"추천", "베스트", "신간", "장르별"};
 
 

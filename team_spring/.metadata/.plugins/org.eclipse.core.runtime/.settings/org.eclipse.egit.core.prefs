@@ -1,2 +1,9 @@
+<<<<<<< HEAD
+GitRepositoriesView.GitDirectories=
+GitRepositoriesView.GitDirectories.relative=
+=======
+GitRepositoriesView.GitDirectories=C\:\\TeamProject_Mobile_Spring_boot\\.git;
+GitRepositoriesView.GitDirectories.relative=C\:\\TeamProject_Mobile_Spring_boot\\.git;
+>>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1
