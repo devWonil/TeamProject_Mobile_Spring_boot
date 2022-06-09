@@ -6,19 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-<!--    <com.google.android.material.appbar.MaterialToolbar-->
-<!--        android:id="@+id/topAppbar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="70dp"-->
-<!--        android:background="@color/m_primary"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:title="우리의 서재" />-->
+    <!--    <com.google.android.material.appbar.MaterialToolbar-->
+    <!--        android:id="@+id/topAppbar"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="70dp"-->
+    <!--        android:background="@color/m_primary"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:title="우리의 서재" />-->
 
     <include
         android:id="@+id/topAppbar"
-        layout="@layout/tool_bar"/>
+        layout="@layout/tool_bar" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
@@ -37,7 +37,15 @@
         app:layout_constraintBottom_toTopOf="@id/bottomNaviContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tabLayout" />
+        app:layout_constraintTop_toBottomOf="@id/tabLayout">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/mainViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/bottomNaviContainer"
@@ -50,12 +58,12 @@
         app:layout_constraintTop_toBottomOf="@id/mainContainer">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:background="@color/m_primary"
-            app:itemTextColor="@color/black"
-            app:itemIconTint="#FFEB3B"
             android:id="@+id/bottomNavigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/m_primary"
+            app:itemIconTint="#FFEB3B"
+            app:itemTextColor="@color/black"
             app:menu="@menu/bottom_navigation" />
 
 
