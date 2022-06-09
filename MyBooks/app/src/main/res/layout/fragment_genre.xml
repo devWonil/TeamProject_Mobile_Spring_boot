@@ -15,6 +15,7 @@
         android:scrollbars="none">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/categoryContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -120,12 +121,12 @@
 
     </HorizontalScrollView>
 
-
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/genreBookContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="3"
-        tools:listitem="@layout/original_item" />
+        tools:listitem="@layout/genre_item" />
 
 </LinearLayout>

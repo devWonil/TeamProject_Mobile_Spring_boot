@@ -9,8 +9,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
+import com.example.mybooks.adapter.BestSellerAdapter;
 import com.example.mybooks.databinding.FragmentBestSellerBinding;
 
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class BestSellerFragment extends Fragment {
+public class BestSellerFragment extends Fragment implements IBookFragment{
 
     private static BestSellerFragment bestSellerFragment;
 
@@ -30,6 +30,7 @@ public class BestSellerFragment extends Fragment {
     private BestSellerAdapter adapter;
 
     private int page = 1;
+    private boolean isRequest = true;
 
     public BestSellerFragment() {
 
@@ -43,7 +44,6 @@ public class BestSellerFragment extends Fragment {
 
     public static BestSellerFragment newInstance() {
         BestSellerFragment fragment = new BestSellerFragment();
-
         return fragment;
     }
 
@@ -51,7 +51,6 @@ public class BestSellerFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bookHttpService = BookHttpService.retrofit.create(BookHttpService.class);
-
     }
 
     @Override
@@ -61,21 +60,22 @@ public class BestSellerFragment extends Fragment {
 
         setupRecyclerView(list);
 
-        requestBestSellerBookData();
+        requestBookData();
 
         return binding.getRoot();
     }
 
-    private void requestBestSellerBookData() {
+    @Override
+    public void requestBookData() {
         bookHttpService.getBestSellerList(page).enqueue(new Callback<ArrayList<Book>>() {
             @Override
             public void onResponse(Call<ArrayList<Book>> call, Response<ArrayList<Book>> response) {
-                Log.d("TAG", "통신메서드안에는 들어옴");
+
                 if (response.isSuccessful()) {
                     ArrayList<Book> addList = response.body();
                     adapter.addBookList(addList);
                     page++;
-                    Log.d("TAG", "통신완료");
+                    isRequest = true;
                 }
             }
 
@@ -86,13 +86,28 @@ public class BestSellerFragment extends Fragment {
         });
     }
 
-    private void setupRecyclerView(ArrayList<Book> list) {
+    @Override
+    public void setupRecyclerView(ArrayList<Book> list) {
         adapter = new BestSellerAdapter();
         adapter.initBookList(list);
-        Log.d("TAG", "어댑터 생성 완료");
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         binding.bestSellerContainer.setAdapter(adapter);
         binding.bestSellerContainer.setLayoutManager(layoutManager);
+
+        binding.bestSellerContainer.setOnScrollChangeListener((v, scrollX, scrollY, oldScrollX, oldScrollY) -> {
+
+            if (isRequest) {
+                LinearLayoutManager manager = (LinearLayoutManager) binding.bestSellerContainer.getLayoutManager();
+                int lastVisibleBookItemCount = manager.findLastVisibleItemPosition();
+                int bookTotalCount = binding.bestSellerContainer.getAdapter().getItemCount() - 1;
+
+                if (lastVisibleBookItemCount == bookTotalCount) {
+                    requestBookData();
+                    isRequest = false;
+                }
+            }
+        });
     }
+
 }
