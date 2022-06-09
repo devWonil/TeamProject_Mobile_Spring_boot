@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/slideViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/m_primary" />
+
+        <View
+            android:id="@+id/indicatorBackground"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/gradient_slider"
+            app:layout_constraintBottom_toBottomOf="@id/slideViewPager"
+            app:layout_constraintEnd_toEndOf="@id/slideViewPager"
+            app:layout_constraintStart_toStartOf="@id/slideViewPager" />
+
+        <LinearLayout
+            android:id="@+id/pagerIndicator"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/indicatorBackground"
+            app:layout_constraintEnd_toEndOf="@id/indicatorBackground"
+            app:layout_constraintStart_toStartOf="@id/indicatorBackground"
+            app:layout_constraintTop_toTopOf="@id/indicatorBackground" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="3"
+        tools:listitem="@layout/item_book" />
+
+
+</LinearLayout>
