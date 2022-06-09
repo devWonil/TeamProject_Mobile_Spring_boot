@@ -1,4 +1,4 @@
-package com.example.mybooks;
+package com.example.mybooks.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,19 +11,23 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterInside;
+import com.example.mybooks.Book;
+import com.example.mybooks.IAdapter;
+import com.example.mybooks.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class BestSellerAdapter extends RecyclerView.Adapter<BestSellerAdapter.MyViewHolder> {
+public class BestSellerAdapter extends RecyclerView.Adapter<BestSellerAdapter.MyViewHolder> implements IAdapter {
 
     private ArrayList<Book> bookList = new ArrayList<>();
 
-    public void initBookList(ArrayList<Book> list){
+    @Override
+    public void initBookList(ArrayList<Book> list) {
         this.bookList = list;
     }
 
-    public void addBookList(ArrayList<Book> list){
+    @Override
+    public void addBookList(ArrayList<Book> list) {
         bookList.addAll(bookList.size(), list);
         notifyDataSetChanged();
     }

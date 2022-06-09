@@ -10,16 +10,28 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CenterInside;
 import com.bumptech.glide.load.resource.bitmap.FitCenter;
 import com.example.mybooks.Book;
+import com.example.mybooks.IAdapter;
 import com.example.mybooks.R;
 
 import java.util.ArrayList;
 
-public class NewBookAdapter extends RecyclerView.Adapter<NewBookAdapter.MyViewHolder> {
+public class NewBookAdapter extends RecyclerView.Adapter<NewBookAdapter.MyViewHolder> implements IAdapter {
 
     private ArrayList<Book> newBookList = new ArrayList<>();
 
+    @Override
+    public void initBookList(ArrayList<Book> list) {
+        this.newBookList = list;
+    }
+
+    @Override
+    public void addBookList(ArrayList<Book> list) {
+        newBookList.addAll(newBookList.size(), list);
+        notifyDataSetChanged();
+    }
 
     @NonNull
     @Override
@@ -36,13 +48,13 @@ public class NewBookAdapter extends RecyclerView.Adapter<NewBookAdapter.MyViewHo
         Glide.with(holder.newBookImageView.getContext())
                 .load(book.getImageUrl())
                 .placeholder(R.drawable.image_loading)
-                .transform(new FitCenter())
+                .transform(new CenterInside())
                 .into(holder.newBookImageView);
 
         holder.newBookTitleTextView.setText(book.getTitle());
         holder.newBookAuthorTextView.setText(book.getAuthor());
         holder.newBookPublisherTextView.setText(book.getPublisher());
-        holder.newBookPriceTextView.setText(book.getPrice());
+        holder.newBookPriceTextView.setText(String.valueOf(book.getPrice()));
 
     }
 

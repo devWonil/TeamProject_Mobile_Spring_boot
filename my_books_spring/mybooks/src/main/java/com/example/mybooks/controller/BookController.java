@@ -26,4 +26,17 @@ public class BookController {
 		});
 		return bestList;
 	}
+
+	@GetMapping("/genre")
+	public List<Book> novel(@RequestParam Integer page, @RequestParam Integer themeNumber) {
+		ArrayList<Book> genreList = new ArrayList<>();
+		Book.sampleData().forEach(list -> {
+			if (list.getTheme() == themeNumber) {
+//				if(list.getPage() == page) {
+					genreList.add(list);
+//				}
+			}
+		});
+		return genreList;
+	}
 }
