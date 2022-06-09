@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/originalBookImageView"
+        android:layout_width="150dp"
+        android:layout_height="210dp"
+        android:layout_marginBottom="20dp"
+        android:elevation="20dp"
+        app:layout_constraintBottom_toTopOf="@id/originalBookTitleTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/sample_book_img" />
+
+    <TextView
+        android:id="@+id/originalBookTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/originalBookAuthorTextView"
+        app:layout_constraintStart_toStartOf="@id/originalBookImageView"
+        app:layout_constraintTop_toBottomOf="@id/originalBookImageView"
+        tools:text="책 제목" />
+
+    <TextView
+        android:id="@+id/originalBookAuthorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toTopOf="@id/originalBookPublisherTextView"
+        app:layout_constraintStart_toStartOf="@id/originalBookImageView"
+        app:layout_constraintTop_toBottomOf="@id/originalBookTitleTextView"
+        tools:text="작가" />
+
+    <TextView
+        android:id="@+id/originalBookPublisherTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toTopOf="@id/originalBookPriceTextView"
+        app:layout_constraintStart_toStartOf="@id/originalBookImageView"
+        app:layout_constraintTop_toBottomOf="@id/originalBookAuthorTextView"
+        tools:text="출판사" />
+
+    <TextView
+        android:id="@+id/originalBookPriceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/originalBookImageView"
+        app:layout_constraintTop_toBottomOf="@id/originalBookPublisherTextView"
+        tools:text="10000" />
+
+    <TextView
+        android:id="@+id/wonTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="2dp"
+        android:text="원"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/originalBookPriceTextView"
+        app:layout_constraintStart_toEndOf="@id/originalBookPriceTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
