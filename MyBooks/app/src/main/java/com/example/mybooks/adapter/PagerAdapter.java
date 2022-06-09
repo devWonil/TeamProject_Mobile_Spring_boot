@@ -1,9 +1,15 @@
-package com.example.mybooks;
+package com.example.mybooks.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+
+import com.example.mybooks.BestSellerFragment;
+import com.example.mybooks.GenreFragment;
+import com.example.mybooks.HomeFragment;
+import com.example.mybooks.MainActivity;
+import com.example.mybooks.NewFragment;
 
 public class PagerAdapter extends FragmentPagerAdapter {
     public PagerAdapter(@NonNull FragmentManager fm, int behavior) {
@@ -16,10 +22,10 @@ public class PagerAdapter extends FragmentPagerAdapter {
         Fragment fragment = null;
         switch (position) {
             case 0:
-                fragment = new HomeFragment();
+                fragment = HomeFragment.newInstance();
                 break;
             case 1:
-                fragment = new BestSellerFragment();
+                fragment = BestSellerFragment.newInstance();
                 break;
             case 2:
                 fragment = new NewFragment();
