@@ -13,11 +13,125 @@
         android:text="장르별 Fragment"
         android:textSize="25dp" />
 
+    <HorizontalScrollView
+        android:id="@+id/btnScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/novelButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="1dp"
+                android:backgroundTint="@color/white"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:text="소설"
+                android:textColor="#616161"
+                app:layout_constraintEnd_toStartOf="@id/mysteryButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/mysteryButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="1dp"
+                android:backgroundTint="@color/white"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:text="추리소설"
+                android:textColor="#616161"
+                app:layout_constraintEnd_toStartOf="@id/essayButton"
+                app:layout_constraintStart_toEndOf="@id/novelButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/essayButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="1dp"
+                android:backgroundTint="@color/white"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:text="에세이"
+                android:textColor="#616161"
+                app:layout_constraintEnd_toStartOf="@id/selfImprovementButton"
+                app:layout_constraintStart_toEndOf="@id/mysteryButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/selfImprovementButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="1dp"
+                android:backgroundTint="@color/white"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:text="자기계발"
+                android:textColor="#616161"
+                app:layout_constraintEnd_toStartOf="@id/economyButton"
+                app:layout_constraintStart_toEndOf="@id/essayButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/economyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="1dp"
+                android:backgroundTint="@color/white"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:text="경제"
+                android:textColor="#616161"
+                app:layout_constraintEnd_toStartOf="@id/kidButton"
+                app:layout_constraintStart_toEndOf="@id/selfImprovementButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/kidButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="1dp"
+                android:backgroundTint="@color/white"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:text="어린이"
+                android:textColor="#616161"
+                app:layout_constraintEnd_toStartOf="@id/etcButton"
+                app:layout_constraintStart_toEndOf="@id/economyButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/etcButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="1dp"
+                android:backgroundTint="@color/white"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:text="기타"
+                android:textColor="#616161"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/kidButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </HorizontalScrollView>
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="3"
-        tools:listitem="@layout/item_book" />
+        tools:listitem="@layout/original_item" />
 
 </LinearLayout>

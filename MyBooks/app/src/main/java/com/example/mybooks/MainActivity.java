@@ -54,12 +54,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(pagerAdapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
-
     }
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +64,4 @@ public class MainActivity extends AppCompatActivity {
         addEventListener();
 
     }
-
-
 }

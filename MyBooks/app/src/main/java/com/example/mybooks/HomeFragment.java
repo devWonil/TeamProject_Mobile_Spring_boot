@@ -1,18 +1,16 @@
 package com.example.mybooks;
 
-import android.content.Context;
+import android.app.Fragment;
 import android.os.Bundle;
-
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
-import androidx.viewpager2.widget.ViewPager2;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import androidx.core.content.ContextCompat;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.mybooks.adapter.SliderImageAdapter;
 import com.example.mybooks.databinding.FragmentHomeBinding;
@@ -21,7 +19,6 @@ import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
 
-    private int a = 0;
     private ViewGroup viewGroup;
     private FragmentHomeBinding binding;
     private LinearLayout layoutIndicatorsContainer;
@@ -31,8 +28,9 @@ public class HomeFragment extends Fragment {
     public HomeFragment() {
 
     }
+
     public static HomeFragment newInstance() {
-        if(fragment == null) {
+        if (fragment == null) {
             fragment = new HomeFragment();
         }
         return fragment;
@@ -53,7 +51,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);
-            initData();
+        initData();
         return viewGroup;
     }
 
@@ -74,7 +72,7 @@ public class HomeFragment extends Fragment {
         setIndicators(imageURL.size());
     }
 
-//     indicator 띄우기
+    //     indicator 띄우기
     private void setIndicators(int count) {
         layoutIndicatorsContainer = viewGroup.findViewById(R.id.indicatorContainer);
         ImageView[] indicators = new ImageView[count];
@@ -92,9 +90,9 @@ public class HomeFragment extends Fragment {
     // 현재 띄우고 있는 indicator 연결
     private void setCurrentIndicator(int position) {
         int count = layoutIndicatorsContainer.getChildCount();
-        for(int i = 0; i < count; i++) {
+        for (int i = 0; i < count; i++) {
             ImageView imageView = (ImageView) layoutIndicatorsContainer.getChildAt(i);
-            if(i == position) {
+            if (i == position) {
                 imageView.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.bg_indicator_active));
             } else {
                 imageView.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.bg_indicator_inactive));
