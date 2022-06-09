@@ -21,6 +21,7 @@ import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
 
+    private int a = 0;
     private ViewGroup viewGroup;
     private FragmentHomeBinding binding;
     private LinearLayout layoutIndicatorsContainer;
@@ -40,29 +41,25 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);
-        initData();
-        // Inflate the layout for this fragment
-        return viewGroup;
-    }
-
-    // SliderImageView 설정
-    private void initData() {
-        ViewPager2 viewPager2 = viewGroup.findViewById(R.id.slideViewPager);
         // 샘플이미지 넣어주기
         imageURL.add("https://cdn.pixabay.com/photo/2022/05/20/13/29/dogs-7209506__340.jpg");
         imageURL.add("https://cdn.pixabay.com/photo/2022/05/20/13/29/dogs-7209506__340.jpg");
         imageURL.add("https://cdn.pixabay.com/photo/2022/05/20/13/29/dogs-7209506__340.jpg");
         imageURL.add("https://cdn.pixabay.com/photo/2022/05/20/13/29/dogs-7209506__340.jpg");
         imageURL.add("https://cdn.pixabay.com/photo/2022/05/20/13/29/dogs-7209506__340.jpg");
-//        layoutIndicatorsContainer = container.findViewById(R.id.indicatorContainer);
-//        sliderImageViewPager = container.findViewById(R.id.sliderImageView);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);
+            initData();
+        return viewGroup;
+    }
+
+    // SliderImageView 설정
+    private void initData() {
+        ViewPager2 viewPager2 = viewGroup.findViewById(R.id.slideViewPager);
         viewPager2.setOffscreenPageLimit(2);
         viewPager2.setAdapter(new SliderImageAdapter(getActivity(), imageURL));
         viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
@@ -102,7 +99,6 @@ public class HomeFragment extends Fragment {
             } else {
                 imageView.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.bg_indicator_inactive));
             }
-
         }
     }
 
