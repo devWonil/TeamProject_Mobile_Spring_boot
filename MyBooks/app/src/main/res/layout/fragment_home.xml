@@ -32,7 +32,7 @@
             app:layout_constraintStart_toStartOf="@id/slideViewPager" />
 
         <LinearLayout
-            android:id="@+id/pagerIndicator"
+            android:id="@+id/indicatorContainer"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:gravity="center"

@@ -35,11 +35,16 @@ public class BestSellerFragment extends Fragment {
 
     }
 
-    public static BestSellerFragment getInstance() {
-        if (bestSellerFragment == null) {
-            bestSellerFragment = new BestSellerFragment();
-        }
-        return bestSellerFragment;
+//    public static BestSellerFragment getInstance() {
+//        if (bestSellerFragment == null) {
+//            bestSellerFragment = new BestSellerFragment();
+//        }
+//        return bestSellerFragment;
+
+    public static BestSellerFragment newInstance() {
+        BestSellerFragment fragment = new BestSellerFragment();
+
+        return fragment;
     }
 
     @Override
