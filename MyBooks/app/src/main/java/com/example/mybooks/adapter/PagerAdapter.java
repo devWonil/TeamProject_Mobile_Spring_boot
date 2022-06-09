@@ -22,10 +22,10 @@ public class PagerAdapter extends FragmentPagerAdapter {
         Fragment fragment = null;
         switch (position) {
             case 0:
-                fragment = new HomeFragment(); // 홈
+                fragment = HomeFragment.newInstance(); // 홈
                 break;
             case 1:
-                fragment = HomeFragment.newInstance();
+                fragment = BestSellerFragment.newInstance();
                 break;
             case 2:
                 fragment = new NewFragment(); // 신간

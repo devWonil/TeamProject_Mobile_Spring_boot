@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.mybooks.dto.Book;
@@ -13,12 +14,14 @@ import com.example.mybooks.dto.Book;
 @RequestMapping("/mybooks")
 public class BookController {
 
-	@GetMapping("/best-celler")
-	public List<Book> bestCeller(){
+	@GetMapping("/best-seller")
+	public List<Book> bestSeller(@RequestParam Integer page) {
 		ArrayList<Book> bestList = new ArrayList<>();
 		Book.sampleData().forEach(list -> {
-			if(list.getId() == 1) {
-				bestList.add(list);
+			if (list.getId() == 1) {
+				if (list.getPage() == page) {
+					bestList.add(list);
+				}
 			}
 		});
 		return bestList;

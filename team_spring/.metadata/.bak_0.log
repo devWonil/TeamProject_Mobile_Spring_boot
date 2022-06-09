@@ -4122,11 +4122,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 
 !ENTRY org.eclipse.ui 2 2 2022-06-09 09:02:11.550
 !MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
-<<<<<<< HEAD
-!SESSION 2022-06-09 15:29:18.195 -----------------------------------------------
-=======
 !SESSION 2022-06-09 11:02:51.460 -----------------------------------------------
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 eclipse.buildId=4.14.1.202204250734
 java.version=17.0.2
 java.vendor=Eclipse Adoptium
@@ -4134,25 +4130,15 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
 Framework arguments:  -product org.springframework.boot.ide.branding.sts4
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.jface 2 0 2022-06-09 15:29:51.938
-!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2022-06-09 15:29:51.938
-=======
 !ENTRY org.eclipse.jface 2 0 2022-06-09 11:03:22.190
 !MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
 !SUBENTRY 1 org.eclipse.jface 2 0 2022-06-09 11:03:22.190
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE A conflict occurred for CTRL+SHIFT+T:
 Binding(CTRL+SHIFT+T,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
 		Open a type in a Java editor,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-<<<<<<< HEAD
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@75973f7a,
-=======
 		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4adc3951,
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
@@ -4160,29 +4146,17 @@ Binding(CTRL+SHIFT+T,
 	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
 		,
 		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
-<<<<<<< HEAD
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7940b729,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
-!SUBENTRY 1 org.eclipse.jface 2 0 2022-06-09 15:29:51.938
-=======
 		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@52b49891,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
 !SUBENTRY 1 org.eclipse.jface 2 0 2022-06-09 11:03:22.190
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE A conflict occurred for ALT+SHIFT+R:
 Binding(ALT+SHIFT+R,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
 		Rename the selected element,
 		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
-<<<<<<< HEAD
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@527d1fe1,
-=======
 		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@75973f7a,
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
@@ -4190,20 +4164,12 @@ Binding(ALT+SHIFT+R,
 	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
 		Rename the selected item,
 		Category(org.eclipse.ui.category.file,File,null,true),
-<<<<<<< HEAD
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@24fb752f,
-=======
 		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7940b729,
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.tm4e.ui 4 0 2022-06-09 15:29:53.149
-=======
 !ENTRY org.eclipse.tm4e.ui 4 0 2022-06-09 11:03:23.168
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Error while initializing TextMate model.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -4342,11 +4308,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:53.149
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:23.169
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -4486,11 +4448,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:53.220
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:23.245
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -4638,11 +4596,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:53.220
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:23.246
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -4791,11 +4745,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:53.234
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:23.259
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -4943,11 +4893,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:53.234
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:23.260
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -5096,11 +5042,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:53.235
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:23.261
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -5257,11 +5199,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:53.235
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:23.261
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -5419,23 +5357,6 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-09 15:29:53.245
-!MESSAGE Entering DelegatingStreamConnectionProvider()
-
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-09 15:29:53.246
-!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@35c69e6b[org.springframework.tooling.boot.ls:1.33.0.202204250653(id=569)]
-
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-09 15:29:53.248
-!MESSAGE SpringBootLanguageServer exists!
-
-!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-09 15:29:53.297
-!MESSAGE Instantiating ReusableClasspathListenerHandler
-
-!ENTRY org.eclipse.jface 2 0 2022-06-09 15:29:53.626
-!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2022-06-09 15:29:53.626
-=======
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-09 11:03:23.271
 !MESSAGE Entering DelegatingStreamConnectionProvider()
 
@@ -5451,17 +5372,12 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 !ENTRY org.eclipse.jface 2 0 2022-06-09 11:03:23.581
 !MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
 !SUBENTRY 1 org.eclipse.jface 2 0 2022-06-09 11:03:23.581
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE A conflict occurred for CTRL+SHIFT+C:
 Binding(CTRL+SHIFT+C,
 	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.togglelinecommentcommand,Toggle Line Comment,
 		,
 		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
-<<<<<<< HEAD
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@94047a4,
-=======
 		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@49d5db99,
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.textEditorScope,,,system)
@@ -5469,20 +5385,12 @@ Binding(CTRL+SHIFT+C,
 	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
 		,
 		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
-<<<<<<< HEAD
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@257de910,
-=======
 		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@564d9ec2,
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.textEditorScope,,,system)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:53.632
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:23.585
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -5574,11 +5482,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:53.632
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:23.586
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -5671,11 +5575,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:53.632
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:23.587
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -5776,11 +5676,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:53.633
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:23.587
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -5882,11 +5778,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:53.688
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:23.639
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -5978,11 +5870,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:53.688
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:23.640
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -6075,11 +5963,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:53.689
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:23.640
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -6180,11 +6064,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:53.689
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:23.641
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -6286,11 +6166,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:53.690
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:23.642
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -6411,11 +6287,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:53.690
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:23.642
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -6537,11 +6409,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:53.691
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:23.643
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -6671,11 +6539,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:53.692
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:23.643
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -6806,11 +6670,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:53.750
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:23.696
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -6931,11 +6791,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:53.750
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:23.696
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -7057,11 +6913,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:53.751
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:23.697
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -7191,11 +7043,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:53.751
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:23.697
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -7326,11 +7174,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:53.752
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:23.698
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -7451,11 +7295,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:53.752
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:23.699
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -7577,11 +7417,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:53.752
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:23.699
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -7711,11 +7547,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:53.753
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:23.699
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -7846,11 +7678,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:53.813
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:23.751
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -7971,11 +7799,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:53.813
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:23.751
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -8097,11 +7921,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:53.814
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:23.752
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -8231,11 +8051,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:53.814
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:23.752
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -8366,11 +8182,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:53.815
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:23.753
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -8460,11 +8272,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:53.816
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:23.753
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -8555,11 +8363,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:53.816
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:23.754
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -8658,11 +8462,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:53.816
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:23.754
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -8762,11 +8562,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:53.874
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:23.805
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -8856,11 +8652,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:53.874
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:23.805
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -8951,11 +8743,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:53.875
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:23.806
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -9054,11 +8842,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:53.875
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:23.806
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -9158,11 +8942,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:53.876
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:23.807
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -9252,11 +9032,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:53.876
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:23.807
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -9347,11 +9123,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:53.876
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:23.807
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -9450,11 +9222,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:53.876
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:23.808
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -9554,11 +9322,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:53.938
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:23.860
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -9648,11 +9412,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:53.938
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:23.860
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -9743,11 +9503,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:53.939
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:23.861
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -9846,11 +9602,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:53.939
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:23.861
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -9950,22 +9702,14 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.egit.ui 2 0 2022-06-09 15:29:54.110
-=======
 !ENTRY org.eclipse.egit.ui 2 0 2022-06-09 11:03:23.983
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
 user global configuration and to define the default location to store repositories: 'C:\Users\ITPS'. If this is
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:54.387
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:24.199
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -10045,11 +9789,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:54.387
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:24.200
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -10130,11 +9870,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:54.388
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:24.200
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -10223,11 +9959,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:54.388
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:24.200
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -10317,11 +10049,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:54.441
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:24.253
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -10401,11 +10129,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:54.441
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:24.253
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -10486,11 +10210,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:54.442
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:24.254
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -10579,11 +10299,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:54.442
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:24.254
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -10673,11 +10389,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:54.443
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:24.255
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -10757,11 +10469,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:54.443
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:24.256
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -10842,11 +10550,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:54.443
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:24.256
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -10935,11 +10639,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:54.443
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:24.256
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -11029,11 +10729,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:54.495
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:24.309
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -11113,11 +10809,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:54.495
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:24.309
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -11198,11 +10890,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:54.496
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:24.310
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -11291,11 +10979,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:54.496
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:24.310
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -11385,11 +11069,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:54.499
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:24.313
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -11454,11 +11134,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:54.499
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:24.313
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -11524,11 +11200,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:54.500
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:24.314
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -11602,11 +11274,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:54.500
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:24.314
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -11681,11 +11349,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:54.553
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:24.367
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -11750,11 +11414,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:54.553
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:24.367
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -11820,11 +11480,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:54.554
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:24.368
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -11898,11 +11554,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:54.554
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:24.368
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -11977,11 +11629,7 @@ java.lang.Exception: Resource '/mybooks/src/main/resources/application.propertie
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-<<<<<<< HEAD
-!ENTRY org.eclipse.lsp4e 4 0 2022-06-09 15:29:54.554
-=======
 !ENTRY org.eclipse.lsp4e 4 0 2022-06-09 11:03:24.369
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Exception occurred while fetching the content type from the buffer
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resources/application.properties)[368]: java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
@@ -12046,11 +11694,7 @@ org.eclipse.core.internal.resources.ResourceException(/mybooks/src/main/resource
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-<<<<<<< HEAD
-!SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 15:29:54.555
-=======
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2022-06-09 11:03:24.369
->>>>>>> 3c6a7f4b74808b69e06c45a1db4ef65818816764
 !MESSAGE Resource '/mybooks/src/main/resources/application.properties' does not exist.
 !STACK 0
 java.lang.Exception: Resource '/mybooks/src/main/resources/application.properties' does not exist.
