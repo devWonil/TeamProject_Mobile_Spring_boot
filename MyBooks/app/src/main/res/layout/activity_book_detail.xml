@@ -70,21 +70,25 @@
             app:layout_constraintTop_toBottomOf="@id/author"
             android:layout_marginTop="20sp"/>
 
-        <ImageButton
-            android:background="#CDDC39"
+        <ToggleButton
             android:id="@+id/likeButton"
-            android:src="@drawable/ic_baseline_favorite_border_24"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="30sp"
+            android:background="@drawable/button_favorite"
+            android:checked="false"
+            android:text=""
+            android:textOff=""
+            android:textOn=""
             app:layout_constraintStart_toStartOf="@id/publishDate"
-            app:layout_constraintTop_toBottomOf="@id/publishDate"
-            android:layout_marginTop="30sp"/>
+            app:layout_constraintTop_toBottomOf="@id/publishDate" />
 
         <Button
             android:id="@+id/purchaseBtn"
             android:text="구매하기"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="onPurchaseBtnClicked"
             app:layout_constraintStart_toEndOf="@id/likeButton"
            app:layout_constraintTop_toBottomOf="@id/publishDate"
             android:layout_marginTop="20sp"

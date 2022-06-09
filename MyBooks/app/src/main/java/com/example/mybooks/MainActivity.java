@@ -1,20 +1,20 @@
 package com.example.mybooks;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
-
-import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
-
 
     private ViewPager viewPager;
     private TabLayout tabLayout;
     private PagerAdapter pagerAdapter;
     static final int TAB_COUNT = 4;
     private String tabTitle[] = {"추천", "베스트", "신간", "장르별"};
+
 
 
     private void initData() {
@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
             tabLayout.addTab(tabLayout.newTab().setText(name));
         }
         pagerAdapter = new PagerAdapter(getSupportFragmentManager(), TAB_COUNT);
+
+
     }
 
     private void addEventListener() {
@@ -47,7 +49,13 @@ public class MainActivity extends AppCompatActivity {
         });
         viewPager.setAdapter(pagerAdapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
+
     }
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,5 +63,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initData();
         addEventListener();
+
     }
+
+
 }

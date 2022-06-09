@@ -39,6 +39,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tabLayout">
 
+
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/mainViewPager"
             android:layout_width="match_parent"

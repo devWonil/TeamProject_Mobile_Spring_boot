@@ -16,16 +16,16 @@ public class PagerAdapter extends FragmentPagerAdapter {
         Fragment fragment = null;
         switch (position) {
             case 0:
-                fragment = new HomeFragment();
+                fragment = new HomeFragment(); // 홈
                 break;
             case 1:
-                fragment = new BestSellerFragment();
+                fragment = new BestSellerFragment(); // 베스트셀러
                 break;
             case 2:
-                fragment = new NewFragment();
+                fragment = new NewFragment(); // 신간
                 break;
             case 3:
-                fragment = new GenreFragment();
+                fragment = new GenreFragment(); // 장르별
                 break;
         }
         return fragment;
