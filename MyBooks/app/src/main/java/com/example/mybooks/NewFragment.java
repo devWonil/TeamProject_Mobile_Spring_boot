@@ -8,16 +8,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.mybooks.databinding.FragmentNewBinding;
+
 public class NewFragment extends Fragment {
+
+    private static NewFragment newFragment;
+
+    private FragmentNewBinding binding;
 
     public NewFragment() {
         // Required empty public constructor
     }
 
-    public static NewFragment newInstance() {
-        NewFragment fragment = new NewFragment();
-
-        return fragment;
+    public static NewFragment getInstance() {
+        if (newFragment == null) {
+            newFragment = new NewFragment();
+        }
+        return newFragment;
     }
 
     @Override
@@ -29,7 +36,8 @@ public class NewFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        binding = FragmentNewBinding.inflate(inflater, container, false);
 
-        return inflater.inflate(R.layout.fragment_new, container, false);
+        return binding.getRoot();
     }
 }
