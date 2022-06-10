@@ -8,6 +8,7 @@
 
     <!-- 앱 접속 시 로고-->
     <TextView
+        android:fontFamily="@font/bmdohyeon"
         android:id="@+id/splashTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

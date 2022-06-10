@@ -18,6 +18,9 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.example.mybooks.databinding.ActivityBookDetailBinding;
+
 public class BookDetailActivity extends AppCompatActivity {
 
     private ScaleAnimation scaleAnimation;
@@ -31,9 +34,21 @@ public class BookDetailActivity extends AppCompatActivity {
     private TextView publishDate; // 출판일
     private TextView summaryText; // 줄거리 내용
 
+    private Book book;
+    public static final String PARAM_NAME_1 = "book obj";
+    private ActivityBookDetailBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        binding = ActivityBookDetailBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        if (getIntent() != null){
+            book = (Book) getIntent().getSerializableExtra(PARAM_NAME_1);
+            initData();
+            addEventListener();
+        }
+
         setContentView(R.layout.activity_book_detail);
 
         scaleAnimation = new ScaleAnimation(0.7f, 1.0f, 0.7f, 1.0f,
@@ -55,4 +70,19 @@ public class BookDetailActivity extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://m.naver.com"));
         startActivity(intent);
     }
+
+    private void initData() {
+        Glide.with(this)
+                .load(book.getImageUrl())
+                .into(binding.bookImage);
+
+        binding.bookTitle.setText(book.getTitle());
+        binding.author.setText(book.getAuthor());
+        binding.publishDate.setText(book.getPublicationDate());
+        binding.summaryText.setText(book.getIntro());
+    }
+
+    private void addEventListener() {
+    }
+
 }

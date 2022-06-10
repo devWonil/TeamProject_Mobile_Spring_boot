@@ -1,5 +1,6 @@
-package com.example.mybooks;
+package com.example.mybooks.adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,19 +12,29 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterInside;
+import com.example.mybooks.Book;
+import com.example.mybooks.IAdapter;
+import com.example.mybooks.OnBookItemClicked;
+import com.example.mybooks.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class BestSellerAdapter extends RecyclerView.Adapter<BestSellerAdapter.MyViewHolder> {
+public class BestSellerAdapter extends RecyclerView.Adapter<BestSellerAdapter.MyViewHolder> implements IAdapter {
 
     private ArrayList<Book> bookList = new ArrayList<>();
+    private OnBookItemClicked onBookItemClicked;
 
-    public void initBookList(ArrayList<Book> list){
+    public void setOnBookItemClicked(OnBookItemClicked onBookItemClicked) {
+        this.onBookItemClicked = onBookItemClicked;
+    }
+
+    @Override
+    public void initBookList(ArrayList<Book> list) {
         this.bookList = list;
     }
 
-    public void addBookList(ArrayList<Book> list){
+    @Override
+    public void addBookList(ArrayList<Book> list) {
         bookList.addAll(bookList.size(), list);
         notifyDataSetChanged();
     }
@@ -53,6 +64,10 @@ public class BestSellerAdapter extends RecyclerView.Adapter<BestSellerAdapter.My
         holder.bestBookPriceTextView.setText(String.valueOf(book.getPrice()));
         holder.bestBookRatingTextView.setText(String.valueOf(book.getRating()));
 
+        holder.setItem(book);
+        holder.itemView.setOnClickListener(view -> {
+            onBookItemClicked.selectItem(book);
+        });
     }
 
     @Override
@@ -80,6 +95,20 @@ public class BestSellerAdapter extends RecyclerView.Adapter<BestSellerAdapter.My
             bestBookPublisherTextView = itemView.findViewById(R.id.bestBookPublisherTextView);
             bestBookPriceTextView = itemView.findViewById(R.id.bestBookPriceTextView);
             bestBookRatingTextView = itemView.findViewById(R.id.bestBookRatingTextView);
+        }
+
+        public void setItem(Book book) {
+            Glide.with(bestBookImageView.getContext())
+                    .load(book.getImageUrl())
+                    .into(bestBookImageView);
+
+            bestBookTitleTextView.setText(book.getTitle());
+            bestBookAuthorTextView.setText(book.getAuthor());
+            //bestBookPriceTextView.setText(book.getPrice());
+
+            itemView.setOnClickListener(view -> {
+                Log.d("TAG", "" + view.getContext());
+            });
         }
     }
 

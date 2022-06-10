@@ -3,33 +3,101 @@ package com.example.mybooks;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class NewFragment extends Fragment {
+import com.example.mybooks.adapter.NewBookAdapter;
+import com.example.mybooks.databinding.FragmentNewBinding;
+
+import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class NewFragment extends Fragment implements IBookFragment {
+
+    private static NewFragment newFragment;
+
+    private ArrayList<Book> list = new ArrayList<>();
+
+    private FragmentNewBinding binding;
+    private BookHttpService bookHttpService;
+    private NewBookAdapter adapter;
+
+    private int page = 1;
+    private boolean isRequest = true;
 
     public NewFragment() {
         // Required empty public constructor
     }
 
-    public static NewFragment newInstance() {
-        NewFragment fragment = new NewFragment();
-
-        return fragment;
+    public static NewFragment getInstance() {
+        if (newFragment == null) {
+            newFragment = new NewFragment();
+        }
+        return newFragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        bookHttpService = BookHttpService.retrofit.create(BookHttpService.class);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        binding = FragmentNewBinding.inflate(inflater, container, false);
 
-        return inflater.inflate(R.layout.fragment_new, container, false);
+        setupRecyclerView(list);
+        requestBookData();
+        return binding.getRoot();
+    }
+
+    @Override
+    public void requestBookData() {
+        bookHttpService.getBestSellerList(page).enqueue(new Callback<ArrayList<Book>>() {
+            @Override
+            public void onResponse(Call<ArrayList<Book>> call, Response<ArrayList<Book>> response) {
+
+                if (response.isSuccessful()) {
+                    ArrayList<Book> addList = response.body();
+                    adapter.addBookList(addList);
+                    page++;
+                    isRequest = true;
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<Book>> call, Throwable t) {
+
+            }
+        });
+    }
+
+    @Override
+    public void setupRecyclerView(ArrayList<Book> list) {
+        adapter = new NewBookAdapter();
+        adapter.initBookList(list);
+
+        binding.newBookContainer.setAdapter(adapter);
+
+        binding.newBookContainer.setOnScrollChangeListener((v, scrollX, scrollY, oldScrollX, oldScrollY) -> {
+
+            if (isRequest) {
+                LinearLayoutManager manager = (LinearLayoutManager) binding.newBookContainer.getLayoutManager();
+                int lastVisibleBookItemCount = manager.findLastVisibleItemPosition();
+                int bookTotalCount = binding.newBookContainer.getAdapter().getItemCount() - 1;
+
+                if (lastVisibleBookItemCount == bookTotalCount) {
+                    requestBookData();
+                    isRequest = false;
+                }
+            }
+        });
     }
 }

@@ -7,13 +7,8 @@
     android:orientation="vertical"
     tools:context=".BestSellerFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="신간 Fragment"
-        android:textSize="25dp" />
-
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/newBookContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"

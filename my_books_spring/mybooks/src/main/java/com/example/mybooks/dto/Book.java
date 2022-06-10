@@ -20,7 +20,7 @@ public class Book {
 	private Integer id;
 
 	// 1. 소설, 2. 추리, 3. 에세이, 4. 자기계발, 5.경제, 6. 기타, 7. 어린이
-	private Integer thema;
+	private Integer theme;
 
 	private String title;
 	private String author;
