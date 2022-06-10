@@ -63,7 +63,7 @@ public class BookDetailActivity extends AppCompatActivity {
 
     public void onPurchaseBtnClicked(View view) { // 구매버튼 클릭 메소드
         // 여기에 구매 URL                                           여기에 넣기!!
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse());
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(book.getBuyUrl()));
         startActivity(intent);
     }
 
