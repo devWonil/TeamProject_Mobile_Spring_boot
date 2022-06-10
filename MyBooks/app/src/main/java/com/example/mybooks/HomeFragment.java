@@ -38,10 +38,10 @@ public class HomeFragment extends Fragment {
     // RecyclerView
 //    private FragmentHomeBinding binding;
     private RecyclerView randomBookContainer;
-    private RandomBookService randomBookService;
+    private BookHttpService bookHttpService;
     private RandomBookAdapter randomBookAdapter;
     private List<Book> bookList = new ArrayList<>();
-    private int page = 3;
+    private int page = 1;
     // 스크롤시 중복 발생
     private boolean isFirstLoading = true;
 
@@ -60,12 +60,12 @@ public class HomeFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // 샘플이미지 넣어주기
-        imageURL.add("https://cdn.pixabay.com/photo/2022/05/20/13/29/dogs-7209506__340.jpg");
-        imageURL.add("https://cdn.pixabay.com/photo/2022/05/20/13/29/dogs-7209506__340.jpg");
-        imageURL.add("https://cdn.pixabay.com/photo/2022/05/20/13/29/dogs-7209506__340.jpg");
-        imageURL.add("https://cdn.pixabay.com/photo/2022/05/20/13/29/dogs-7209506__340.jpg");
-        imageURL.add("https://cdn.pixabay.com/photo/2022/05/20/13/29/dogs-7209506__340.jpg");
-        randomBookService = RandomBookService.retrofit.create(RandomBookService.class);
+        imageURL.add("http://image.kyobobook.co.kr/ink/images/prom/2022/book/220509_bellygom/bn/bnE_w01_c3c5f7.jpg");
+        imageURL.add("http://image.kyobobook.co.kr/newimages/adcenter/IMAC/creatives/2022/05/30/50520/20220530-1.jpg");
+        imageURL.add("http://image.kyobobook.co.kr/ink/images/prom/2022/book/220607_bestseller/bn/bnG_w01_a8daff.jpg");
+        imageURL.add("http://image.kyobobook.co.kr/newimages/adcenter/IMAC/creatives/2022/06/03/61174/kyobo_newbook.jpg");
+        imageURL.add("http://image.kyobobook.co.kr/newimages/adcenter/IMAC/creatives/2022/06/03/57753/EG_newbook.jpg");
+        bookHttpService = BookHttpService.retrofit.create(BookHttpService.class);
     }
 
     @Override
@@ -75,6 +75,10 @@ public class HomeFragment extends Fragment {
         initData();
 //        binding = FragmentHomeBinding.inflate(inflater, container, false);
         // TODO BOOKLIST 올리기
+        setRandomRecyclerView(bookList);
+        //
+//        Log.d("TAG", bookList.get(1).getTitle());
+
         requestRandomBookData();
         return viewGroup;
     }
@@ -92,6 +96,7 @@ public class HomeFragment extends Fragment {
                 Log.d("TAG", "position : " + position);
             }
         });
+
 
         setIndicators(imageURL.size());
     }
@@ -126,7 +131,7 @@ public class HomeFragment extends Fragment {
 
     // recyclerView 통신
     private void requestRandomBookData() {
-        randomBookService.getRandomBookList(page).enqueue(new Callback<ArrayList<Book>>() {
+        bookHttpService.getRandomList().enqueue(new Callback<ArrayList<Book>>() {
             @Override
             public void onResponse(Call<ArrayList<Book>> call, Response<ArrayList<Book>> response) {
                 if(response.isSuccessful()) {
@@ -149,9 +154,22 @@ public class HomeFragment extends Fragment {
         randomBookAdapter = new RandomBookAdapter();
         randomBookAdapter.initBookList(bookList);
         Log.d("TAG", "어댑터 성공");
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         randomBookContainer.setAdapter(randomBookAdapter);
-        randomBookContainer.setLayoutManager(layoutManager);
+        randomBookContainer.hasFixedSize();
+
+        randomBookContainer.setOnScrollChangeListener(new View.OnScrollChangeListener() {
+
+            @Override
+            public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                LinearLayoutManager layoutManager = (LinearLayoutManager) randomBookContainer.getLayoutManager();
+                int lastBookItemCount = layoutManager.findLastVisibleItemPosition();
+                int bookCount = randomBookContainer.getAdapter().getItemCount();
+
+                if(lastBookItemCount == bookCount) {
+                    requestRandomBookData();
+                }
+            }
+        });
     }
 
 

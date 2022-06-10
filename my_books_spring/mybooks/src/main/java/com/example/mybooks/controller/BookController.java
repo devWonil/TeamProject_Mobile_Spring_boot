@@ -1,7 +1,9 @@
 package com.example.mybooks.controller;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,5 +40,28 @@ public class BookController {
 			}
 		});
 		return genreList;
+	}
+	
+	@GetMapping("/random")
+	public List<Book> random() {
+		Random random = new Random();
+		ArrayList<Book> totalList = new ArrayList<>();
+		Book.sampleData().forEach(list -> {
+			totalList.add(list);
+		});
+		ArrayList<Book> randomList = new ArrayList<>();
+		
+		Collections.shuffle(totalList);
+		
+		for(int i = 0; i < 9; i++) {
+			randomList.add(totalList.get(i));
+//			int a = random.nextInt(100);
+//			if(randomList.contains(a)) {
+//				continue;
+//			}
+//			randomList.add(totalList.get(a)); 
+		}
+		
+		return randomList;
 	}
 }

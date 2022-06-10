@@ -27,4 +27,8 @@ public interface BookHttpService {
             @Query("page") int page,
             @Query("themeNumber") int themeNumber
     );
+
+    @GET("random/")
+    Call<ArrayList<Book>> getRandomList(
+    );
 }
