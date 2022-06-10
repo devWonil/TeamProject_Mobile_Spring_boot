@@ -1,14 +1,6 @@
 package com.example.mybooks;
 
-import android.content.Context;
 import android.os.Bundle;
-
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager2.widget.ViewPager2;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,10 +8,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.ViewPager2;
+
 import com.example.mybooks.adapter.RandomBookAdapter;
 import com.example.mybooks.adapter.SliderImageAdapter;
-import com.example.mybooks.databinding.FragmentHomeBinding;
-import com.example.mybooks.repository.RandomBookService;
 
 import java.util.ArrayList;
 import java.util.List;

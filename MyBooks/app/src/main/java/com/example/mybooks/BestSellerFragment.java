@@ -1,17 +1,17 @@
 package com.example.mybooks;
 
+
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import com.example.mybooks.adapter.BestSellerAdapter;
 import com.example.mybooks.databinding.FragmentBestSellerBinding;
-
 
 import java.util.ArrayList;
 
@@ -19,7 +19,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class BestSellerFragment extends Fragment implements IBookFragment{
+public class BestSellerFragment extends Fragment implements IBookFragment, OnBookItemClicked {
 
     private static BestSellerFragment bestSellerFragment;
 
@@ -89,6 +89,7 @@ public class BestSellerFragment extends Fragment implements IBookFragment{
     @Override
     public void setupRecyclerView(ArrayList<Book> list) {
         adapter = new BestSellerAdapter();
+        adapter.setOnBookItemClicked(this); // 추가
         adapter.initBookList(list);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
@@ -110,4 +111,12 @@ public class BestSellerFragment extends Fragment implements IBookFragment{
         });
     }
 
+    @Override
+    public void selectItem(Book book) {
+        System.out.println("22222222");
+        Intent intent = new Intent(getContext(), BookDetailActivity.class);
+        // 직렬화
+        intent.putExtra(BookDetailActivity.PARAM_NAME_1, book);
+        startActivity(intent);
+    }
 }

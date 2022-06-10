@@ -11,7 +11,6 @@ import android.view.MenuItem;
 
 import com.example.mybooks.databinding.ActivityDiaryWriteBinding;
 
-import java.util.ArrayList;
 
 public class DiaryWriteActivity extends AppCompatActivity {
 
