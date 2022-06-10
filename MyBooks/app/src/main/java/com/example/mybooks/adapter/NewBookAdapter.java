@@ -14,6 +14,7 @@ import com.bumptech.glide.load.resource.bitmap.CenterInside;
 import com.bumptech.glide.load.resource.bitmap.FitCenter;
 import com.example.mybooks.Book;
 import com.example.mybooks.IAdapter;
+import com.example.mybooks.OnBookItemClicked;
 import com.example.mybooks.R;
 
 import java.util.ArrayList;
