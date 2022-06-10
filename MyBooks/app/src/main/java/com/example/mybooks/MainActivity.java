@@ -64,9 +64,5 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initData();
         addEventListener();
-        Diary diary1 = new Diary();
-        String a = diary1.a();
-        Log.d("TAG", a +"시간");
-
     }
 }
