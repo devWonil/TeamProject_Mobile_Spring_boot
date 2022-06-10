@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.mybooks.BestSellerFragment;
+import com.example.mybooks.DiaryHomeFragment;
 import com.example.mybooks.GenreFragment;
 import com.example.mybooks.HomeFragment;
 import com.example.mybooks.MainActivity;
@@ -32,6 +33,9 @@ public class PagerAdapter extends FragmentPagerAdapter {
                 break;
             case 3:
                 fragment = new GenreFragment(); // 장르별
+                break;
+            case 4:
+                fragment = new DiaryHomeFragment();
                 break;
         }
         return fragment;

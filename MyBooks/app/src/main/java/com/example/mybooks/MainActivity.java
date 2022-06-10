@@ -1,33 +1,31 @@
 package com.example.mybooks;
 
-import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
-
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.mybooks.adapter.PagerAdapter;
-import com.example.mybooks.repository.models.Diary;
+import com.example.mybooks.databinding.ActivityMainBinding;
+import com.example.mybooks.utils.FragmentType;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ViewPager viewPager;
-    private TabLayout tabLayout;
+    ActivityMainBinding binding;
     private PagerAdapter pagerAdapter;
     public static final int TAB_COUNT = 4;
     private String tabTitle[] = {"추천", "베스트", "신간", "장르별"};
 
 
-
     private void initData() {
-        viewPager = findViewById(R.id.mainViewPager);
-        tabLayout = findViewById(R.id.tabLayout);
         for (String name : tabTitle) {
-            tabLayout.addTab(tabLayout.newTab().setText(name));
+            binding.tabLayout.addTab(binding.tabLayout.newTab().setText(name));
         }
         pagerAdapter = new PagerAdapter(getSupportFragmentManager(), TAB_COUNT);
 
@@ -35,11 +33,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addEventListener() {
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        binding.tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 int currentPage = tab.getPosition();
-                viewPager.setCurrentItem(currentPage);
+                binding.mainViewPager.setCurrentItem(currentPage);
             }
 
             @Override
@@ -53,16 +51,60 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-        viewPager.setAdapter(pagerAdapter);
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        binding.mainViewPager.setAdapter(pagerAdapter);
+        binding.mainViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(binding.tabLayout));
 
+    }
+
+    private void replaceFragment(FragmentType type) {
+        Fragment fragment = null;
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        if (type == FragmentType.HOME) {
+//            Intent intent = new Intent(this, MainActivity.class);
+//            startActivity(intent);
+
+        } else {
+            if (type == FragmentType.DIARY) {
+                fragment = DiaryHomeFragment.newInstance();
+            } else if (type == FragmentType.LIKE) {
+                fragment = new LikeFragment();
+            }
+            transaction.replace(binding.fragmentContainer.getId(), fragment);
+            transaction.commit();
+
+        }
+
+
+    }
+
+    private void addBottomNaviListener() {
+        binding.bottomNavigation.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.homePage:
+                    Log.d("TAG", "홈 버튼 누름");
+                    replaceFragment(FragmentType.HOME);
+                    break;
+                case R.id.diaryPage:
+                    replaceFragment(FragmentType.DIARY);
+                    break;
+                case R.id.likePage:
+                    replaceFragment(FragmentType.LIKE);
+                    break;
+            }
+            return true;
+        });
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+//        binding.tabLayout.setVisibility(View.GONE);
         initData();
         addEventListener();
+        replaceFragment(FragmentType.HOME);
+        addBottomNaviListener();
     }
 }

@@ -8,13 +8,13 @@
         android:title="홈" />
 
     <item
-        android:id="@+id/myPage"
+        android:id="@+id/diaryPage"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_person_24"
         android:title="다이어리" />
 
     <item
-        android:id="@+id/favoritePage"
+        android:id="@+id/likePage"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_favorite_24"
         android:title="찜" />
