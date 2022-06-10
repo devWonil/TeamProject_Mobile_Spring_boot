@@ -15,8 +15,7 @@ import java.util.ArrayList;
 
 public class DiaryListAdapter extends RecyclerView.Adapter<DiaryListAdapter.DiaryViewHolder> {
 
-
-    ArrayList<Diary> diaryList = new ArrayList<>();
+    private ArrayList<Diary> diaryList = new ArrayList<>();
 
     public void initDiaryList(ArrayList<Diary> diaryList) {
         this.diaryList = diaryList;

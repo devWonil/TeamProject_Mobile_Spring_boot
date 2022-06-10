@@ -11,8 +11,14 @@ public class Diary {
     public String currentDate;
     public String diaryContent;
 
+    public Diary(int diaryId, String diaryTitle, String currentDate, String diaryContent) {
+        this.diaryId = diaryId;
+        this.diaryTitle = diaryTitle;
+        this.currentDate = currentDate;
+        this.diaryContent = diaryContent;
+    }
 
-//    public void getCurrentDate() {
+    //    public void getCurrentDate() {
 //        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 //        Long time = System.currentTimeMillis();
 //        Date date = new Date(time);
