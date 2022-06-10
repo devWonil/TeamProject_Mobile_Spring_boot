@@ -1,4 +1,4 @@
-package com.example.mybooks;
+package com.example.mybooks.repository.models;
 
 import java.io.Serializable;
 

@@ -1,4 +1,6 @@
-package com.example.mybooks.repository.models;
+package com.example.mybooks.retrofit;
+
+import com.example.mybooks.repository.models.Books;
 
 import java.util.ArrayList;
 
