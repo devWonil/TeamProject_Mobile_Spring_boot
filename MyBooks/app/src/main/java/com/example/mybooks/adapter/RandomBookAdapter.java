@@ -41,7 +41,10 @@ public class RandomBookAdapter extends RecyclerView.Adapter<RandomBookAdapter.Ra
     @Override
     public void onBindViewHolder(@NonNull RandomViewHolder holder, int position) {
         Book book = bookList.get(position);
-        holder.setItem(book);
+        holder.titleTextView.setText(book.getTitle());
+        Glide.with(holder.bookImageView.getContext()).load(book.getImageUrl())
+                .placeholder(R.drawable.image_loading).transform(new FitCenter(), new RoundedCorners(10))
+                .into(holder.bookImageView);
         holder.itemView.setOnClickListener(v -> {
             // 이벤트 리스너
         });
@@ -64,11 +67,6 @@ public class RandomBookAdapter extends RecyclerView.Adapter<RandomBookAdapter.Ra
             bookImageView = itemView.findViewById(R.id.bookImageView);
             titleTextView = itemView.findViewById(R.id.bookTitleTextView);
         }
-        public void setItem(Book book) {
-            titleTextView.setText(book.getTitle());
-            Glide.with(bookImageView.getContext()).load(book.getImageUrl())
-                    .placeholder(R.drawable.book).transform(new FitCenter(), new RoundedCorners(10))
-                    .into(bookImageView);
-        }
+
     }
 }

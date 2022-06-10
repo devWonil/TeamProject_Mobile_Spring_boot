@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterInside;
 import com.example.mybooks.Book;
+
 import com.example.mybooks.IAdapter;
 import com.example.mybooks.OnBookItemClicked;
 import com.example.mybooks.R;
@@ -42,9 +43,9 @@ public class BestSellerAdapter extends RecyclerView.Adapter<BestSellerAdapter.My
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
+        View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.best_item, parent, false);
-        return new MyViewHolder(view);
+        return new MyViewHolder(itemView);
     }
 
     @Override
@@ -65,9 +66,9 @@ public class BestSellerAdapter extends RecyclerView.Adapter<BestSellerAdapter.My
         holder.bestBookRatingTextView.setText(String.valueOf(book.getRating()));
 
         holder.setItem(book);
-        holder.itemView.setOnClickListener(view -> {
-            onBookItemClicked.selectItem(book);
-        });
+//        holder.itemView.setOnClickListener(view -> {
+//            onBookItemClicked.selectItem(book);
+//        });
     }
 
     @Override
@@ -100,15 +101,23 @@ public class BestSellerAdapter extends RecyclerView.Adapter<BestSellerAdapter.My
         public void setItem(Book book) {
             Glide.with(bestBookImageView.getContext())
                     .load(book.getImageUrl())
+                    .placeholder(R.drawable.book)
                     .into(bestBookImageView);
 
             bestBookTitleTextView.setText(book.getTitle());
             bestBookAuthorTextView.setText(book.getAuthor());
-            //bestBookPriceTextView.setText(book.getPrice());
-
-            itemView.setOnClickListener(view -> {
-                Log.d("TAG", "" + view.getContext());
+            //
+            // 오류 String type :
+            bestBookPriceTextView.setText(String.valueOf(book.getPrice()));
+            bestBookImageView.setOnClickListener(view -> {
+                onBookItemClicked.selectItem(book);
             });
+//
+
+//
+//            bestBookImageView.setOnClickListener(v -> {
+//
+//            });
         }
     }
 

@@ -49,19 +49,19 @@ public class BookDetailActivity extends AppCompatActivity {
             addEventListener();
         }
 
-        setContentView(R.layout.activity_book_detail);
-
-        scaleAnimation = new ScaleAnimation(0.7f, 1.0f, 0.7f, 1.0f,
-                Animation.RELATIVE_TO_SELF, 0.7f, Animation.RELATIVE_TO_SELF, 0.7f);
-
-        scaleAnimation.setDuration(500);
-        bounceInterpolator = new BounceInterpolator();
-        scaleAnimation.setInterpolator(bounceInterpolator);
-
-        likeButton = findViewById(R.id.likeButton);
-
-        likeButton.setOnCheckedChangeListener((compoundButton, isChecked) ->
-                compoundButton.startAnimation(scaleAnimation));
+//        setContentView(R.layout.activity_book_detail);
+//
+//        scaleAnimation = new ScaleAnimation(0.7f, 1.0f, 0.7f, 1.0f,
+//                Animation.RELATIVE_TO_SELF, 0.7f, Animation.RELATIVE_TO_SELF, 0.7f);
+//
+//        scaleAnimation.setDuration(500);
+//        bounceInterpolator = new BounceInterpolator();
+//        scaleAnimation.setInterpolator(bounceInterpolator);
+//
+//        likeButton = findViewById(R.id.likeButton);
+//
+//        likeButton.setOnCheckedChangeListener((compoundButton, isChecked) ->
+//                compoundButton.startAnimation(scaleAnimation));
 
     }
 

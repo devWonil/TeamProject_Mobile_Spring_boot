@@ -1,5 +1,6 @@
 package com.example.mybooks;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,7 +19,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class BestSellerFragment extends Fragment implements IBookFragment, OnBookItemClicked{
+public class BestSellerFragment extends Fragment implements IBookFragment, OnBookItemClicked {
 
     private static BestSellerFragment bestSellerFragment;
 
@@ -88,7 +89,7 @@ public class BestSellerFragment extends Fragment implements IBookFragment, OnBoo
     @Override
     public void setupRecyclerView(ArrayList<Book> list) {
         adapter = new BestSellerAdapter();
-        adapter.setOnBookItemClicked(this);
+        adapter.setOnBookItemClicked(this); // 추가
         adapter.initBookList(list);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
@@ -112,6 +113,7 @@ public class BestSellerFragment extends Fragment implements IBookFragment, OnBoo
 
     @Override
     public void selectItem(Book book) {
+        System.out.println("22222222");
         Intent intent = new Intent(getContext(), BookDetailActivity.class);
         // 직렬화
         intent.putExtra(BookDetailActivity.PARAM_NAME_1, book);
