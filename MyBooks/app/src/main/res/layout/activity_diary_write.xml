@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/m_primary"
-    tools:context=".DiaryWriteFragment">
+    tools:context=".DiaryWriteActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/diaryToolbar"
@@ -35,7 +35,6 @@
         app:layout_constraintTop_toBottomOf="@id/diaryToolbar"
         tools:text="제목" />
 
-
     <EditText
         android:id="@+id/diaryContentEditText"
         android:layout_width="0dp"
@@ -56,4 +55,5 @@
 로렘 입숨은 전통 라틴어와 닮은 점 때문에 종종 호기심을 유발하기도 하지만 그 이상의 의미를 담지는 않는다. 문서에서 텍스트가 보이면 사람들은 전체적인 프레젠테이션보다는 텍스트에 담긴 뜻에 집중하" />
 
     <!-- 368 자 -->
+
 </androidx.constraintlayout.widget.ConstraintLayout>
