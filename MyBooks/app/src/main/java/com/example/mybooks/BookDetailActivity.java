@@ -1,25 +1,21 @@
 package com.example.mybooks;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.Animation;
 import android.view.animation.BounceInterpolator;
 import android.view.animation.ScaleAnimation;
 import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.mybooks.databinding.ActivityBookDetailBinding;
+import com.example.mybooks.repository.models.Book;
 
 public class BookDetailActivity extends AppCompatActivity {
 
@@ -67,7 +63,7 @@ public class BookDetailActivity extends AppCompatActivity {
 
     public void onPurchaseBtnClicked(View view) { // 구매버튼 클릭 메소드
         // 여기에 구매 URL                                           여기에 넣기!!
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://m.naver.com"));
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse());
         startActivity(intent);
     }
 

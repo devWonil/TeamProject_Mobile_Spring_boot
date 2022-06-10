@@ -11,11 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterInside;
-import com.bumptech.glide.load.resource.bitmap.FitCenter;
-import com.example.mybooks.Book;
-import com.example.mybooks.IAdapter;
-import com.example.mybooks.OnBookItemClicked;
 import com.example.mybooks.R;
+import com.example.mybooks.interfaces.IAdapter;
+import com.example.mybooks.repository.models.Book;
 
 import java.util.ArrayList;
 
