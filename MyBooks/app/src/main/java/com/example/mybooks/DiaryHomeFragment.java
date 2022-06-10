@@ -46,7 +46,7 @@ public class DiaryHomeFragment extends Fragment {
 
     public void setDiaryRecyclerView() {
         diaryListAdapter = new DiaryListAdapter();
-//        diaryListAdapter.initDiaryList();
+        diaryListAdapter.initDiaryList(diaryList);
     }
 
 }
