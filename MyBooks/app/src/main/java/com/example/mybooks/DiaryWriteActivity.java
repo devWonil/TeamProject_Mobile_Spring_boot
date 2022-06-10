@@ -3,28 +3,42 @@ package com.example.mybooks;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.example.mybooks.databinding.ActivityDiaryWriteBinding;
+import com.example.mybooks.interfaces.OnClickedSaveButton;
+import com.google.gson.JsonArray;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
-
 
 public class DiaryWriteActivity extends AppCompatActivity {
 
     private ActivityDiaryWriteBinding binding;
 
-    private static final String DIARY_NUMBER = "diaryNumber";
-    private static final String DIARY_TITLE = "diaryTitle";
-    private static final String DIARY_CONTENT = "diaryContent";
-    private static final String CURRENT_DATE = "currentDate";
+    private OnClickedSaveButton onClickedSaveButton;
+
+    public static final String DIARY_DATABASE = "diaryDatabase";
+    public static final String DIARY_NUMBER = "diaryNumber";
+    public static final String DIARY_TITLE = "diaryTitle";
+    public static final String DIARY_CONTENT = "diaryContent";
+    public static final String CURRENT_DATE = "currentDate";
     private SharedPreferences diaryDb;
     private SharedPreferences.Editor editor;
+
+    public void setOnClickedSaveButton(OnClickedSaveButton onClickedSaveButton) {
+        this.onClickedSaveButton = onClickedSaveButton;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +47,7 @@ public class DiaryWriteActivity extends AppCompatActivity {
         binding = ActivityDiaryWriteBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        diaryDb = getSharedPreferences(DIARY_NUMBER, MODE_PRIVATE);
+        diaryDb = getSharedPreferences(DIARY_DATABASE, MODE_PRIVATE);
         editor = diaryDb.edit();
         editor.putInt(DIARY_NUMBER, 1);
         editor.apply();
@@ -52,14 +66,25 @@ public class DiaryWriteActivity extends AppCompatActivity {
             case R.id.saveIcon:
                 int diaryNumber = diaryDb.getInt(DIARY_NUMBER, 100);
                 String diaryTitle = binding.diaryTitleEditText.getText().toString();
+                String currentDate = getCurrentDate();
                 String diaryContent = binding.diaryContentEditText.getText().toString();
 
                 diaryNumber++;
-                editor.putInt(DIARY_NUMBER, diaryNumber);
-                editor.putString(CURRENT_DATE, getCurrentDate());
-                editor.putString(DIARY_TITLE, diaryTitle);
-                editor.putString(DIARY_CONTENT, diaryContent);
-                editor.apply();
+//                editor.putInt(DIARY_NUMBER, diaryNumber);
+//                editor.putString(CURRENT_DATE, getCurrentDate());
+//                editor.putString(DIARY_TITLE, diaryTitle);
+//                editor.putString(DIARY_CONTENT, diaryContent);
+//                editor.apply();
+
+                ArrayList<String> list = new ArrayList<>();
+                list.add(String.valueOf(diaryNumber));
+                list.add(diaryTitle);
+                list.add(currentDate);
+                list.add(diaryContent);
+
+                setStringArrayDiaryDb(getApplication(), "diary", list);
+
+                onClickedSaveButton.onClickedSaveButton();
 
                 break;
         }
@@ -71,5 +96,17 @@ public class DiaryWriteActivity extends AppCompatActivity {
         Long time = System.currentTimeMillis();
         Date date = new Date(time);
         return simpleDateFormat.format(date);
+    }
+
+    private void setStringArrayDiaryDb(Context context, String key, ArrayList<String> values) {
+        SharedPreferences diaryDb = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = diaryDb.edit();
+        JSONArray jsonArray = new JSONArray();
+
+        for (int i = 0; i < values.size(); i++) {
+            jsonArray.put(values.get(i));
+        }
+
+        editor.putString(key, jsonArray.toString());
     }
 }

@@ -13,6 +13,7 @@ public class Book implements Serializable {
     private double rating;
     private String imageUrl;
     private String intro;
+    private String buyUrl;
 
     public int getId() {
         return id;
@@ -92,5 +93,13 @@ public class Book implements Serializable {
 
     public void setIntro(String intro) {
         this.intro = intro;
+    }
+
+    public String getBuyUrl() {
+        return buyUrl;
+    }
+
+    public void setBuyUrl(String buyUrl) {
+        this.buyUrl = buyUrl;
     }
 }
