@@ -5,11 +5,13 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.example.mybooks.adapter.DiaryListAdapter;
 import com.example.mybooks.databinding.FragmentDiaryHomeBinding;
@@ -49,13 +51,19 @@ public class DiaryHomeFragment extends Fragment implements OnClickedSaveButton {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_diary_home, container, false);
+        binding = FragmentDiaryHomeBinding.inflate(inflater, container, false);
+        setDiaryRecyclerView();
+        return binding.getRoot();
     }
 
     public void setDiaryRecyclerView() {
+        // TODO 이벤트 리스너 등록
         diaryListAdapter = new DiaryListAdapter();
-//        diaryListAdapter.initDiaryList();
+        diaryListAdapter.initDiaryList(diaryList);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        binding.diaryListContainer.setAdapter(diaryListAdapter);
+        binding.diaryListContainer.setLayoutManager(layoutManager);
+
     }
 
 //    private void getDiaryDb() {
