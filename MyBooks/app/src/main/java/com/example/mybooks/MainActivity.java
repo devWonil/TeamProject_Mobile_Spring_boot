@@ -7,8 +7,10 @@ import androidx.viewpager.widget.ViewPager;
 
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.mybooks.adapter.PagerAdapter;
+import com.example.mybooks.repository.models.Diary;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
@@ -62,6 +64,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initData();
         addEventListener();
+        Diary diary1 = new Diary();
+        String a = diary1.a();
+        Log.d("TAG", a +"시간");
 
     }
 }

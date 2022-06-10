@@ -1,6 +1,5 @@
 package com.example.mybooks;
 
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.core.content.ContextCompat;
@@ -18,8 +17,6 @@ import android.widget.LinearLayout;
 
 import com.example.mybooks.adapter.RandomBookAdapter;
 import com.example.mybooks.adapter.SliderImageAdapter;
-import com.example.mybooks.databinding.FragmentHomeBinding;
-import com.example.mybooks.repository.RandomBookService;
 
 import java.util.ArrayList;
 import java.util.List;
