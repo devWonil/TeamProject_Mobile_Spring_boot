@@ -11,6 +11,9 @@ import android.view.MenuItem;
 
 import com.example.mybooks.databinding.ActivityDiaryWriteBinding;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public class DiaryWriteActivity extends AppCompatActivity {
 
@@ -19,6 +22,7 @@ public class DiaryWriteActivity extends AppCompatActivity {
     private static final String DIARY_NUMBER = "diaryNumber";
     private static final String DIARY_TITLE = "diaryTitle";
     private static final String DIARY_CONTENT = "diaryContent";
+    private static final String CURRENT_DATE = "currentDate";
     private SharedPreferences diaryDb;
     private SharedPreferences.Editor editor;
 
@@ -52,6 +56,7 @@ public class DiaryWriteActivity extends AppCompatActivity {
 
                 diaryNumber++;
                 editor.putInt(DIARY_NUMBER, diaryNumber);
+                editor.putString(CURRENT_DATE, getCurrentDate());
                 editor.putString(DIARY_TITLE, diaryTitle);
                 editor.putString(DIARY_CONTENT, diaryContent);
                 editor.apply();
@@ -59,5 +64,12 @@ public class DiaryWriteActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public String getCurrentDate() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Long time = System.currentTimeMillis();
+        Date date = new Date(time);
+        return simpleDateFormat.format(date);
     }
 }

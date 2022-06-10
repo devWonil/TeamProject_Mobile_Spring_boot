@@ -1,6 +1,6 @@
-package com.example.mybooks;
+package com.example.mybooks.retrofit;
 
-import android.util.Log;
+import com.example.mybooks.repository.models.Book;
 
 import java.util.ArrayList;
 

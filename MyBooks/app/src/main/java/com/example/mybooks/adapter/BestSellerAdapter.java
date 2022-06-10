@@ -1,6 +1,5 @@
 package com.example.mybooks.adapter;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +11,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterInside;
-import com.example.mybooks.Book;
+import com.example.mybooks.repository.models.Book;
 
-import com.example.mybooks.IAdapter;
-import com.example.mybooks.OnBookItemClicked;
+import com.example.mybooks.interfaces.IAdapter;
+import com.example.mybooks.interfaces.OnBookItemClicked;
 import com.example.mybooks.R;
 
 import java.util.ArrayList;

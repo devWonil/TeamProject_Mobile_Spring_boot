@@ -1,4 +1,6 @@
-package com.example.mybooks;
+package com.example.mybooks.interfaces;
+
+import com.example.mybooks.repository.models.Book;
 
 import java.util.ArrayList;
 

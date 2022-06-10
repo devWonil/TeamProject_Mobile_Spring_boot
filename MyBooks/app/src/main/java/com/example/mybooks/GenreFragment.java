@@ -11,6 +11,9 @@ import android.view.ViewGroup;
 
 import com.example.mybooks.adapter.GenreAdapter;
 import com.example.mybooks.databinding.FragmentGenreBinding;
+import com.example.mybooks.interfaces.IBookFragment;
+import com.example.mybooks.repository.models.Book;
+import com.example.mybooks.retrofit.BookHttpService;
 
 import java.util.ArrayList;
 
