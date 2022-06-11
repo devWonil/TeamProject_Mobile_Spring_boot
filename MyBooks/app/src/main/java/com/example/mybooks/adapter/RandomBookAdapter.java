@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.FitCenter;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.example.mybooks.interfaces.OnBookItemClicked;
 import com.example.mybooks.repository.models.Book;
 import com.example.mybooks.R;
 
@@ -21,9 +22,11 @@ import java.util.List;
 public class RandomBookAdapter extends RecyclerView.Adapter<RandomBookAdapter.RandomViewHolder>{
 
     private List<Book> bookList = new ArrayList<>();
-    
-    // TODO 버튼 이벤트 등록하여 세부정보 볼 수 있게 하기
-    // TODO 콜백 메서드
+    private OnBookItemClicked onBookItemClicked;
+
+    public void setOnBookItemClicked(OnBookItemClicked onBookItemClicked) {
+        this.onBookItemClicked = onBookItemClicked;
+    }
 
     public void initBookList(List<Book> list) {
         this.bookList = list;
@@ -46,7 +49,7 @@ public class RandomBookAdapter extends RecyclerView.Adapter<RandomBookAdapter.Ra
                 .placeholder(R.drawable.image_loading).transform(new FitCenter(), new RoundedCorners(10))
                 .into(holder.bookImageView);
         holder.itemView.setOnClickListener(v -> {
-            // 이벤트 리스너
+            onBookItemClicked.selectItem(book);
         });
     }
 

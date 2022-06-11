@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterInside;
 import com.example.mybooks.R;
 import com.example.mybooks.interfaces.IAdapter;
+import com.example.mybooks.interfaces.OnBookItemClicked;
 import com.example.mybooks.repository.models.Book;
 
 import java.util.ArrayList;
@@ -20,6 +21,11 @@ import java.util.ArrayList;
 public class NewBookAdapter extends RecyclerView.Adapter<NewBookAdapter.MyViewHolder> implements IAdapter {
 
     private ArrayList<Book> newBookList = new ArrayList<>();
+    private OnBookItemClicked onBookItemClicked;
+
+    public void setOnBookItemClicked(OnBookItemClicked onBookItemClicked) {
+        this.onBookItemClicked = onBookItemClicked;
+    }
 
     @Override
     public void initBookList(ArrayList<Book> list) {
@@ -54,7 +60,9 @@ public class NewBookAdapter extends RecyclerView.Adapter<NewBookAdapter.MyViewHo
         holder.newBookAuthorTextView.setText(book.getAuthor());
         holder.newBookPublisherTextView.setText(book.getPublisher());
         holder.newBookPriceTextView.setText(String.valueOf(book.getPrice()));
-
+        holder.newBookImageView.setOnClickListener(v -> {
+            onBookItemClicked.selectItem(book);
+        });
     }
 
     @Override

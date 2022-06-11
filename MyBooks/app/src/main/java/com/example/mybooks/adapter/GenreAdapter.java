@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterInside;
+import com.example.mybooks.interfaces.OnBookItemClicked;
 import com.example.mybooks.repository.models.Book;
 import com.example.mybooks.interfaces.IAdapter;
 import com.example.mybooks.R;
@@ -20,6 +21,11 @@ import java.util.ArrayList;
 public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.MyViewHolder> implements IAdapter {
 
     private ArrayList<Book> genreBookList = new ArrayList<>();
+    private OnBookItemClicked onBookItemClicked;
+
+    public void setOnBookItemClicked(OnBookItemClicked onBookItemClicked) {
+        this.onBookItemClicked = onBookItemClicked;
+    }
 
     public void formatBookList() {
         genreBookList.removeAll(genreBookList);
@@ -58,6 +64,9 @@ public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.MyViewHolder
         holder.genreBookAuthorTextView.setText(book.getAuthor());
         holder.genreBookPublisherTextView.setText(book.getPublisher());
         holder.genreBookPriceTextView.setText(String.valueOf(book.getPrice()));
+        holder.genreBookImageView.setOnClickListener(v -> {
+            onBookItemClicked.selectItem(book);
+        });
 
     }
 

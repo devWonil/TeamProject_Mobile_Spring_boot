@@ -44,7 +44,7 @@
             app:layout_constraintBottom_toTopOf="@id/author"
             app:layout_constraintStart_toEndOf="@+id/bookImage"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.43"
+            app:layout_constraintVertical_bias="0.5"
             app:layout_constraintVertical_chainStyle="packed"
             tools:text="플러터 UI 실전"
             tools:textStyle="bold" />
@@ -57,7 +57,7 @@
             android:layout_marginBottom="13dp"
             android:textColor="@color/black"
             android:textSize="15sp"
-            app:layout_constraintBottom_toTopOf="@id/publishDate"
+            app:layout_constraintBottom_toTopOf="@id/genre"
             app:layout_constraintStart_toStartOf="@id/bookTitle"
             app:layout_constraintTop_toBottomOf="@id/bookTitle"
             tools:text="김근호"
@@ -67,24 +67,24 @@
             android:id="@+id/genre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
             android:text="교육"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/author"
-            app:layout_constraintStart_toEndOf="@id/author"
-            app:layout_constraintTop_toTopOf="@id/author" />
+            app:layout_constraintBottom_toTopOf="@id/publishDate"
+            app:layout_constraintStart_toStartOf="@id/author"
+            app:layout_constraintTop_toBottomOf="@id/author" />
 
         <TextView
             android:id="@+id/publishDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
             android:textColor="@color/black"
             android:textSize="15sp"
             app:layout_constraintBottom_toTopOf="@id/publishCompany"
-            app:layout_constraintStart_toStartOf="@id/author"
-            app:layout_constraintTop_toBottomOf="@id/author"
+            app:layout_constraintStart_toStartOf="@id/genre"
+            app:layout_constraintTop_toBottomOf="@id/genre"
             tools:text="2021. 08. 20" />
 
         <TextView
@@ -96,7 +96,7 @@
             android:text="앤써북"
             android:textColor="@color/black"
             android:textSize="16dp"
-            app:layout_constraintBottom_toTopOf="@id/ratingBar"
+            app:layout_constraintBottom_toTopOf="@id/bookPrice"
             app:layout_constraintStart_toStartOf="@id/publishDate"
             app:layout_constraintTop_toBottomOf="@id/publishDate" />
 
@@ -107,22 +107,23 @@
             android:text="18000"
             android:textColor="@color/black"
             android:textSize="16dp"
-            app:layout_constraintBottom_toBottomOf="@id/publishCompany"
-            app:layout_constraintStart_toStartOf="@id/genre"
-            app:layout_constraintTop_toTopOf="@id/publishCompany" />
+            app:layout_constraintBottom_toTopOf="@id/ratingBar"
+            app:layout_constraintStart_toStartOf="@id/publishCompany"
+            app:layout_constraintTop_toBottomOf="@id/publishCompany" />
 
         <RatingBar
             android:id="@+id/ratingBar"
             style="@style/Widget.AppCompat.RatingBar.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
             android:isIndicator="true"
             android:numStars="10"
             android:rating="9.4"
             android:stepSize="0.1"
             app:layout_constraintBottom_toTopOf="@id/likeButton"
-            app:layout_constraintStart_toStartOf="@id/publishCompany"
-            app:layout_constraintTop_toBottomOf="@id/publishCompany" />
+            app:layout_constraintStart_toStartOf="@id/bookPrice"
+            app:layout_constraintTop_toBottomOf="@id/bookPrice" />
 
         <ToggleButton
             android:id="@+id/likeButton"
@@ -134,8 +135,8 @@
             android:text=""
             android:textOff=""
             android:textOn=""
-            app:layout_constraintBottom_toTopOf="@id/summaryText"
-            app:layout_constraintStart_toStartOf="@id/publishDate"
+            app:layout_constraintBottom_toTopOf="@id/textScrollView"
+            app:layout_constraintStart_toStartOf="@id/ratingBar"
             app:layout_constraintTop_toBottomOf="@id/ratingBar" />
 
         <Button
@@ -160,28 +161,36 @@
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/summaryText"
+            app:layout_constraintBottom_toTopOf="@id/textScrollView"
             app:layout_constraintStart_toStartOf="@id/bookImage"
             app:layout_constraintTop_toBottomOf="@id/bookImage" />
 
-        <TextView
-            android:id="@+id/summaryText"
+        <ScrollView
+            android:id="@+id/textScrollView"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="25dp"
             android:layout_marginBottom="25dp"
             android:background="#F5F5F5"
-            android:ellipsize="end"
-            android:maxWidth="300dp"
-            android:padding="6dp"
-            android:textColor="@color/black"
-            android:textSize="12dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/summary"
-            app:layout_constraintTop_toBottomOf="@+id/summary"
-            tools:text="fsdfsdfsdfsdfsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsddfsssssssssssssssfsddddddddddd" />
+            app:layout_constraintTop_toBottomOf="@+id/summary">
+
+            <TextView
+                android:id="@+id/summaryText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ellipsize="end"
+                android:maxWidth="300dp"
+                android:padding="6dp"
+                android:textColor="@color/black"
+                android:textSize="12dp"
+                tools:text="fsdfsdfsdfsdfsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsddfsssssssssssssssfsddddddddddd" />
+
+
+        </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

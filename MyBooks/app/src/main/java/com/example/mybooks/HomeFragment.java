@@ -1,6 +1,8 @@
 package com.example.mybooks;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,22 +18,27 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.mybooks.adapter.RandomBookAdapter;
 import com.example.mybooks.adapter.SliderImageAdapter;
+import com.example.mybooks.interfaces.OnBookItemClicked;
 import com.example.mybooks.repository.models.Book;
 import com.example.mybooks.retrofit.BookHttpService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements OnBookItemClicked {
 
     private ViewGroup viewGroup;
     private LinearLayout layoutIndicatorsContainer;
     private static HomeFragment fragment;
     private ArrayList<String> imageURL = new ArrayList<>();
+    private int currentPage = 0;
+    Timer timer;
 
     // RecyclerView
 //    private FragmentHomeBinding binding;
@@ -39,7 +46,6 @@ public class HomeFragment extends Fragment {
     private BookHttpService bookHttpService;
     private RandomBookAdapter randomBookAdapter;
     private List<Book> bookList = new ArrayList<>();
-    private int page = 1;
     // 스크롤시 중복 발생
     private boolean isFirstLoading = true;
 
@@ -94,9 +100,24 @@ public class HomeFragment extends Fragment {
                 Log.d("TAG", "position : " + position);
             }
         });
-
-
         setIndicators(imageURL.size());
+        final Handler handler = new Handler();
+        final Runnable update = new Runnable() {
+            @Override
+            public void run() {
+                if(currentPage == 5) {
+                    currentPage = 0;
+                }
+                viewPager2.setCurrentItem(currentPage++, true);
+            }
+        };
+        timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                handler.post(update);
+            }
+        }, 500, 3000);
     }
 
     //     indicator 띄우기
@@ -150,6 +171,7 @@ public class HomeFragment extends Fragment {
     private void setRandomRecyclerView(List<Book> bookList) {
         randomBookContainer = viewGroup.findViewById(R.id.randomBookContainer);
         randomBookAdapter = new RandomBookAdapter();
+        randomBookAdapter.setOnBookItemClicked(this);
         randomBookAdapter.initBookList(bookList);
         Log.d("TAG", "어댑터 성공");
         randomBookContainer.setAdapter(randomBookAdapter);
@@ -157,5 +179,10 @@ public class HomeFragment extends Fragment {
     }
 
 
-
+    @Override
+    public void selectItem(Book book) {
+        Intent intent = new Intent(getContext(), BookDetailActivity.class);
+        intent.putExtra(BookDetailActivity.PARAM_NAME_1, book);
+        startActivity(intent);
+    }
 }
