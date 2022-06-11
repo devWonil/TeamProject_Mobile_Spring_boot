@@ -23,7 +23,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
         Fragment fragment = null;
         switch (position) {
             case 0:
-                fragment = new HomeFragment();
+                fragment = HomeFragment.newInstance();
                 break;
             case 1:
                 fragment = BestSellerFragment.newInstance();
@@ -33,9 +33,6 @@ public class PagerAdapter extends FragmentPagerAdapter {
                 break;
             case 3:
                 fragment = new GenreFragment(); // 장르별
-                break;
-            case 4:
-                fragment = new DiaryHomeFragment();
                 break;
         }
         return fragment;

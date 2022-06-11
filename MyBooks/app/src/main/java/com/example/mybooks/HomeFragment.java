@@ -154,20 +154,6 @@ public class HomeFragment extends Fragment {
         Log.d("TAG", "어댑터 성공");
         randomBookContainer.setAdapter(randomBookAdapter);
         randomBookContainer.hasFixedSize();
-
-        randomBookContainer.setOnScrollChangeListener(new View.OnScrollChangeListener() {
-
-            @Override
-            public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                LinearLayoutManager layoutManager = (LinearLayoutManager) randomBookContainer.getLayoutManager();
-                int lastBookItemCount = layoutManager.findLastVisibleItemPosition();
-                int bookCount = randomBookContainer.getAdapter().getItemCount();
-
-                if(lastBookItemCount == bookCount) {
-                    requestRandomBookData();
-                }
-            }
-        });
     }
 
 

@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private PagerAdapter pagerAdapter;
     public static final int TAB_COUNT = 4;
     private String tabTitle[] = {"추천", "베스트", "신간", "장르별"};
+    Fragment fragment;
 
 
     private void initData() {
@@ -57,24 +58,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void replaceFragment(FragmentType type) {
-        Fragment fragment = null;
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
         if (type == FragmentType.HOME) {
-//            Intent intent = new Intent(this, MainActivity.class);
-//            startActivity(intent);
-
-        } else {
-            if (type == FragmentType.DIARY) {
-                fragment = DiaryHomeFragment.newInstance();
-            } else if (type == FragmentType.LIKE) {
-                fragment = new LikeFragment();
-            }
+            transaction.remove(fragment);
+            setContentView(binding.getRoot());
+        } else if (type == FragmentType.DIARY) {
+            fragment = DiaryHomeFragment.newInstance();
             transaction.replace(binding.fragmentContainer.getId(), fragment);
-            transaction.commit();
-
+        } else if (type == FragmentType.LIKE) {
+            fragment = new LikeFragment();
+            transaction.replace(binding.fragmentContainer.getId(), fragment);
         }
-
+        transaction.commit();
 
     }
 
@@ -82,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
         binding.bottomNavigation.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.homePage:
-                    Log.d("TAG", "홈 버튼 누름");
                     replaceFragment(FragmentType.HOME);
                     break;
                 case R.id.diaryPage:
@@ -104,7 +99,9 @@ public class MainActivity extends AppCompatActivity {
 //        binding.tabLayout.setVisibility(View.GONE);
         initData();
         addEventListener();
-        replaceFragment(FragmentType.HOME);
+        if (fragment != null) {
+            replaceFragment(FragmentType.HOME);
+        }
         addBottomNaviListener();
     }
 }
