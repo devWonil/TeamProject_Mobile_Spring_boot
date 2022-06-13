@@ -109,7 +109,6 @@ public class SearchActivity extends AppCompatActivity implements IBookFragment, 
         startActivity(intent);
     }
 
-
     @Override
     public void onBackPressed() {
         if (!binding.searchView.isIconified()) {

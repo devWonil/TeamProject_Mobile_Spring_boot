@@ -17,6 +17,11 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.mybooks.databinding.ActivityBookDetailBinding;
 import com.example.mybooks.repository.models.Book;
+import com.example.mybooks.retrofit.BookHttpService;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class BookDetailActivity extends AppCompatActivity {
 
@@ -34,12 +39,14 @@ public class BookDetailActivity extends AppCompatActivity {
     private Book book;
     public static final String PARAM_NAME_1 = "book obj";
     private ActivityBookDetailBinding binding;
+    private BookHttpService bookHttpService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityBookDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        bookHttpService = BookHttpService.retrofit.create(BookHttpService.class);
         if (getIntent() != null) {
             book = (Book) getIntent().getSerializableExtra(PARAM_NAME_1);
             initData();
@@ -122,17 +129,29 @@ public class BookDetailActivity extends AppCompatActivity {
 
     private void addEventListener() {
         binding.likeButton.setOnClickListener(v -> {
+            requestFavorite();
+        });
+    }
 
+    private void requestFavorite() {
+        bookHttpService.clickFavorite(book).enqueue(new Callback<Book>() {
+            @Override
+            public void onResponse(Call<Book> call, Response<Book> response) {
+                if (response.isSuccessful()) {
+                    book = response.body();
 
-
-            if (book.isFavorite() == false) {
-                book.setFavorite(true);
-//                binding.likeButton.setChecked(true);
-            } else {
-                book.setFavorite(false);
+                    if (book.isFavorite() == false) {
+                        binding.likeButton.setChecked(true);
+                    } else {
+                        binding.likeButton.setChecked(false);
+                    }
+                }
             }
-            Log.d("TAG", String.valueOf(book.isFavorite()));
 
+            @Override
+            public void onFailure(Call<Book> call, Throwable t) {
+
+            }
         });
     }
 

@@ -10,6 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Query;
 
 public interface BookHttpService {
@@ -39,7 +40,7 @@ public interface BookHttpService {
     Call<ArrayList<Book>> getRandomList(
     );
 
-    @POST("/favorite")
+    @PUT("/favorite")
     Call<Book> clickFavorite(
             @Body Book book
     );
