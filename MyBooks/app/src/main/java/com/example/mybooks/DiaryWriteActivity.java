@@ -48,9 +48,7 @@ public class DiaryWriteActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         diaryDb = getSharedPreferences(DIARY_DATABASE, MODE_PRIVATE);
-        editor = diaryDb.edit();
-        editor.putInt(DIARY_NUMBER, 1);
-        editor.apply();
+
     }
 
     @Override
@@ -70,11 +68,11 @@ public class DiaryWriteActivity extends AppCompatActivity {
                 String diaryContent = binding.diaryContentEditText.getText().toString();
 
                 diaryNumber++;
-//                editor.putInt(DIARY_NUMBER, diaryNumber);
-//                editor.putString(CURRENT_DATE, getCurrentDate());
-//                editor.putString(DIARY_TITLE, diaryTitle);
-//                editor.putString(DIARY_CONTENT, diaryContent);
-//                editor.apply();
+                editor.putInt(DIARY_NUMBER, diaryNumber);
+                editor.putString(CURRENT_DATE, getCurrentDate());
+                editor.putString(DIARY_TITLE, diaryTitle);
+                editor.putString(DIARY_CONTENT, diaryContent);
+                editor.apply();
 
                 ArrayList<String> list = new ArrayList<>();
                 list.add(String.valueOf(diaryNumber));
@@ -82,7 +80,7 @@ public class DiaryWriteActivity extends AppCompatActivity {
                 list.add(currentDate);
                 list.add(diaryContent);
 
-                setStringArrayDiaryDb(getApplication(), "diary", list);
+//                setStringArrayDiaryDb(getApplication(), "diary", list);
 
                 onClickedSaveButton.onClickedSaveButton();
 
@@ -98,15 +96,5 @@ public class DiaryWriteActivity extends AppCompatActivity {
         return simpleDateFormat.format(date);
     }
 
-    private void setStringArrayDiaryDb(Context context, String key, ArrayList<String> values) {
-        SharedPreferences diaryDb = PreferenceManager.getDefaultSharedPreferences(context);
-        SharedPreferences.Editor editor = diaryDb.edit();
-        JSONArray jsonArray = new JSONArray();
 
-        for (int i = 0; i < values.size(); i++) {
-            jsonArray.put(values.get(i));
-        }
-
-        editor.putString(key, jsonArray.toString());
-    }
 }
