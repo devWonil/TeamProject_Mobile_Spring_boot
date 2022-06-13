@@ -7,7 +7,10 @@ import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Query;
 
 public interface BookHttpService {
@@ -22,6 +25,11 @@ public interface BookHttpService {
             @Query("page") int page
     );
 
+    @GET("new-book/")
+    Call<ArrayList<Book>> getNewBookList(
+            @Query("page") int page
+    );
+
     @GET("genre/")
     Call<ArrayList<Book>> getGenreList(
             @Query("page") int page,
@@ -31,4 +39,15 @@ public interface BookHttpService {
     @GET("random/")
     Call<ArrayList<Book>> getRandomList(
     );
+
+    @PUT("/favorite")
+    Call<Book> clickFavorite(
+            @Body Book book
+    );
+
+    @GET("search/")
+    Call<ArrayList<Book>> getSearchList(
+            @Query("title") String title
+    );
+
 }

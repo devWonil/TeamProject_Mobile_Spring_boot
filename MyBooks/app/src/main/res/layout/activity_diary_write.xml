@@ -7,7 +7,7 @@
     android:background="@color/m_primary"
     tools:context=".DiaryWriteActivity">
 
-    <com.google.android.material.appbar.MaterialToolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/diaryToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,31 +20,76 @@
         app:title="다이어리"
         app:titleTextColor="@color/black" />
 
+    <TextView
+        android:id="@+id/diaryIdTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:background="@color/white"
+        android:fontFamily="@font/bmdohyeon"
+        android:text="다이어리 저장번호"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toStartOf="@id/diaryIdEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/diaryToolbar" />
+
+    <EditText
+        android:id="@+id/diaryIdEditText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="3dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/diaryIdTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/diaryIdTextView"
+        app:layout_constraintTop_toTopOf="@id/diaryIdTextView"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="3dp"
+        android:background="@color/white"
+        android:fontFamily="@font/bmdohyeon"
+        android:gravity="center"
+        android:paddingHorizontal="10dp"
+        android:text="제목"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/diaryTitleEditText"
+        app:layout_constraintEnd_toStartOf="@id/diaryTitleEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/diaryTitleEditText" />
+
     <EditText
         android:id="@+id/diaryTitleEditText"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="3dp"
+        android:layout_marginEnd="3dp"
         android:background="@color/white"
         android:paddingHorizontal="20dp"
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@id/diaryContentEditText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/diaryToolbar"
+        app:layout_constraintStart_toEndOf="@id/titleTextView"
+        app:layout_constraintTop_toBottomOf="@id/diaryIdTextView"
         tools:text="제목" />
 
     <EditText
         android:id="@+id/diaryContentEditText"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginVertical="3dp"
+        android:layout_margin="3dp"
         android:background="@color/white"
         android:gravity="start|top"
         android:letterSpacing="0.1"
         android:lineHeight="30dp"
         android:padding="20dp"
+        android:text="내용을 입력하세요."
         android:textColor="@color/black"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"

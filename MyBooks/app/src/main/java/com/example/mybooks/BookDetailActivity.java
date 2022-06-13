@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.BounceInterpolator;
 import android.view.animation.ScaleAnimation;
@@ -16,6 +17,11 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.mybooks.databinding.ActivityBookDetailBinding;
 import com.example.mybooks.repository.models.Book;
+import com.example.mybooks.retrofit.BookHttpService;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class BookDetailActivity extends AppCompatActivity {
 
@@ -33,13 +39,15 @@ public class BookDetailActivity extends AppCompatActivity {
     private Book book;
     public static final String PARAM_NAME_1 = "book obj";
     private ActivityBookDetailBinding binding;
+    private BookHttpService bookHttpService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityBookDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        if (getIntent() != null){
+        bookHttpService = BookHttpService.retrofit.create(BookHttpService.class);
+        if (getIntent() != null) {
             book = (Book) getIntent().getSerializableExtra(PARAM_NAME_1);
             initData();
             addEventListener();
@@ -69,16 +77,82 @@ public class BookDetailActivity extends AppCompatActivity {
 
     private void initData() {
         Glide.with(this)
-                .load(book.getImageUrl())
+                .load(book.getImageUrl()).fitCenter()
                 .into(binding.bookImage);
 
         binding.bookTitle.setText(book.getTitle());
         binding.author.setText(book.getAuthor());
         binding.publishDate.setText(book.getPublicationDate());
         binding.summaryText.setText(book.getIntro());
+
+        if (book.isFavorite() == false) {
+            binding.likeButton.setChecked(false);
+        } else {
+            binding.likeButton.setChecked(true);
+        }
+
+        Log.d("TAG", String.valueOf(book.isFavorite()));
+
+        // 장르
+        switch (book.getTheme()) {
+            case 1:
+                binding.genre.setText("소설");
+                break;
+            case 2:
+                binding.genre.setText("추리");
+                break;
+            case 3:
+                binding.genre.setText("에쎄이");
+                break;
+            case 4:
+                binding.genre.setText("자기계발");
+                break;
+            case 5:
+                binding.genre.setText("경제");
+                break;
+            case 6:
+                binding.genre.setText("기타");
+                break;
+            case 7:
+                binding.genre.setText("어린이");
+                break;
+        }
+
+        // 출판사
+        binding.publishCompany.setText(book.getPublisher());
+        // 가격
+        binding.bookPrice.setText(String.valueOf(book.getPrice()));
+        // 별점
+        binding.ratingBar.setRating((float) book.getRating());
+
     }
 
     private void addEventListener() {
+        binding.likeButton.setOnClickListener(v -> {
+            requestFavorite();
+        });
+    }
+
+    private void requestFavorite() {
+        bookHttpService.clickFavorite(book).enqueue(new Callback<Book>() {
+            @Override
+            public void onResponse(Call<Book> call, Response<Book> response) {
+                if (response.isSuccessful()) {
+                    book = response.body();
+
+                    if (book.isFavorite() == false) {
+                        binding.likeButton.setChecked(true);
+                    } else {
+                        binding.likeButton.setChecked(false);
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Book> call, Throwable t) {
+
+            }
+        });
     }
 
 }

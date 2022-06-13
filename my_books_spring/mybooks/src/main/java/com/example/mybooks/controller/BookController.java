@@ -2,10 +2,14 @@ package com.example.mybooks.controller;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,19 +33,30 @@ public class BookController {
 		return bestList;
 	}
 
+	@GetMapping("/new-book")
+	public List<Book> newBook(@RequestParam Integer page) {
+		ArrayList<Book> newBookList = new ArrayList<>();
+		Book.sampleData().forEach(list -> {
+			if (list.getId() == 0) {
+				if (list.getPage() == page) {
+					newBookList.add(list);
+				}
+			}
+		});
+		return newBookList;
+	}
+
 	@GetMapping("/genre")
 	public List<Book> novel(@RequestParam Integer page, @RequestParam Integer themeNumber) {
 		ArrayList<Book> genreList = new ArrayList<>();
 		Book.sampleData().forEach(list -> {
 			if (list.getTheme() == themeNumber) {
-//				if(list.getPage() == page) {
-					genreList.add(list);
-//				}
+				genreList.add(list);
 			}
 		});
 		return genreList;
 	}
-	
+
 	@GetMapping("/random")
 	public List<Book> random() {
 		Random random = new Random();
@@ -50,10 +65,10 @@ public class BookController {
 			totalList.add(list);
 		});
 		ArrayList<Book> randomList = new ArrayList<>();
-		
+
 		Collections.shuffle(totalList);
-		
-		for(int i = 0; i < 9; i++) {
+
+		for (int i = 0; i < 9; i++) {
 			randomList.add(totalList.get(i));
 //			int a = random.nextInt(100);
 //			if(randomList.contains(a)) {
@@ -61,7 +76,34 @@ public class BookController {
 //			}
 //			randomList.add(totalList.get(a)); 
 		}
-		
+
 		return randomList;
 	}
+	
+	@GetMapping("/search")
+	public List<Book> search(@RequestParam String title) {
+		ArrayList<Book> searchList = new ArrayList<>();
+		Book.sampleData().forEach(list -> {
+			if(list.getTitle().replace(" ", "").toUpperCase().contains(title)) {
+				searchList.add(list);
+			}
+		});
+		return searchList;
+	}
+
+	@PutMapping("/favorite")
+	public Book favorite(@RequestBody Book book) {
+		Book.sampleData().forEach(t -> {
+			if (t.getBuyUrl().equals(book.getBuyUrl())) {
+				if(t.getFavorite() == false) {
+					t.setFavorite(true);					
+				} else {
+					t.setFavorite(false);
+				}
+
+			}
+		});
+		return book;
+	}
+
 }

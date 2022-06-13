@@ -1,5 +1,6 @@
 package com.example.mybooks;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import com.example.mybooks.adapter.NewBookAdapter;
 import com.example.mybooks.databinding.FragmentNewBinding;
 import com.example.mybooks.interfaces.IBookFragment;
+import com.example.mybooks.interfaces.OnBookItemClicked;
 import com.example.mybooks.repository.models.Book;
 import com.example.mybooks.retrofit.BookHttpService;
 
@@ -21,7 +23,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class NewFragment extends Fragment implements IBookFragment {
+public class NewFragment extends Fragment implements IBookFragment, OnBookItemClicked {
 
     private static NewFragment newFragment;
 
@@ -31,7 +33,7 @@ public class NewFragment extends Fragment implements IBookFragment {
     private BookHttpService bookHttpService;
     private NewBookAdapter adapter;
 
-    private int page = 1;
+    private int page = 3;
     private boolean isRequest = true;
 
     public NewFragment() {
@@ -63,7 +65,7 @@ public class NewFragment extends Fragment implements IBookFragment {
 
     @Override
     public void requestBookData() {
-        bookHttpService.getBestSellerList(page).enqueue(new Callback<ArrayList<Book>>() {
+        bookHttpService.getNewBookList(page).enqueue(new Callback<ArrayList<Book>>() {
             @Override
             public void onResponse(Call<ArrayList<Book>> call, Response<ArrayList<Book>> response) {
 
@@ -86,7 +88,7 @@ public class NewFragment extends Fragment implements IBookFragment {
     public void setupRecyclerView(ArrayList<Book> list) {
         adapter = new NewBookAdapter();
         adapter.initBookList(list);
-
+        adapter.setOnBookItemClicked(this);
         binding.newBookContainer.setAdapter(adapter);
 
         binding.newBookContainer.setOnScrollChangeListener((v, scrollX, scrollY, oldScrollX, oldScrollY) -> {
@@ -102,5 +104,12 @@ public class NewFragment extends Fragment implements IBookFragment {
                 }
             }
         });
+    }
+
+    @Override
+    public void selectItem(Book book) {
+        Intent intent = new Intent(getContext(), BookDetailActivity.class);
+        intent.putExtra(BookDetailActivity.PARAM_NAME_1, book);
+        startActivity(intent);
     }
 }

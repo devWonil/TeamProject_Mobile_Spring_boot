@@ -1,13 +1,17 @@
 package com.example.mybooks;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,15 +25,17 @@ import com.example.mybooks.repository.models.Diary;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import java.lang.reflect.Array;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class DiaryHomeFragment extends Fragment implements OnClickedSaveButton {
+public class DiaryHomeFragment extends Fragment {
 
     private FragmentDiaryHomeBinding binding;
     private static DiaryHomeFragment diaryFragment;
     private DiaryListAdapter diaryListAdapter;
-
-//    SharedPreferences diaryDb = getContext().getSharedPreferences(DiaryWriteActivity.DIARY_DATABASE, Context.MODE_PRIVATE);
+    private SharedPreferences diaryDb;
+    public static boolean newNote;
 
     private ArrayList<Diary> diaryList = new ArrayList<>();
 
@@ -38,65 +44,81 @@ public class DiaryHomeFragment extends Fragment implements OnClickedSaveButton {
     }
 
     public static DiaryHomeFragment newInstance() {
-        DiaryHomeFragment fragment = new DiaryHomeFragment();
-        return fragment;
+        if (diaryFragment == null) {
+            diaryFragment = new DiaryHomeFragment();
+        }
+        return diaryFragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentDiaryHomeBinding.inflate(inflater, container, false);
         setDiaryRecyclerView();
+        addEventListener();
         return binding.getRoot();
     }
 
     public void setDiaryRecyclerView() {
-        // TODO 이벤트 리스너 등록
         diaryListAdapter = new DiaryListAdapter();
         diaryListAdapter.initDiaryList(diaryList);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+
         binding.diaryListContainer.setAdapter(diaryListAdapter);
         binding.diaryListContainer.setLayoutManager(layoutManager);
 
     }
 
-//    private void getDiaryDb() {
-//        int diaryNumber = diaryDb.getInt(DiaryWriteActivity.DIARY_NUMBER, -1);
-//        String diaryTitle = diaryDb.getString(DiaryWriteActivity.DIARY_TITLE, "제목없음");
-//        String currentDate = diaryDb.getString(DiaryWriteActivity.CURRENT_DATE, "날짜없음");
-//        String diaryContent = diaryDb.getString(DiaryWriteActivity.DIARY_CONTENT, "내용없음");
-//
-//        Diary diary = new Diary(diaryNumber, diaryTitle, currentDate, diaryContent);
-//
-//
-//    }
+    public void addEventListener() {
+        binding.diaryWriteButton.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), DiaryWriteActivity.class);
+            startActivity(intent);
+            newNote = true;
+        });
 
-    private ArrayList<String> getStringArrayDiaryDb(Context context, String key) {
-        SharedPreferences diaryDb = PreferenceManager.getDefaultSharedPreferences(context);
-        String json = diaryDb.getString(key, null);
-        ArrayList<String> diary = new ArrayList<>();
+        binding.refreshContainer.setOnRefreshListener(() -> {
+            getDiaryDb();
+            call();
+            newNote = false;
+            binding.refreshContainer.setRefreshing(false);
+        });
+    }
 
-        try {
-            JSONArray jsonArray = new JSONArray(json);
-            for (int i = 0; i < jsonArray.length(); i++) {
-                String data = jsonArray.optString(i);
-                diary.add(data);
+    public Diary getDiaryDb() {
+        diaryDb = getContext().getSharedPreferences(DiaryWriteActivity.DIARY_DATABASE, Context.MODE_PRIVATE);
+        int diaryNumber = diaryDb.getInt(DiaryWriteActivity.DIARY_NUMBER, -1);
+
+        if (newNote) {
+            if (diaryNumber != -1) {
+
+                String diaryTitle = diaryDb.getString(DiaryWriteActivity.DIARY_TITLE, "제목없음");
+                String currentDate = diaryDb.getString(DiaryWriteActivity.CURRENT_DATE, "날짜없음");
+                String diaryContent = diaryDb.getString(DiaryWriteActivity.DIARY_CONTENT, "내용없음");
+
+                Diary diary = new Diary(diaryNumber, diaryTitle, currentDate, diaryContent);
+
+                return diary;
             }
-        } catch (JSONException e) {
-            e.printStackTrace();
         }
-
-        return diary;
+        return null;
     }
 
-    @Override
-    public void onClickedSaveButton() {
-        getStringArrayDiaryDb(getContext(), "diary");
+    public void call() {
+        ArrayList<Diary> list = new ArrayList<>();
+        Diary diary = getDiaryDb();
+
+        if (diary != null) {
+            list.add(diary);
+            diaryListAdapter.addDiaryList(list);
+        }
     }
+
+
+
 }

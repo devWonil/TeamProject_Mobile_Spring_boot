@@ -1,5 +1,6 @@
 package com.example.mybooks;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import com.example.mybooks.adapter.GenreAdapter;
 import com.example.mybooks.databinding.FragmentGenreBinding;
 import com.example.mybooks.interfaces.IBookFragment;
+import com.example.mybooks.interfaces.OnBookItemClicked;
 import com.example.mybooks.repository.models.Book;
 import com.example.mybooks.retrofit.BookHttpService;
 
@@ -21,7 +23,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class GenreFragment extends Fragment implements IBookFragment {
+public class GenreFragment extends Fragment implements IBookFragment, OnBookItemClicked {
 
     private static GenreFragment genreFragment;
 
@@ -84,6 +86,7 @@ public class GenreFragment extends Fragment implements IBookFragment {
     @Override
     public void setupRecyclerView(ArrayList<Book> list) {
         adapter = new GenreAdapter();
+        adapter.setOnBookItemClicked(this);
         adapter.initBookList(list);
 
         binding.genreBookContainer.setAdapter(adapter);
@@ -132,5 +135,12 @@ public class GenreFragment extends Fragment implements IBookFragment {
             adapter.formatBookList();
             requestBookData(6);
         });
+    }
+
+    @Override
+    public void selectItem(Book book) {
+        Intent intent = new Intent(getContext(), BookDetailActivity.class);
+        intent.putExtra(BookDetailActivity.PARAM_NAME_1, book);
+        startActivity(intent);
     }
 }
