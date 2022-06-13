@@ -132,6 +132,7 @@
             android:layout_marginTop="13dp"
             android:background="@drawable/button_favorite"
             android:checked="false"
+            android:onClick="onLikeBtnClicked"
             android:text=""
             android:textOff=""
             android:textOn=""

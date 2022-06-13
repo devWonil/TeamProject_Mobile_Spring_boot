@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             fragment = DiaryHomeFragment.newInstance();
             transaction.replace(binding.fragmentContainer.getId(), fragment);
         } else if (type == FragmentType.LIKE) {
-            fragment = new LikeFragment();
+            fragment = new ZzimFragment();
             transaction.replace(binding.fragmentContainer.getId(), fragment);
         }
         transaction.commit();

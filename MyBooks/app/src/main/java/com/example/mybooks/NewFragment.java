@@ -15,6 +15,7 @@ import com.example.mybooks.databinding.FragmentNewBinding;
 import com.example.mybooks.interfaces.IBookFragment;
 import com.example.mybooks.interfaces.OnBookItemClicked;
 import com.example.mybooks.repository.models.Book;
+import com.example.mybooks.repository.models.LikeBooks;
 import com.example.mybooks.retrofit.BookHttpService;
 
 import java.util.ArrayList;

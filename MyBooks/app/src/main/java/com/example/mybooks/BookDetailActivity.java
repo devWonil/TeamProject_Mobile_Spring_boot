@@ -2,16 +2,20 @@ package com.example.mybooks;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.BounceInterpolator;
 import android.view.animation.ScaleAnimation;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.bumptech.glide.Glide;
 import com.example.mybooks.databinding.ActivityBookDetailBinding;
@@ -19,20 +23,21 @@ import com.example.mybooks.repository.models.Book;
 
 public class BookDetailActivity extends AppCompatActivity {
 
-    private ScaleAnimation scaleAnimation;
-    //애니메이션이 일어나는 동안의 회수, 속도를 조절하거나 시작과 종료시의 효과를 추가 할 수 있다
-    private BounceInterpolator bounceInterpolator;
-    private CompoundButton likeButton; // 찜 버튼
-    private Button purchaseBtn; // 구매하기 버튼
-    private ImageView bookImage; // 책이미지
-    private TextView bookTitle; // 책제목
-    private TextView author; // 작가
-    private TextView publishDate; // 출판일
-    private TextView summaryText; // 줄거리 내용
+
+    private ToggleButton likeButton; // 찜 버튼
+
 
     private Book book;
     public static final String PARAM_NAME_1 = "book obj";
     private ActivityBookDetailBinding binding;
+
+    public ToggleButton getLikeButton() {
+        return likeButton;
+    }
+
+    public void setLikeButton(ToggleButton likeButton) {
+        this.likeButton = likeButton;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +48,8 @@ public class BookDetailActivity extends AppCompatActivity {
             book = (Book) getIntent().getSerializableExtra(PARAM_NAME_1);
             initData();
             addEventListener();
+
+
         }
 
 //        setContentView(R.layout.activity_book_detail);
@@ -61,11 +68,32 @@ public class BookDetailActivity extends AppCompatActivity {
 
     }
 
+
+
     public void onPurchaseBtnClicked(View view) { // 구매버튼 클릭 메소드
         // 여기에 구매 URL                                           여기에 넣기!!
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(book.getBuyUrl()));
         startActivity(intent);
     }
+
+    public void onLikeBtnClicked(View view) { // 찜버튼 클릭 메소드
+        likeButton = findViewById(R.id.likeButton);
+
+        Toast.makeText(this, "찜 하셨어요", Toast.LENGTH_SHORT).show();
+        Log.d("TAG", "value : " + likeButton.isChecked()); // true
+
+        likeButton.setOnClickListener(v -> {
+            if (likeButton.isChecked()){
+                Toast.makeText(this, "찜 하셨어요", Toast.LENGTH_SHORT).show();
+                Log.d("TAG", "value : " + likeButton.isChecked()); // true
+            }else {
+
+                Toast.makeText(this, "찜 취소하셨어요", Toast.LENGTH_SHORT).show();
+                Log.d("TAG", "value : " + likeButton.isChecked()); // false
+            }
+        });
+    }
+
 
     private void initData() {
         Glide.with(this)
@@ -76,9 +104,12 @@ public class BookDetailActivity extends AppCompatActivity {
         binding.author.setText(book.getAuthor());
         binding.publishDate.setText(book.getPublicationDate());
         binding.summaryText.setText(book.getIntro());
+
+
     }
 
     private void addEventListener() {
+
     }
 
 }
