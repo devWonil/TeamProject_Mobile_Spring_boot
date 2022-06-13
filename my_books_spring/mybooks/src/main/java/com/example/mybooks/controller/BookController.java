@@ -8,6 +8,7 @@ import java.util.Random;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -78,8 +79,6 @@ public class BookController {
 
 		return randomList;
 	}
-<<<<<<< HEAD
-	
 	
 	@GetMapping("/search")
 	public List<Book> search(@RequestParam String title) {
@@ -91,9 +90,8 @@ public class BookController {
 		});
 		return searchList;
 	}
-=======
 
-	@PostMapping("/favorite")
+	@PutMapping("/favorite")
 	public Book favorite(@RequestBody Book book) {
 		Book.sampleData().forEach(t -> {
 			if (t.getBuyUrl().equals(book.getBuyUrl())) {
@@ -102,10 +100,10 @@ public class BookController {
 				} else {
 					t.setFavorite(false);
 				}
+
 			}
 		});
 		return book;
 	}
 
->>>>>>> 5354fb160f919b2f967b06d6416af8b407c70d14
 }
