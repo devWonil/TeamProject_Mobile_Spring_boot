@@ -43,4 +43,10 @@ public interface BookHttpService {
     Call<Book> clickFavorite(
             @Body Book book
     );
+
+    @GET("search/")
+    Call<ArrayList<Book>> getSearchList(
+            @Query("title") String title
+    );
+
 }

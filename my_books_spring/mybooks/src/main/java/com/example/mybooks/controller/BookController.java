@@ -78,6 +78,20 @@ public class BookController {
 
 		return randomList;
 	}
+<<<<<<< HEAD
+	
+	
+	@GetMapping("/search")
+	public List<Book> search(@RequestParam String title) {
+		ArrayList<Book> searchList = new ArrayList<>();
+		Book.sampleData().forEach(list -> {
+			if(list.getTitle().replace(" ", "").toUpperCase().contains(title)) {
+				searchList.add(list);
+			}
+		});
+		return searchList;
+	}
+=======
 
 	@PostMapping("/favorite")
 	public Book favorite(@RequestBody Book book) {
@@ -93,4 +107,5 @@ public class BookController {
 		return book;
 	}
 
+>>>>>>> 5354fb160f919b2f967b06d6416af8b407c70d14
 }

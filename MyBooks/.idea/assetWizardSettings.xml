@@ -18,7 +18,11 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
+<<<<<<< HEAD
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/manage_search/baseline_manage_search_24.xml" />
+=======
                                       <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/favorite/baseline_favorite_24.xml" />
+>>>>>>> 5354fb160f919b2f967b06d6416af8b407c70d14
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,7 +32,11 @@
                         </option>
                         <option name="values">
                           <map>
+<<<<<<< HEAD
+                            <entry key="outputName" value="ic_baseline_manage_search_24" />
+=======
                             <entry key="outputName" value="ic_baseline_favorite_24" />
+>>>>>>> 5354fb160f919b2f967b06d6416af8b407c70d14
                             <entry key="sourceFile" value="C:\TeamProject_Mobile_Spring_boot\MyBooks" />
                           </map>
                         </option>
