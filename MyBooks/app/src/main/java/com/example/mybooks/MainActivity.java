@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.mybooks.adapter.PagerAdapter;
 import com.example.mybooks.databinding.ActivityMainBinding;
+import com.example.mybooks.interfaces.OnClickedSaveButton;
 import com.example.mybooks.utils.FragmentType;
 import com.google.android.material.tabs.TabLayout;
 
@@ -29,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
             binding.tabLayout.addTab(binding.tabLayout.newTab().setText(name));
         }
         pagerAdapter = new PagerAdapter(getSupportFragmentManager(), TAB_COUNT);
-
-
     }
 
     private void addEventListener() {
@@ -71,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
             transaction.replace(binding.fragmentContainer.getId(), fragment);
         }
         transaction.commit();
-
     }
 
     private void addBottomNaviListener() {
@@ -104,4 +102,5 @@ public class MainActivity extends AppCompatActivity {
         }
         addBottomNaviListener();
     }
+
 }

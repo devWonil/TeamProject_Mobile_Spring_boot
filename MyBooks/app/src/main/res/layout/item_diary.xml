@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/m_primary">
@@ -33,24 +34,24 @@
                 android:layout_height="0dp"
                 android:layout_marginStart="15dp"
                 android:gravity="center_vertical"
-                android:text="다이어리 제목 TextView"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@id/diaryContentTextView"
                 app:layout_constraintEnd_toStartOf="@id/diaryDateTextView"
                 app:layout_constraintStart_toEndOf="@id/diaryImageView1"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="다이어리 제목 TextView" />
 
             <TextView
                 android:id="@+id/diaryDateTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2022-06-10"
                 android:textSize="12dp"
                 app:layout_constraintBottom_toTopOf="@id/diaryContentTextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/diaryTitleTextView"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="2022-06-10" />
 
             <TextView
                 android:id="@+id/diaryContentTextView"
@@ -60,12 +61,12 @@
                 android:gravity="center_vertical"
                 android:maxLines="1"
                 android:padding="5dp"
-                android:text="다이어리 내용 ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ"
                 android:textSize="12dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/diaryTitleTextView"
-                app:layout_constraintTop_toBottomOf="@id/diaryTitleTextView" />
+                app:layout_constraintTop_toBottomOf="@id/diaryTitleTextView"
+                tools:text="다이어리 내용 ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

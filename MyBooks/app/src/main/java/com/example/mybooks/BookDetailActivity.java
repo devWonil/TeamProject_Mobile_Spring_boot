@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.BounceInterpolator;
 import android.view.animation.ScaleAnimation;
@@ -39,7 +40,7 @@ public class BookDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityBookDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        if (getIntent() != null){
+        if (getIntent() != null) {
             book = (Book) getIntent().getSerializableExtra(PARAM_NAME_1);
             initData();
             addEventListener();
@@ -76,9 +77,27 @@ public class BookDetailActivity extends AppCompatActivity {
         binding.author.setText(book.getAuthor());
         binding.publishDate.setText(book.getPublicationDate());
         binding.summaryText.setText(book.getIntro());
+
+        if (book.isFavorite() == false) {
+            binding.likeButton.setChecked(false);
+        } else {
+            binding.likeButton.setChecked(true);
+        }
+
+        Log.d("TAG", String.valueOf(book.isFavorite()));
     }
 
     private void addEventListener() {
+        binding.likeButton.setOnClickListener(v -> {
+            if (book.isFavorite() == false) {
+                book.setFavorite(true);
+//                binding.likeButton.setChecked(true);
+            } else {
+                book.setFavorite(false);
+            }
+            Log.d("TAG", String.valueOf(book.isFavorite()));
+
+        });
     }
 
 }

@@ -4,12 +4,15 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+
 
 import com.example.mybooks.databinding.ActivityDiaryWriteBinding;
 import com.example.mybooks.interfaces.OnClickedSaveButton;
@@ -26,8 +29,6 @@ public class DiaryWriteActivity extends AppCompatActivity {
 
     private ActivityDiaryWriteBinding binding;
 
-    private OnClickedSaveButton onClickedSaveButton;
-
     public static final String DIARY_DATABASE = "diaryDatabase";
     public static final String DIARY_NUMBER = "diaryNumber";
     public static final String DIARY_TITLE = "diaryTitle";
@@ -35,10 +36,6 @@ public class DiaryWriteActivity extends AppCompatActivity {
     public static final String CURRENT_DATE = "currentDate";
     private SharedPreferences diaryDb;
     private SharedPreferences.Editor editor;
-
-    public void setOnClickedSaveButton(OnClickedSaveButton onClickedSaveButton) {
-        this.onClickedSaveButton = onClickedSaveButton;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,46 +46,40 @@ public class DiaryWriteActivity extends AppCompatActivity {
 
         diaryDb = getSharedPreferences(DIARY_DATABASE, MODE_PRIVATE);
         editor = diaryDb.edit();
-        editor.putInt(DIARY_NUMBER, 1);
-        editor.apply();
+
+        setSupportActionBar(binding.diaryToolbar);
+        addEventListener();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.diary_tool_bar, menu);
-        return super.onCreateOptionsMenu(menu);
+        Log.d("TAG", "메뉴 이벤트");
+        return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.saveIcon:
-                int diaryNumber = diaryDb.getInt(DIARY_NUMBER, 100);
+                int diaryNumber = Integer.parseInt(binding.diaryIdEditText.getText().toString());
+
                 String diaryTitle = binding.diaryTitleEditText.getText().toString();
                 String currentDate = getCurrentDate();
                 String diaryContent = binding.diaryContentEditText.getText().toString();
 
-                diaryNumber++;
-//                editor.putInt(DIARY_NUMBER, diaryNumber);
-//                editor.putString(CURRENT_DATE, getCurrentDate());
-//                editor.putString(DIARY_TITLE, diaryTitle);
-//                editor.putString(DIARY_CONTENT, diaryContent);
-//                editor.apply();
+                editor.putInt(DIARY_NUMBER, diaryNumber);
+                editor.putString(CURRENT_DATE, currentDate);
+                editor.putString(DIARY_TITLE, diaryTitle);
+                editor.putString(DIARY_CONTENT, diaryContent);
+                editor.apply();
 
-                ArrayList<String> list = new ArrayList<>();
-                list.add(String.valueOf(diaryNumber));
-                list.add(diaryTitle);
-                list.add(currentDate);
-                list.add(diaryContent);
-
-                setStringArrayDiaryDb(getApplication(), "diary", list);
-
-                onClickedSaveButton.onClickedSaveButton();
-
+                finish();
                 break;
         }
-        return super.onOptionsItemSelected(item);
+
+        return true;
     }
 
     public String getCurrentDate() {
@@ -98,15 +89,11 @@ public class DiaryWriteActivity extends AppCompatActivity {
         return simpleDateFormat.format(date);
     }
 
-    private void setStringArrayDiaryDb(Context context, String key, ArrayList<String> values) {
-        SharedPreferences diaryDb = PreferenceManager.getDefaultSharedPreferences(context);
-        SharedPreferences.Editor editor = diaryDb.edit();
-        JSONArray jsonArray = new JSONArray();
-
-        for (int i = 0; i < values.size(); i++) {
-            jsonArray.put(values.get(i));
-        }
-
-        editor.putString(key, jsonArray.toString());
+    private void addEventListener(){
+        binding.diaryToolbar.setNavigationOnClickListener(v -> {
+            DiaryHomeFragment.newNote = false;
+            finish();
+        });
     }
+
 }
