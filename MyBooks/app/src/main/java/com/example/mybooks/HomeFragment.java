@@ -37,7 +37,7 @@ public class HomeFragment extends Fragment implements OnBookItemClicked {
     private LinearLayout layoutIndicatorsContainer;
     private static HomeFragment fragment;
     private ArrayList<String> imageURL = new ArrayList<>();
-    private int currentPage = 0;
+    private int currentPage;
     Timer timer;
 
     // RecyclerView
@@ -97,6 +97,7 @@ public class HomeFragment extends Fragment implements OnBookItemClicked {
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
                 setCurrentIndicator(position);
+                currentPage = position;
                 Log.d("TAG", "position : " + position);
             }
         });
