@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedDispatcher;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -47,6 +48,7 @@ public class DiaryHomeFragment extends Fragment implements OnClickedSaveButton {
         super.onCreate(savedInstanceState);
 
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -99,4 +101,7 @@ public class DiaryHomeFragment extends Fragment implements OnClickedSaveButton {
     public void onClickedSaveButton() {
         getStringArrayDiaryDb(getContext(), "diary");
     }
+
+
+
 }

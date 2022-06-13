@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int TAB_COUNT = 4;
     private String tabTitle[] = {"추천", "베스트", "신간", "장르별"};
     Fragment fragment;
+
 
 
     private void initData() {
@@ -68,10 +70,10 @@ public class MainActivity extends AppCompatActivity {
             setContentView(binding.getRoot());
         } else if (type == FragmentType.DIARY) {
             fragment = DiaryHomeFragment.newInstance();
-            transaction.replace(binding.fragmentContainer.getId(), fragment);
+            transaction.replace(binding.fragmentContainer.getId(), fragment).addToBackStack(null);
         } else if (type == FragmentType.LIKE) {
             fragment = new LikeFragment();
-            transaction.replace(binding.fragmentContainer.getId(), fragment);
+            transaction.replace(binding.fragmentContainer.getId(), fragment).addToBackStack(null);
         }
         transaction.commit();
 
@@ -125,5 +127,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
     }
 }
