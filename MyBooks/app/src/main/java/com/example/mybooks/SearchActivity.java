@@ -47,7 +47,6 @@ public class SearchActivity extends AppCompatActivity implements IBookFragment, 
 
     @Override
     public void requestBookData() {
-        binding.searchView.
         binding.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
