@@ -69,13 +69,44 @@ public class BookDetailActivity extends AppCompatActivity {
 
     private void initData() {
         Glide.with(this)
-                .load(book.getImageUrl())
+                .load(book.getImageUrl()).fitCenter()
                 .into(binding.bookImage);
 
         binding.bookTitle.setText(book.getTitle());
         binding.author.setText(book.getAuthor());
         binding.publishDate.setText(book.getPublicationDate());
         binding.summaryText.setText(book.getIntro());
+        // 장르
+        switch (book.getTheme()) {
+            case 1:
+                binding.genre.setText("소설");
+                break;
+            case 2:
+                binding.genre.setText("추리");
+                break;
+            case 3:
+                binding.genre.setText("에쎄이");
+                break;
+            case 4:
+                binding.genre.setText("자기계발");
+                break;
+            case 5:
+                binding.genre.setText("경제");
+                break;
+            case 6:
+                binding.genre.setText("기타");
+                break;
+            case 7:
+                binding.genre.setText("어린이");
+                break;
+        }
+
+        // 출판사
+        binding.publishCompany.setText(book.getPublisher());
+        // 가격
+        binding.bookPrice.setText(String.valueOf(book.getPrice()));
+        // 별점
+        binding.ratingBar.setRating((float) book.getRating());
     }
 
     private void addEventListener() {
