@@ -33,7 +33,7 @@ public class NewFragment extends Fragment implements IBookFragment, OnBookItemCl
     private BookHttpService bookHttpService;
     private NewBookAdapter adapter;
 
-    private int page = 1;
+    private int page = 3;
     private boolean isRequest = true;
 
     public NewFragment() {
@@ -65,7 +65,7 @@ public class NewFragment extends Fragment implements IBookFragment, OnBookItemCl
 
     @Override
     public void requestBookData() {
-        bookHttpService.getBestSellerList(page).enqueue(new Callback<ArrayList<Book>>() {
+        bookHttpService.getNewBookList(page).enqueue(new Callback<ArrayList<Book>>() {
             @Override
             public void onResponse(Call<ArrayList<Book>> call, Response<ArrayList<Book>> response) {
 

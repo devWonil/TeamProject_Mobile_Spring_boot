@@ -22,6 +22,11 @@ public interface BookHttpService {
             @Query("page") int page
     );
 
+    @GET("new-book/")
+    Call<ArrayList<Book>> getNewBookList(
+            @Query("page") int page
+    );
+
     @GET("genre/")
     Call<ArrayList<Book>> getGenreList(
             @Query("page") int page,

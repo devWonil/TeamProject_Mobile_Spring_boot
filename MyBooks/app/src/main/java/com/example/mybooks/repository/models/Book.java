@@ -14,6 +14,7 @@ public class Book implements Serializable {
     private String imageUrl;
     private String intro;
     private String buyUrl;
+    private boolean favorite;
 
     public int getId() {
         return id;
@@ -101,5 +102,13 @@ public class Book implements Serializable {
 
     public void setBuyUrl(String buyUrl) {
         this.buyUrl = buyUrl;
+    }
+
+    public boolean isFavorite() {
+        return favorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        this.favorite = favorite;
     }
 }
