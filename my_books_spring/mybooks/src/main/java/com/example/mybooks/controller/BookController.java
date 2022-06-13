@@ -64,4 +64,16 @@ public class BookController {
 		
 		return randomList;
 	}
+	
+	
+	@GetMapping("/search")
+	public List<Book> search(@RequestParam String title) {
+		ArrayList<Book> searchList = new ArrayList<>();
+		Book.sampleData().forEach(list -> {
+			if(list.getTitle().replace(" ", "").toUpperCase().contains(title)) {
+				searchList.add(list);
+			}
+		});
+		return searchList;
+	}
 }

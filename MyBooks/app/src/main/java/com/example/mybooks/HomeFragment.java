@@ -77,12 +77,7 @@ public class HomeFragment extends Fragment implements OnBookItemClicked {
                              Bundle savedInstanceState) {
         viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);
         initData();
-//        binding = FragmentHomeBinding.inflate(inflater, container, false);
-        // TODO BOOKLIST 올리기
         setRandomRecyclerView(bookList);
-        //
-//        Log.d("TAG", bookList.get(1).getTitle());
-
         requestRandomBookData();
         return viewGroup;
     }

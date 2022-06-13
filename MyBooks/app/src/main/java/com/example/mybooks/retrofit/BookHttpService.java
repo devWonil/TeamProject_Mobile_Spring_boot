@@ -31,4 +31,10 @@ public interface BookHttpService {
     @GET("random/")
     Call<ArrayList<Book>> getRandomList(
     );
+
+    @GET("search/")
+    Call<ArrayList<Book>> getSearchList(
+            @Query("title") String title
+    );
+
 }

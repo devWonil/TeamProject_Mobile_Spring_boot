@@ -8,9 +8,9 @@
     tools:context=".DiaryHomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="#F2F8B8"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:background="#F2F8B8"
         android:orientation="horizontal">
 
         <TextView
@@ -38,17 +38,17 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="#B1F7C2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#B1F7C2">
 
         <TextView
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/bmdohyeon"
-            android:gravity="center"
             android:id="@+id/welcomeTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/bmdohyeon"
+            android:gravity="center"
             android:text="오늘의 독서는 어떠셨나요? \n 나의 독서기록을 작성해보세요!"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
