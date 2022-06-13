@@ -122,6 +122,9 @@ public class BookDetailActivity extends AppCompatActivity {
 
     private void addEventListener() {
         binding.likeButton.setOnClickListener(v -> {
+
+
+
             if (book.isFavorite() == false) {
                 book.setFavorite(true);
 //                binding.likeButton.setChecked(true);
