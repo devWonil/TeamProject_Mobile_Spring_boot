@@ -55,6 +55,7 @@ public class DiaryHomeFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -117,4 +118,7 @@ public class DiaryHomeFragment extends Fragment {
             diaryListAdapter.addDiaryList(list);
         }
     }
+
+
+
 }
