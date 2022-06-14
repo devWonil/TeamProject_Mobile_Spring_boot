@@ -3,7 +3,6 @@ package com.example.mybooks.models;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-
 public class Diary {
 
     public int diaryId;
@@ -17,13 +16,5 @@ public class Diary {
         this.currentDate = currentDate;
         this.diaryContent = diaryContent;
     }
-
-    //    public void getCurrentDate() {
-//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-//        Long time = System.currentTimeMillis();
-//        Date date = new Date(time);
-//        String getCurrentDate = simpleDateFormat.format(date);
-//        currentDate = getCurrentDate;
-//    }
 
 }

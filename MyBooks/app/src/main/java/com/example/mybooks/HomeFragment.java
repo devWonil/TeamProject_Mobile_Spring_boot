@@ -94,7 +94,6 @@ public class HomeFragment extends Fragment implements OnBookItemClicked {
                 super.onPageSelected(position);
                 setCurrentIndicator(position);
                 currentPage = position;
-                Log.d("TAG", "position : " + position);
             }
         });
         setIndicators(imageURL.size());
@@ -114,7 +113,7 @@ public class HomeFragment extends Fragment implements OnBookItemClicked {
             public void run() {
                 handler.post(update);
             }
-        }, 500, 3000);
+        }, 400, 3000);
     }
 
     //     indicator 띄우기
@@ -153,7 +152,6 @@ public class HomeFragment extends Fragment implements OnBookItemClicked {
                 if(response.isSuccessful()) {
                     List<Book> bookList = response.body();
                     randomBookAdapter.initBookList(bookList);
-                    Log.d("TAG", "random 통신 성공");
                 }
             }
 
@@ -170,7 +168,6 @@ public class HomeFragment extends Fragment implements OnBookItemClicked {
         randomBookAdapter = new RandomBookAdapter();
         randomBookAdapter.setOnBookItemClicked(this);
         randomBookAdapter.initBookList(bookList);
-        Log.d("TAG", "어댑터 성공");
         randomBookContainer.setAdapter(randomBookAdapter);
         randomBookContainer.hasFixedSize();
     }
