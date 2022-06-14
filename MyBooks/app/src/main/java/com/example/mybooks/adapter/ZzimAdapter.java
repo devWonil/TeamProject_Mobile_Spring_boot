@@ -32,7 +32,7 @@ public class ZzimAdapter extends RecyclerView.Adapter<ZzimAdapter.ZzimViewHolder
     public ZzimViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.best_item, parent, false);
-        return new ZzimViewHolder;
+        return new ZzimViewHolder(view);
     }
 
     @Override
@@ -48,18 +48,12 @@ public class ZzimAdapter extends RecyclerView.Adapter<ZzimAdapter.ZzimViewHolder
     // 내부클래스
     public class ZzimViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView likeBookImageView;
-        TextView likeNumberTextView;
-        TextView likeBookTitleTextView;
-        TextView likeBookAuthorTextView;
-        TextView likeBookPublisherTextView;
-        TextView likeBookPriceTextView;
-        TextView likeBookRatingTextView;
 
-        public MyViewHolder(@NonNull View itemView){
+
+
+
+        public ZzimViewHolder(@NonNull View itemView) {
             super(itemView);
-
-
         }
     }
 }
