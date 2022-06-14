@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     private String tabTitle[] = {"추천", "베스트", "신간", "장르별"};
     Fragment fragment;
     public static Stack<Fragment> fragmentStack = new Stack<>();
+    private long backPressedTime = 0;
+    Toast toast;
 
 
     private void initData() {
@@ -75,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
             transaction.replace(binding.fragmentContainer.getId(), fragment);
             fragmentStack.push(fragment);
         } else if (type == FragmentType.LIKE) {
+//            fragment = new ZzimFragment();
+//            transaction.replace(binding.fragmentContainer.getId(), fragment);
             fragment = new LikeFragment();
             transaction.replace(binding.fragmentContainer.getId(), fragment);
             fragmentStack.push(fragment);
@@ -134,12 +139,19 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if(!fragmentStack.isEmpty()) {
+        if (!fragmentStack.isEmpty()) {
             replaceFragment(FragmentType.HOME);
             fragmentStack.clear();
             Log.d("TAG", "stack에 저장되어 있는 fragment 개수 : " + fragmentStack.size());
         } else {
-            super.onBackPressed();
+            if (System.currentTimeMillis() > backPressedTime + 2000) {
+                backPressedTime = System.currentTimeMillis();
+                toast = Toast.makeText(this, "버튼을 한 번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT);
+                toast.show();
+                return;
+            } else if (System.currentTimeMillis() <= backPressedTime + 2000) {
+                finish();
+            }
         }
     }
 }
