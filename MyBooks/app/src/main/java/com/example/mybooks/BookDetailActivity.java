@@ -56,7 +56,14 @@ public class BookDetailActivity extends AppCompatActivity {
                 SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
                 boolean isFavorite = sp.getBoolean("isFavorite", !(book.isFavorite()));
 
-                MainActivity.likeBookList.add(book);
+                if (MainActivity.likeBookList.size() == 0) {
+                    MainActivity.likeBookList.add(book);
+                }
+                for (int i = 0; i < MainActivity.likeBookList.size(); i++) {
+                    if (!MainActivity.likeBookList.get(i).getImageUrl().equals(book.getImageUrl())) {
+                        MainActivity.likeBookList.add(book);
+                    }
+                }
 
                 bookHttpService.clickFavorite(book).enqueue(new Callback<Book>() {
                     @Override

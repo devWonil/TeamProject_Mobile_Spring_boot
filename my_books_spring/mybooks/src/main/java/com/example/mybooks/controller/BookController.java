@@ -18,7 +18,7 @@ import com.example.mybooks.dto.Book;
 @RequestMapping("/mybooks")
 public class BookController {
 	
-	ArrayList<Book> bookList = (ArrayList<Book>) Book.sampleData();
+	public static ArrayList<Book> bookList = (ArrayList<Book>) Book.sampleData();
 
 	@GetMapping("/best-seller")
 	public List<Book> bestSeller(@RequestParam Integer page) {
@@ -70,11 +70,6 @@ public class BookController {
 
 		for (int i = 0; i < 9; i++) {
 			randomList.add(totalList.get(i));
-//			int a = random.nextInt(100);
-//			if(randomList.contains(a)) {
-//				continue;
-//			}
-//			randomList.add(totalList.get(a)); 
 		}
 
 		return randomList;
@@ -90,39 +85,5 @@ public class BookController {
 		});
 		return searchList;
 	}
-
-	@PutMapping("/favorite")
-	public void favorite(@RequestBody Book book) {
-		
-		for (int i = 0; i < bookList.size(); i++) {
-			if (bookList.get(i).getBuyUrl().equals(book.getBuyUrl())) {
-				if(bookList.get(i).getFavorite() == false) {
-					bookList.get(i).setFavorite(true);					
-				} else {
-					bookList.get(i).setFavorite(false);
-				}
-			}
-		}
-		
-		System.out.println(bookList.get(0).getTitle());
-		
-	}
 	
-	@PutMapping("/favorite")
-    public void favorite(@RequestBody Book book) {
-
-        for (int i = 0; i < bookList.size(); i++) {
-            if (bookList.get(i).getBuyUrl().equals(book.getBuyUrl())) {
-                if(bookList.get(i).getFavorite() == false) {
-                    bookList.get(i).setFavorite(true);
-                } else {
-                    bookList.get(i).setFavorite(false);
-                }
-            }
-        }
-
-        System.out.println(bookList.get(0).getTitle());
-
-    }
-
 }
