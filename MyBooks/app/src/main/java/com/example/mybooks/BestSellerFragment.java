@@ -14,7 +14,7 @@ import com.example.mybooks.adapter.BestSellerAdapter;
 import com.example.mybooks.databinding.FragmentBestSellerBinding;
 import com.example.mybooks.interfaces.IBookFragment;
 import com.example.mybooks.interfaces.OnBookItemClicked;
-import com.example.mybooks.repository.models.Book;
+import com.example.mybooks.models.Book;
 import com.example.mybooks.retrofit.BookHttpService;
 
 import java.util.ArrayList;
@@ -39,12 +39,6 @@ public class BestSellerFragment extends Fragment implements IBookFragment, OnBoo
     public BestSellerFragment() {
 
     }
-
-//    public static BestSellerFragment getInstance() {
-//        if (bestSellerFragment == null) {
-//            bestSellerFragment = new BestSellerFragment();
-//        }
-//        return bestSellerFragment;
 
     public static BestSellerFragment newInstance() {
         BestSellerFragment fragment = new BestSellerFragment();

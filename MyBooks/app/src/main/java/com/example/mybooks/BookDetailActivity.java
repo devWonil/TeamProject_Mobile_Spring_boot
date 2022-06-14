@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.mybooks.databinding.ActivityBookDetailBinding;
-import com.example.mybooks.repository.models.Book;
+import com.example.mybooks.models.Book;
 import com.example.mybooks.retrofit.BookHttpService;
 
 import retrofit2.Call;
@@ -50,7 +50,6 @@ public class BookDetailActivity extends AppCompatActivity {
         if (getIntent() != null) {
             book = (Book) getIntent().getSerializableExtra(PARAM_NAME_1);
             initData();
-            addEventListener();
         }
 
 //        setContentView(R.layout.activity_book_detail);
@@ -126,33 +125,4 @@ public class BookDetailActivity extends AppCompatActivity {
         binding.ratingBar.setRating((float) book.getRating());
 
     }
-
-    private void addEventListener() {
-        binding.likeButton.setOnClickListener(v -> {
-            requestFavorite();
-        });
-    }
-
-    private void requestFavorite() {
-        bookHttpService.clickFavorite(book).enqueue(new Callback<Book>() {
-            @Override
-            public void onResponse(Call<Book> call, Response<Book> response) {
-                if (response.isSuccessful()) {
-                    book = response.body();
-
-                    if (book.isFavorite() == false) {
-                        binding.likeButton.setChecked(true);
-                    } else {
-                        binding.likeButton.setChecked(false);
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Book> call, Throwable t) {
-
-            }
-        });
-    }
-
 }

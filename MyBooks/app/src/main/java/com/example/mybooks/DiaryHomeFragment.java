@@ -5,28 +5,19 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import com.example.mybooks.adapter.DiaryListAdapter;
 import com.example.mybooks.databinding.FragmentDiaryHomeBinding;
-import com.example.mybooks.interfaces.OnClickedSaveButton;
-import com.example.mybooks.repository.models.Diary;
+import com.example.mybooks.models.Diary;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-
-import java.lang.reflect.Array;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class DiaryHomeFragment extends Fragment {
@@ -65,6 +56,17 @@ public class DiaryHomeFragment extends Fragment {
         return binding.getRoot();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        binding.refreshButton.setOnClickListener(v -> {
+            getDiaryDb();
+            addToDiaryHome();
+            newNote = false;
+        });
+        binding.refreshButton.callOnClick();
+    }
+
     public void setDiaryRecyclerView() {
         diaryListAdapter = new DiaryListAdapter();
         diaryListAdapter.initDiaryList(diaryList);
@@ -84,7 +86,7 @@ public class DiaryHomeFragment extends Fragment {
 
         binding.refreshContainer.setOnRefreshListener(() -> {
             getDiaryDb();
-            call();
+            addToDiaryHome();
             newNote = false;
             binding.refreshContainer.setRefreshing(false);
         });
@@ -109,7 +111,7 @@ public class DiaryHomeFragment extends Fragment {
         return null;
     }
 
-    public void call() {
+    public void addToDiaryHome() {
         ArrayList<Diary> list = new ArrayList<>();
         Diary diary = getDiaryDb();
 
@@ -118,7 +120,4 @@ public class DiaryHomeFragment extends Fragment {
             diaryListAdapter.addDiaryList(list);
         }
     }
-
-
-
 }

@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterInside;
 import com.example.mybooks.interfaces.OnBookItemClicked;
-import com.example.mybooks.repository.models.Book;
+import com.example.mybooks.models.Book;
 import com.example.mybooks.interfaces.IAdapter;
 import com.example.mybooks.R;
 

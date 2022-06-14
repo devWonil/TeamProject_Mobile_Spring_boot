@@ -12,14 +12,13 @@ import android.widget.LinearLayout;
 
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.mybooks.adapter.RandomBookAdapter;
 import com.example.mybooks.adapter.SliderImageAdapter;
 import com.example.mybooks.interfaces.OnBookItemClicked;
-import com.example.mybooks.repository.models.Book;
+import com.example.mybooks.models.Book;
 import com.example.mybooks.retrofit.BookHttpService;
 
 import java.util.ArrayList;

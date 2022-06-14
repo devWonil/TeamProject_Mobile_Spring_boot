@@ -2,12 +2,11 @@ package com.example.mybooks;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,14 +14,8 @@ import android.view.MenuItem;
 
 
 import com.example.mybooks.databinding.ActivityDiaryWriteBinding;
-import com.example.mybooks.interfaces.OnClickedSaveButton;
-import com.google.gson.JsonArray;
-
-import org.json.JSONArray;
-import org.json.JSONException;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 
 public class DiaryWriteActivity extends AppCompatActivity {

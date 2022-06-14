@@ -14,11 +14,10 @@ import com.example.mybooks.adapter.SearchBookAdapter;
 import com.example.mybooks.databinding.ActivitySearchBinding;
 import com.example.mybooks.interfaces.IBookFragment;
 import com.example.mybooks.interfaces.OnBookItemClicked;
-import com.example.mybooks.repository.models.Book;
+import com.example.mybooks.models.Book;
 import com.example.mybooks.retrofit.BookHttpService;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;

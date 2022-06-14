@@ -6,7 +6,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -16,7 +15,6 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.mybooks.adapter.PagerAdapter;
 import com.example.mybooks.databinding.ActivityMainBinding;
-import com.example.mybooks.interfaces.OnClickedSaveButton;
 import com.example.mybooks.utils.FragmentType;
 import com.google.android.material.tabs.TabLayout;
 
