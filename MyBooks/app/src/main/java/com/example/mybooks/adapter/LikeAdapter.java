@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -47,9 +48,15 @@ public class LikeAdapter extends RecyclerView.Adapter<LikeAdapter.LikeViewHolder
         Glide.with(holder.likeImageView.getContext()).load(book.getImageUrl())
                 .placeholder(R.drawable.image_loading).transform(new FitCenter(), new RoundedCorners(10))
                 .into(holder.likeImageView);
+        holder.likeItemNumTextView.setText(String.valueOf(position + 1));
         holder.likeTitleTextView.setText(book.getTitle());
         holder.likeAuthorTextView.setText(book.getAuthor());
         holder.likePriceTextView.setText(String.valueOf(book.getPrice()));
+
+        holder.itemView.setOnClickListener(v -> {
+//            v.get
+        });
+
     }
 
     @Override
@@ -61,6 +68,7 @@ public class LikeAdapter extends RecyclerView.Adapter<LikeAdapter.LikeViewHolder
     public class LikeViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView likeImageView;
+        private TextView likeItemNumTextView;
         private TextView likeTitleTextView;
         private TextView likeAuthorTextView;
         private TextView likePriceTextView;
@@ -68,6 +76,7 @@ public class LikeAdapter extends RecyclerView.Adapter<LikeAdapter.LikeViewHolder
         public LikeViewHolder(@NonNull View view) {
             super(view);
             likeImageView = view.findViewById(R.id.likeItemImageView);
+            likeItemNumTextView = view.findViewById(R.id.likeItemNumTextView);
             likeTitleTextView = view.findViewById(R.id.likeItemTitle);
             likeAuthorTextView = view.findViewById(R.id.likeItemAuthor);
             likePriceTextView = view.findViewById(R.id.likeItemPrice);

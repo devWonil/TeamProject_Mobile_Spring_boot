@@ -39,7 +39,7 @@ public interface BookHttpService {
     Call<ArrayList<Book>> getRandomList(
     );
 
-    @PUT("/favorite")
+    @PUT("favorite/")
     Call<Book> clickFavorite(
             @Body Book book
     );

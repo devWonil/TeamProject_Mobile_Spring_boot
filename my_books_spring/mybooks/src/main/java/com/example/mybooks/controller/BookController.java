@@ -2,12 +2,10 @@ package com.example.mybooks.controller;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,11 +17,13 @@ import com.example.mybooks.dto.Book;
 @RestController
 @RequestMapping("/mybooks")
 public class BookController {
+	
+	ArrayList<Book> bookList = (ArrayList<Book>) Book.sampleData();
 
 	@GetMapping("/best-seller")
 	public List<Book> bestSeller(@RequestParam Integer page) {
 		ArrayList<Book> bestList = new ArrayList<>();
-		Book.sampleData().forEach(list -> {
+		bookList.forEach(list -> {
 			if (list.getId() == 1) {
 				if (list.getPage() == page) {
 					bestList.add(list);
@@ -36,7 +36,7 @@ public class BookController {
 	@GetMapping("/new-book")
 	public List<Book> newBook(@RequestParam Integer page) {
 		ArrayList<Book> newBookList = new ArrayList<>();
-		Book.sampleData().forEach(list -> {
+		bookList.forEach(list -> {
 			if (list.getId() == 0) {
 				if (list.getPage() == page) {
 					newBookList.add(list);
@@ -49,7 +49,7 @@ public class BookController {
 	@GetMapping("/genre")
 	public List<Book> novel(@RequestParam Integer page, @RequestParam Integer themeNumber) {
 		ArrayList<Book> genreList = new ArrayList<>();
-		Book.sampleData().forEach(list -> {
+		bookList.forEach(list -> {
 			if (list.getTheme() == themeNumber) {
 				genreList.add(list);
 			}
@@ -61,7 +61,7 @@ public class BookController {
 	public List<Book> random() {
 		Random random = new Random();
 		ArrayList<Book> totalList = new ArrayList<>();
-		Book.sampleData().forEach(list -> {
+		bookList.forEach(list -> {
 			totalList.add(list);
 		});
 		ArrayList<Book> randomList = new ArrayList<>();
@@ -83,7 +83,7 @@ public class BookController {
 	@GetMapping("/search")
 	public List<Book> search(@RequestParam String title) {
 		ArrayList<Book> searchList = new ArrayList<>();
-		Book.sampleData().forEach(list -> {
+		bookList.forEach(list -> {
 			if(list.getTitle().replace(" ", "").toUpperCase().contains(title)) {
 				searchList.add(list);
 			}
@@ -92,18 +92,20 @@ public class BookController {
 	}
 
 	@PutMapping("/favorite")
-	public Book favorite(@RequestBody Book book) {
-		Book.sampleData().forEach(t -> {
-			if (t.getBuyUrl().equals(book.getBuyUrl())) {
-				if(t.getFavorite() == false) {
-					t.setFavorite(true);					
+	public void favorite(@RequestBody Book book) {
+		
+		for (int i = 0; i < bookList.size(); i++) {
+			if (bookList.get(i).getBuyUrl().equals(book.getBuyUrl())) {
+				if(bookList.get(i).getFavorite() == false) {
+					bookList.get(i).setFavorite(true);					
 				} else {
-					t.setFavorite(false);
+					bookList.get(i).setFavorite(false);
 				}
-
 			}
-		});
-		return book;
+		}
+		
+		System.out.println(bookList.get(0).getTitle());
+		
 	}
 
 }

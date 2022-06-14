@@ -58,6 +58,20 @@ public class BookDetailActivity extends AppCompatActivity {
 
                 MainActivity.likeBookList.add(book);
 
+                bookHttpService.clickFavorite(book).enqueue(new Callback<Book>() {
+                    @Override
+                    public void onResponse(Call<Book> call, Response<Book> response) {
+                        if (response.isSuccessful()) {
+                            Log.d("TAG", "응답성공");
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Book> call, Throwable t) {
+                        Log.d("TAG", "통신실패");
+                    }
+                });
+
             });
         }
     }
