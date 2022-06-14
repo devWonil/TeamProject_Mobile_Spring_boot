@@ -37,7 +37,7 @@ public class RandomBookAdapter extends RecyclerView.Adapter<RandomBookAdapter.Ra
     @Override
     public RandomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View itemView = inflater.inflate(R.layout.item_book, parent, false);
+        View itemView = inflater.inflate(R.layout.item_random, parent, false);
         return new RandomViewHolder(itemView);
     }
 

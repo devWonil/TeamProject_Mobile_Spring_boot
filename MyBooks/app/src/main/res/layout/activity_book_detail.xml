@@ -39,9 +39,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:fontFamily="@font/nanum_square"
             android:layout_marginEnd="10dp"
             android:ellipsize="end"
+            android:fontFamily="@font/nanum_square"
             android:maxLines="3"
             android:textColor="@color/black"
             android:textSize="18sp"
@@ -101,24 +101,24 @@
             android:layout_marginTop="13dp"
             android:layout_marginBottom="13dp"
             android:fontFamily="@font/nanum_square"
-            android:text="앤써북"
             android:textColor="@color/black"
             android:textSize="16dp"
             app:layout_constraintBottom_toTopOf="@id/bookPrice"
             app:layout_constraintStart_toStartOf="@id/publishDate"
-            app:layout_constraintTop_toBottomOf="@id/publishDate" />
+            app:layout_constraintTop_toBottomOf="@id/publishDate"
+            tools:text="앤써북" />
 
         <TextView
             android:id="@+id/bookPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/nanum_square"
-            android:text="18000"
             android:textColor="@color/black"
             android:textSize="16dp"
             app:layout_constraintBottom_toTopOf="@id/ratingBar"
             app:layout_constraintStart_toStartOf="@id/publishCompany"
-            app:layout_constraintTop_toBottomOf="@id/publishCompany" />
+            app:layout_constraintTop_toBottomOf="@id/publishCompany"
+            tools:text="18000" />
 
         <RatingBar
             android:id="@+id/ratingBar"
@@ -128,13 +128,15 @@
             android:layout_marginTop="13dp"
             android:isIndicator="true"
             android:numStars="10"
-            android:rating="9.4"
             android:stepSize="0.1"
             app:layout_constraintBottom_toTopOf="@id/likeButton"
             app:layout_constraintStart_toStartOf="@id/bookPrice"
-            app:layout_constraintTop_toBottomOf="@id/bookPrice" />
+            app:layout_constraintTop_toBottomOf="@id/bookPrice"
+            tools:rating="9.4" />
 
         <ToggleButton
+            android:textOff=""
+            android:textOn=""
             android:id="@+id/likeButton"
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -142,9 +144,6 @@
             android:background="@drawable/button_favorite"
             android:checked="false"
             android:fontFamily="@font/nanum_square"
-            android:text=""
-            android:textOff=""
-            android:textOn=""
             app:layout_constraintBottom_toTopOf="@id/textScrollView"
             app:layout_constraintStart_toStartOf="@id/ratingBar"
             app:layout_constraintTop_toBottomOf="@id/ratingBar" />
@@ -157,11 +156,11 @@
             android:backgroundTint="#F7D46C"
             android:fontFamily="@font/nanum_square"
             android:onClick="onPurchaseBtnClicked"
-            android:text="구매 링크"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="@id/likeButton"
             app:layout_constraintStart_toEndOf="@id/likeButton"
-            app:layout_constraintTop_toTopOf="@id/likeButton" />
+            app:layout_constraintTop_toTopOf="@id/likeButton"
+            android:text="구매 링크" />
 
         <TextView
             android:id="@+id/summary"
@@ -169,13 +168,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/nanum_square"
-            android:text="줄거리"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/textScrollView"
             app:layout_constraintStart_toStartOf="@id/bookImage"
-            app:layout_constraintTop_toBottomOf="@id/likeButton" />
+            app:layout_constraintTop_toBottomOf="@id/likeButton"
+            tools:text="줄거리" />
 
         <ScrollView
             android:id="@+id/textScrollView"

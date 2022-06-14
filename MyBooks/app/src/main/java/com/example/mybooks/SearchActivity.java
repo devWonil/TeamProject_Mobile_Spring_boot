@@ -26,7 +26,6 @@ import retrofit2.Response;
 public class SearchActivity extends AppCompatActivity implements IBookFragment, OnBookItemClicked {
 
     ActivitySearchBinding binding;
-    private RecyclerView searchBookContainer;
     private BookHttpService bookHttpService;
     private SearchBookAdapter searchBookAdapter;
     private ArrayList<Book> bookList = new ArrayList<>();
@@ -61,7 +60,6 @@ public class SearchActivity extends AppCompatActivity implements IBookFragment, 
                     public void onResponse(Call<ArrayList<Book>> call, Response<ArrayList<Book>> response) {
                         if (response.isSuccessful()) {
                             if (response.body().size() == 0) {
-                                // recyclerView 다시 그려줌
                                 searchBookAdapter.setBookList(bookList);
                                 searchBookAdapter.notifyDataSetChanged();
                                 Toast.makeText(SearchActivity.this, "검색하신 제목의 책이 없습니다", Toast.LENGTH_SHORT).show();
@@ -69,7 +67,6 @@ public class SearchActivity extends AppCompatActivity implements IBookFragment, 
                                 ArrayList<Book> addList = response.body();
                                 searchBookAdapter.initSearchBookList(addList);
                             }
-                            Log.d("TAG", "통신 성공");
                         }
                     }
 
@@ -94,7 +91,6 @@ public class SearchActivity extends AppCompatActivity implements IBookFragment, 
         // 이벤트 리스너
         searchBookAdapter.setOnBookItemClicked(this);
         searchBookAdapter.initSearchBookList(list);
-        Log.d("TAG", "어댑터 성공");
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         binding.searchBookContainer.setAdapter(searchBookAdapter);
         binding.searchBookContainer.hasFixedSize();

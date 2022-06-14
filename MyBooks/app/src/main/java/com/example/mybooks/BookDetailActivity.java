@@ -27,28 +27,15 @@ import retrofit2.Response;
 
 public class BookDetailActivity extends AppCompatActivity {
 
-    private ScaleAnimation scaleAnimation;
-    //애니메이션이 일어나는 동안의 회수, 속도를 조절하거나 시작과 종료시의 효과를 추가 할 수 있다
-    private BounceInterpolator bounceInterpolator;
-    private CompoundButton likeButton; // 찜 버튼
-    private Button purchaseBtn; // 구매하기 버튼
-    private ImageView bookImage; // 책이미지
-    private TextView bookTitle; // 책제목
-    private TextView author; // 작가
-    private TextView publishDate; // 출판일
-    private TextView summaryText; // 줄거리 내용
-
     private Book book;
     public static final String PARAM_NAME_1 = "book obj";
     private ActivityBookDetailBinding binding;
-    private BookHttpService bookHttpService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityBookDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        bookHttpService = BookHttpService.retrofit.create(BookHttpService.class);
         if (getIntent() != null) {
             book = (Book) getIntent().getSerializableExtra(PARAM_NAME_1);
             initData();
@@ -69,9 +56,9 @@ public class BookDetailActivity extends AppCompatActivity {
                             return;
                         }
                     }
-                        Toast.makeText(this, "찜 목록에 추가되었습니다.", Toast.LENGTH_SHORT).show();
-                        MainActivity.likeBookList.add(book);
-                        Log.d("TAG", MainActivity.likeBookList.size() + "");
+                    Toast.makeText(this, "찜 목록에 추가되었습니다.", Toast.LENGTH_SHORT).show();
+                    MainActivity.likeBookList.add(book);
+                    Log.d("TAG", MainActivity.likeBookList.size() + "");
                 }
             });
         }

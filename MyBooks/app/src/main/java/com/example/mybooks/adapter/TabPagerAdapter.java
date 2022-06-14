@@ -25,13 +25,13 @@ public class TabPagerAdapter extends FragmentPagerAdapter {
                 fragment = new HomeFragment();
                 break;
             case 1:
-                fragment = BestSellerFragment.newInstance();
+                fragment = new BestSellerFragment();
                 break;
             case 2:
-                fragment = new NewBookFragment(); // 신간
+                fragment = new NewBookFragment();
                 break;
             case 3:
-                fragment = new GenreFragment(); // 장르별
+                fragment = new GenreFragment();
                 break;
         }
         return fragment;
