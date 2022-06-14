@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".DiaryHomeFragment">
 
@@ -12,6 +13,14 @@
         android:layout_height="40dp"
         android:background="#F2F8B8"
         android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/likeRefreshButton"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:layout_width="match_parent"

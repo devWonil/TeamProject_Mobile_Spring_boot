@@ -61,37 +61,18 @@ public class BookDetailActivity extends AppCompatActivity {
                     Toast.makeText(this, "찜 목록에 추가되었습니다.", Toast.LENGTH_SHORT).show();
                     MainActivity.likeBookList.add(book);
                     binding.likeButton.setChecked(true);
-                }
+                } else {
                     for (int i = 0; i < MainActivity.likeBookList.size(); i++) {
-                        if (!MainActivity.likeBookList.get(i).getImageUrl().equals(book.getImageUrl())) {
-                            Toast.makeText(this, "찜 목록에 추가되었습니다.", Toast.LENGTH_SHORT).show();
-                            MainActivity.likeBookList.add(book);
-                            Log.d("TAG", MainActivity.likeBookList.size() + "");
-                        }
-//                        } else {
-//                            Toast.makeText(this, "찜 목록에 삭제되었습니다.", Toast.LENGTH_SHORT).show();
-//                            MainActivity.likeBookList.remove(book);
-//                            binding.likeButton.setChecked(false);
-                        }
-//                    }
-
-
-
-
-                bookHttpService.clickFavorite(book).enqueue(new Callback<Book>() {
-                    @Override
-                    public void onResponse(Call<Book> call, Response<Book> response) {
-                        if (response.isSuccessful()) {
-                            Log.d("TAG", "응답성공");
+                        if (MainActivity.likeBookList.get(i).getImageUrl().equals(book.getImageUrl())) {
+                            Toast.makeText(this, "찜 목록에 삭제되었습니다.", Toast.LENGTH_SHORT).show();
+                            MainActivity.likeBookList.remove(i);
+                            return;
                         }
                     }
-
-                    @Override
-                    public void onFailure(Call<Book> call, Throwable t) {
-                        Log.d("TAG", "통신실패");
-                    }
-                });
-
+                        Toast.makeText(this, "찜 목록에 추가되었습니다.", Toast.LENGTH_SHORT).show();
+                        MainActivity.likeBookList.add(book);
+                        Log.d("TAG", MainActivity.likeBookList.size() + "");
+                }
             });
         }
     }
@@ -111,16 +92,6 @@ public class BookDetailActivity extends AppCompatActivity {
         binding.author.setText(book.getAuthor());
         binding.publishDate.setText(book.getPublicationDate());
         binding.summaryText.setText(book.getIntro());
-//        binding.likeButton.setOnClickListener(v -> {
-//            SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
-//            boolean isFavorite;
-//            if (book.isFavorite() == false) {
-//                isFavorite = sp.getBoolean("isFavorite", false);
-//            } else {
-//                isFavorite = sp.getBoolean("isFavorite", true);
-//            }
-//            Log.d("TAG", "onDestroy isFavorite : " + isFavorite);
-//        });
 
         Log.d("TAG", String.valueOf(book.isFavorite()));
 
@@ -158,4 +129,9 @@ public class BookDetailActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+    }
 }

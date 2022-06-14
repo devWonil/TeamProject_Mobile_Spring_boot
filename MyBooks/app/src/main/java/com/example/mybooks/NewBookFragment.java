@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.mybooks.adapter.NewBookAdapter;
-import com.example.mybooks.databinding.FragmentNewBinding;
+import com.example.mybooks.databinding.FragmentNewBookBinding;
 import com.example.mybooks.interfaces.IBookFragment;
 import com.example.mybooks.interfaces.OnBookItemClicked;
 import com.example.mybooks.models.Book;
@@ -30,7 +30,7 @@ public class NewBookFragment extends Fragment implements IBookFragment, OnBookIt
 
     private ArrayList<Book> list = new ArrayList<>();
 
-    private FragmentNewBinding binding;
+    private FragmentNewBookBinding binding;
     private BookHttpService bookHttpService;
     private NewBookAdapter adapter;
 
@@ -57,7 +57,7 @@ public class NewBookFragment extends Fragment implements IBookFragment, OnBookIt
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentNewBinding.inflate(inflater, container, false);
+        binding = FragmentNewBookBinding.inflate(inflater, container, false);
 
         setupRecyclerView(list);
         requestBookData();
