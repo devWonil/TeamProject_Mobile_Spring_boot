@@ -14,6 +14,7 @@ import com.bumptech.glide.load.resource.bitmap.FitCenter;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.example.mybooks.R;
 
+import com.example.mybooks.interfaces.OnBookItemClicked;
 import com.example.mybooks.models.Book;
 
 
@@ -22,6 +23,11 @@ import java.util.ArrayList;
 public class LikeAdapter extends RecyclerView.Adapter<LikeAdapter.LikeViewHolder> {
 
     public ArrayList<Book> likeList = new ArrayList<>();
+    private OnBookItemClicked onBookItemClicked;
+
+    public void setOnBookItemClicked(OnBookItemClicked onBookItemClicked) {
+        this.onBookItemClicked = onBookItemClicked;
+    }
 
     public void initLikeList(ArrayList<Book> likeList) {
         this.likeList = likeList;
@@ -50,6 +56,9 @@ public class LikeAdapter extends RecyclerView.Adapter<LikeAdapter.LikeViewHolder
         holder.likeTitleTextView.setText(book.getTitle());
         holder.likeAuthorTextView.setText(book.getAuthor());
         holder.likePriceTextView.setText(String.valueOf(book.getPrice()));
+        holder.itemView.setOnClickListener(v -> {
+            onBookItemClicked.selectItem(book);
+        });
     }
 
     @Override
