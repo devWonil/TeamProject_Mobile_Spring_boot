@@ -107,5 +107,22 @@ public class BookController {
 		System.out.println(bookList.get(0).getTitle());
 		
 	}
+	
+	@PutMapping("/favorite")
+    public void favorite(@RequestBody Book book) {
+
+        for (int i = 0; i < bookList.size(); i++) {
+            if (bookList.get(i).getBuyUrl().equals(book.getBuyUrl())) {
+                if(bookList.get(i).getFavorite() == false) {
+                    bookList.get(i).setFavorite(true);
+                } else {
+                    bookList.get(i).setFavorite(false);
+                }
+            }
+        }
+
+        System.out.println(bookList.get(0).getTitle());
+
+    }
 
 }
