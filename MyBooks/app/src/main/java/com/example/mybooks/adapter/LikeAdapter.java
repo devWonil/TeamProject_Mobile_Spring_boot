@@ -56,7 +56,7 @@ public class LikeAdapter extends RecyclerView.Adapter<LikeAdapter.LikeViewHolder
         holder.likeTitleTextView.setText(book.getTitle());
         holder.likeAuthorTextView.setText(book.getAuthor());
         holder.likePriceTextView.setText(String.valueOf(book.getPrice()));
-        holder.itemView.setOnClickListener(v -> {
+        holder.likeImageView.setOnClickListener(v -> {
             onBookItemClicked.selectItem(book);
         });
     }

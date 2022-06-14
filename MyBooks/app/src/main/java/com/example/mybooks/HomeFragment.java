@@ -98,14 +98,11 @@ public class HomeFragment extends Fragment implements OnBookItemClicked {
         });
         setIndicators(imageURL.size());
         final Handler handler = new Handler();
-        final Runnable update = new Runnable() {
-            @Override
-            public void run() {
-                if(currentPage == 5) {
-                    currentPage = 0;
-                }
-                viewPager2.setCurrentItem(currentPage++, true);
+        final Runnable update = () -> {
+            if(currentPage == 5) {
+                currentPage = 0;
             }
+            viewPager2.setCurrentItem(currentPage++, true);
         };
         timer = new Timer();
         timer.schedule(new TimerTask() {
