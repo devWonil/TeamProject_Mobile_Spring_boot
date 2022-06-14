@@ -118,7 +118,6 @@ public class BestSellerFragment extends Fragment implements IBookFragment, OnBoo
 
     @Override
     public void selectItem(Book book) {
-        System.out.println("22222222");
         Intent intent = new Intent(getContext(), BookDetailActivity.class);
         // 직렬화
         intent.putExtra(BookDetailActivity.PARAM_NAME_1, book);

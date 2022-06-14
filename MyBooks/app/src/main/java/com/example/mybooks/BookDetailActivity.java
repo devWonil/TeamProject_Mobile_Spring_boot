@@ -2,7 +2,6 @@ package com.example.mybooks;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -12,10 +11,9 @@ import android.view.View;
 import android.view.animation.BounceInterpolator;
 import android.view.animation.ScaleAnimation;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.ToggleButton;
 
 import com.bumptech.glide.Glide;
 import com.example.mybooks.databinding.ActivityBookDetailBinding;
@@ -23,33 +21,37 @@ import com.example.mybooks.repository.models.Book;
 
 public class BookDetailActivity extends AppCompatActivity {
 
-
-    private ToggleButton likeButton; // 찜 버튼
-
+    private ScaleAnimation scaleAnimation;
+    //애니메이션이 일어나는 동안의 회수, 속도를 조절하거나 시작과 종료시의 효과를 추가 할 수 있다
+    private BounceInterpolator bounceInterpolator;
+    private CompoundButton likeButton; // 찜 버튼
+    private Button purchaseBtn; // 구매하기 버튼
+    private ImageView bookImage; // 책이미지
+    private TextView bookTitle; // 책제목
+    private TextView author; // 작가
+    private TextView publishDate; // 출판일
+    private TextView summaryText; // 줄거리 내용
 
     private Book book;
     public static final String PARAM_NAME_1 = "book obj";
     private ActivityBookDetailBinding binding;
-
-    public ToggleButton getLikeButton() {
-        return likeButton;
-    }
-
-    public void setLikeButton(ToggleButton likeButton) {
-        this.likeButton = likeButton;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityBookDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        if (getIntent() != null){
+        if (getIntent() != null) {
             book = (Book) getIntent().getSerializableExtra(PARAM_NAME_1);
             initData();
             addEventListener();
-
-
+            binding.likeButton.setOnClickListener(v -> {
+                SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
+                boolean isFavorite = sp.getBoolean("isFavorite", !(book.isFavorite()));
+                Log.d("TAG", "onDestroy isFavorite : " + isFavorite);
+            });
+//            SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
+//            boolean isFavorite = sp.getBoolean("isFavorite", book.isFavorite());
         }
 
 //        setContentView(R.layout.activity_book_detail);
@@ -68,7 +70,55 @@ public class BookDetailActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        binding.likeButton.setOnClickListener(v -> {
+            SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
+            boolean isFavorite = sp.getBoolean("isFavorite", book.isFavorite());
+            Log.d("TAG", "onDestroy isFavorite : " + isFavorite);
+        });
+    }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        binding.likeButton.setOnClickListener(v -> {
+            SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
+            boolean isFavorite = sp.getBoolean("isFavorite", book.isFavorite());
+            Log.d("TAG", "onDestroy isFavorite : " + isFavorite);
+        });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        binding.likeButton.setOnClickListener(v -> {
+            SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
+            boolean isFavorite = sp.getBoolean("isFavorite", book.isFavorite());
+            Log.d("TAG", "onDestroy isFavorite : " + isFavorite);
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        binding.likeButton.setOnClickListener(v -> {
+            SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
+            boolean isFavorite = sp.getBoolean("isFavorite", !(book.isFavorite()));
+            Log.d("TAG", "onDestroy isFavorite : " + isFavorite);
+        });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        binding.likeButton.setOnClickListener(v -> {
+            SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
+            boolean isFavorite = sp.getBoolean("isFavorite", book.isFavorite());
+            Log.d("TAG", "onDestroy isFavorite : " + isFavorite);
+        });
+    }
 
     public void onPurchaseBtnClicked(View view) { // 구매버튼 클릭 메소드
         // 여기에 구매 URL                                           여기에 넣기!!
@@ -76,40 +126,84 @@ public class BookDetailActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onLikeBtnClicked(View view) { // 찜버튼 클릭 메소드
-        likeButton = findViewById(R.id.likeButton);
-
-        Toast.makeText(this, "찜 하셨어요", Toast.LENGTH_SHORT).show();
-        Log.d("TAG", "value : " + likeButton.isChecked()); // true
-
-        likeButton.setOnClickListener(v -> {
-            if (likeButton.isChecked()){
-                Toast.makeText(this, "찜 하셨어요", Toast.LENGTH_SHORT).show();
-                Log.d("TAG", "value : " + likeButton.isChecked()); // true
-            }else {
-
-                Toast.makeText(this, "찜 취소하셨어요", Toast.LENGTH_SHORT).show();
-                Log.d("TAG", "value : " + likeButton.isChecked()); // false
-            }
-        });
-    }
-
-
     private void initData() {
         Glide.with(this)
-                .load(book.getImageUrl())
+                .load(book.getImageUrl()).fitCenter()
                 .into(binding.bookImage);
 
         binding.bookTitle.setText(book.getTitle());
         binding.author.setText(book.getAuthor());
         binding.publishDate.setText(book.getPublicationDate());
         binding.summaryText.setText(book.getIntro());
+        binding.likeButton.setOnClickListener(v -> {
+            SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
+            boolean isFavorite;
+            if (book.isFavorite() == false){
+                isFavorite = sp.getBoolean("isFavorite", false);
+            } else {
+                isFavorite = sp.getBoolean("isFavorite", true);
+            }
+            Log.d("TAG", "onDestroy isFavorite : " + isFavorite);
+        });
 
+
+
+        Log.d("TAG", String.valueOf(book.isFavorite()));
+
+        // 장르
+        switch (book.getTheme()) {
+            case 1:
+                binding.genre.setText("소설");
+                break;
+            case 2:
+                binding.genre.setText("추리");
+                break;
+            case 3:
+                binding.genre.setText("에쎄이");
+                break;
+            case 4:
+                binding.genre.setText("자기계발");
+                break;
+            case 5:
+                binding.genre.setText("경제");
+                break;
+            case 6:
+                binding.genre.setText("기타");
+                break;
+            case 7:
+                binding.genre.setText("어린이");
+                break;
+        }
+
+        // 출판사
+        binding.publishCompany.setText(book.getPublisher());
+        // 가격
+        binding.bookPrice.setText(String.valueOf(book.getPrice()));
+        // 별점
+        binding.ratingBar.setRating((float) book.getRating());
 
     }
 
     private void addEventListener() {
+        binding.likeButton.setOnClickListener(v -> {
 
+            if (book.isFavorite() == false) {
+                //book.setFavorite(true);
+//                binding.likeButton.setChecked(true);
+                SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putBoolean("isFavorite", true);
+                editor.apply();
+            } else {
+                //book.setFavorite(false);
+                SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putBoolean("isFavorite", false);
+                editor.apply();
+            }
+            Log.d("TAG", String.valueOf(book.isFavorite()));
+
+        });
     }
 
 }

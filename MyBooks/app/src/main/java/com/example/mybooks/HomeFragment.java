@@ -37,7 +37,7 @@ public class HomeFragment extends Fragment implements OnBookItemClicked {
     private LinearLayout layoutIndicatorsContainer;
     private static HomeFragment fragment;
     private ArrayList<String> imageURL = new ArrayList<>();
-    private int currentPage = 0;
+    private int currentPage;
     Timer timer;
 
     // RecyclerView
@@ -77,12 +77,7 @@ public class HomeFragment extends Fragment implements OnBookItemClicked {
                              Bundle savedInstanceState) {
         viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);
         initData();
-//        binding = FragmentHomeBinding.inflate(inflater, container, false);
-        // TODO BOOKLIST 올리기
         setRandomRecyclerView(bookList);
-        //
-//        Log.d("TAG", bookList.get(1).getTitle());
-
         requestRandomBookData();
         return viewGroup;
     }
@@ -97,6 +92,7 @@ public class HomeFragment extends Fragment implements OnBookItemClicked {
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
                 setCurrentIndicator(position);
+                currentPage = position;
                 Log.d("TAG", "position : " + position);
             }
         });

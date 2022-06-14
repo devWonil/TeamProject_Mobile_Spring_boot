@@ -3,41 +3,60 @@ package com.example.mybooks.dto;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.lang.Nullable;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@RequiredArgsConstructor
 @Builder
 public class Book {
 
+	@NonNull
 	private Integer page;
 	
+	@NonNull
 	// 신간 0, 베스트 1, 둘다 아니면 2
 	private Integer id;
 
+	@NonNull
 	// 1. 소설, 2. 추리, 3. 에세이, 4. 자기계발, 5.경제, 6. 기타, 7. 어린이
 	private Integer theme;
 
+	@NonNull
 	private String title;
+	@NonNull
 	private String author;
+	@NonNull
 	private Integer price;
+	@NonNull
 	private String publicationDate; // 출간일
+	@NonNull
 	private String publisher; // 출판사
+	@NonNull
 	private Double rating;
+	@NonNull
 	private String imageUrl;
+	@NonNull
 	private String intro;
+	@NonNull
 	private String buyUrl;
+	
+	private Boolean favorite;
 
 	public static List<Book> sampleData() {
 		ArrayList<Book> list = new ArrayList<>();
 		list.add(new Book(1, 1, 6, "플러터 UI 실전", "김근호, 최주호, 황승준", 15930, "2021년 08월 20일", "앤써북", 10.0, "http://image.kyobobook.co.kr/images/book/xlarge/825/x9791185553825.jpg", "이 책은 플러터 2.x 최신 버전을 사용했으며 클론 코딩으로 모두의마켓, 모두의컬리, 모두의플레이 3가지 앱을 구성하는 다양한 화면을 직접 만들어본다!\r\n"
 				+ "플러터(Flutter)와 Dart 다트 언어의 문법을 잘 익히는 것도 중요하다. 하지만 문법을 이해했다고 실무 개발을 잘하는 것은 아니다. 반면 실제 프로젝트를 직접 코딩하며 만들어보면 플러터 이해하기가 더 쉽고 실무 개발을 이해하는데도 더 도움이 된다.\r\n"
 				+ "\r\n"
-				+ "이 책은 실제로 서비스되고 있는 3가지 앱의 화면을 직접 만들어 보면서 실무에서 바로 적용할 수 있는 개념과 기법을 배울 수 있도록 구성되었다. 이 책에서는 다음과 같이 비교적 쉽게 접근할 수 있는 난이도의 모두의마켓 앱, 모두의컬리 앱 화면부터 상당히 수준 높은 모두의플레이 앱 화면까지 3가지 유형의 앱 UI 프로젝트 만든다. 3가지 유형의 앱 화면 만들기 프로젝트를 차근차근 수행하다보면 어느새 플러터 앱 개발할 할 수 있다는 자신감이 얻을 수 있을 것이다.", "http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791185553825"));
+				+ "이 책은 실제로 서비스되고 있는 3가지 앱의 화면을 직접 만들어 보면서 실무에서 바로 적용할 수 있는 개념과 기법을 배울 수 있도록 구성되었다. 이 책에서는 다음과 같이 비교적 쉽게 접근할 수 있는 난이도의 모두의마켓 앱, 모두의컬리 앱 화면부터 상당히 수준 높은 모두의플레이 앱 화면까지 3가지 유형의 앱 UI 프로젝트 만든다. 3가지 유형의 앱 화면 만들기 프로젝트를 차근차근 수행하다보면 어느새 플러터 앱 개발할 할 수 있다는 자신감이 얻을 수 있을 것이다.", "http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791185553825", true));
 		list.add(new Book(1, 1, 1, "작별인사", "김영하", 12600, "2022년 05월 02일", "복복서가", 9.7,
 				"http://image.kyobobook.co.kr/images/book/xlarge/225/x9791191114225.jpg", "김영하가 『살인자의 기억법』 이후 9 년 만에 내놓는 장편소설 『작별인사』는 그리 멀지 않은 미래를 배경으로, 별안간 삶이 송두리째 뒤흔들린 한 소년의 여정을 좇는다. 유명한 IT 기업의 연구원인 아버지와 쾌적하고 평화롭게 살아가던 철이는 어느날 갑자기 수용소로 끌려가 난생처음 날것의 감정으로 가득한 혼돈의 세계에 맞닥뜨리게 되면서 정신적, 신체적 위기에 직면한다. 동시에 자신처럼 사회에서 배제된 자들을 만나 처음으로 생생한 소속감을 느끼고 따뜻한 우정도 싹틔운다. 철이는 그들과 함께 수용소를 탈출하여 집으로 돌아가기 위해 길을 떠나지만 그 여정에는 피할 수 없는 질문이 기다리고 있다.\r\n"
 						+ "\r\n"

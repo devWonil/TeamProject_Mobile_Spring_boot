@@ -2,16 +2,20 @@ package com.example.mybooks;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.mybooks.adapter.PagerAdapter;
 import com.example.mybooks.databinding.ActivityMainBinding;
+import com.example.mybooks.interfaces.OnClickedSaveButton;
 import com.example.mybooks.utils.FragmentType;
 import com.google.android.material.tabs.TabLayout;
 
@@ -29,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
             binding.tabLayout.addTab(binding.tabLayout.newTab().setText(name));
         }
         pagerAdapter = new PagerAdapter(getSupportFragmentManager(), TAB_COUNT);
-
-
     }
 
     private void addEventListener() {
@@ -71,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
             transaction.replace(binding.fragmentContainer.getId(), fragment);
         }
         transaction.commit();
-
     }
 
     private void addBottomNaviListener() {
@@ -103,5 +104,25 @@ public class MainActivity extends AppCompatActivity {
             replaceFragment(FragmentType.HOME);
         }
         addBottomNaviListener();
+        Toolbar toolbar = findViewById(R.id.topAppbar);
+        setSupportActionBar(toolbar);
     }
+
+    // menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.top_appbar, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.searchIcon) {
+            Intent intent = new Intent(this, SearchActivity.class);
+            startActivity(intent);
+        }
+        return true;
+    }
+
 }
