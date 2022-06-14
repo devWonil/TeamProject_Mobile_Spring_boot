@@ -14,7 +14,7 @@ import com.bumptech.glide.load.resource.bitmap.FitCenter;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.example.mybooks.R;
 import com.example.mybooks.interfaces.OnBookItemClicked;
-import com.example.mybooks.repository.models.Book;
+import com.example.mybooks.models.Book;
 
 import java.util.ArrayList;
 import java.util.List;

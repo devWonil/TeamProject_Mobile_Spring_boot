@@ -14,7 +14,7 @@ import com.bumptech.glide.load.resource.bitmap.CenterInside;
 import com.example.mybooks.R;
 import com.example.mybooks.interfaces.IAdapter;
 import com.example.mybooks.interfaces.OnBookItemClicked;
-import com.example.mybooks.repository.models.Book;
+import com.example.mybooks.models.Book;
 
 import java.util.ArrayList;
 
@@ -88,5 +88,4 @@ public class NewBookAdapter extends RecyclerView.Adapter<NewBookAdapter.MyViewHo
             newBookPriceTextView = itemView.findViewById(R.id.newBookPriceTextView);
         }
     }
-
 }

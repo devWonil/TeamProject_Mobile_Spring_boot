@@ -1,4 +1,4 @@
-package com.example.mybooks.repository.models;
+package com.example.mybooks.models;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

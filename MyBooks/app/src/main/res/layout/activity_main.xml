@@ -6,10 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-        <include
-            android:id="@+id/topAppbar"
-            layout="@layout/tool_bar" />
-
+    <include
+        android:id="@+id/topAppbar"
+        layout="@layout/tool_bar" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/fragmentContainer"

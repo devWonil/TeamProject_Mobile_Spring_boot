@@ -1,6 +1,5 @@
 package com.example.mybooks.adapter;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mybooks.R;
-import com.example.mybooks.repository.models.Diary;
+import com.example.mybooks.models.Diary;
 
 import java.util.ArrayList;
 

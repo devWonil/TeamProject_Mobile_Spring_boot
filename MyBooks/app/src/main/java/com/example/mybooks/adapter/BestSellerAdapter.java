@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterInside;
-import com.example.mybooks.repository.models.Book;
+import com.example.mybooks.models.Book;
 
 import com.example.mybooks.interfaces.IAdapter;
 import com.example.mybooks.interfaces.OnBookItemClicked;
@@ -65,9 +65,7 @@ public class BestSellerAdapter extends RecyclerView.Adapter<BestSellerAdapter.My
         holder.bestBookRatingTextView.setText(String.valueOf(book.getRating()));
 
         holder.setItem(book);
-//        holder.itemView.setOnClickListener(view -> {
-//            onBookItemClicked.selectItem(book);
-//        });
+
     }
 
     @Override
@@ -105,18 +103,13 @@ public class BestSellerAdapter extends RecyclerView.Adapter<BestSellerAdapter.My
 
             bestBookTitleTextView.setText(book.getTitle());
             bestBookAuthorTextView.setText(book.getAuthor());
-            //
+
             // 오류 String type :
             bestBookPriceTextView.setText(String.valueOf(book.getPrice()));
             bestBookImageView.setOnClickListener(view -> {
                 onBookItemClicked.selectItem(book);
             });
-//
 
-//
-//            bestBookImageView.setOnClickListener(v -> {
-//
-//            });
         }
     }
 
