@@ -2,6 +2,7 @@ package com.example.mybooks;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -20,6 +21,8 @@ import com.example.mybooks.interfaces.OnClickedSaveButton;
 import com.example.mybooks.utils.FragmentType;
 import com.google.android.material.tabs.TabLayout;
 
+import java.util.Stack;
+
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
@@ -27,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int TAB_COUNT = 4;
     private String tabTitle[] = {"추천", "베스트", "신간", "장르별"};
     Fragment fragment;
-
+    public static Stack<Fragment> fragmentStack = new Stack<>();
 
 
     private void initData() {
@@ -69,10 +72,12 @@ public class MainActivity extends AppCompatActivity {
             setContentView(binding.getRoot());
         } else if (type == FragmentType.DIARY) {
             fragment = DiaryHomeFragment.newInstance();
-            transaction.replace(binding.fragmentContainer.getId(), fragment).addToBackStack(null);
+            transaction.replace(binding.fragmentContainer.getId(), fragment);
+            fragmentStack.push(fragment);
         } else if (type == FragmentType.LIKE) {
             fragment = new LikeFragment();
-            transaction.replace(binding.fragmentContainer.getId(), fragment).addToBackStack(null);
+            transaction.replace(binding.fragmentContainer.getId(), fragment);
+            fragmentStack.push(fragment);
         }
         transaction.commit();
     }
@@ -129,7 +134,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-
+        if(!fragmentStack.isEmpty()) {
+            replaceFragment(FragmentType.HOME);
+            fragmentStack.clear();
+            Log.d("TAG", "stack에 저장되어 있는 fragment 개수 : " + fragmentStack.size());
+        } else {
+            super.onBackPressed();
+        }
     }
 }
