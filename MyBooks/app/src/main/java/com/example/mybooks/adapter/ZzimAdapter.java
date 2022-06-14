@@ -15,7 +15,6 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.example.mybooks.R;
 
 import com.example.mybooks.models.Book;
-import com.example.mybooks.repository.models.LikeBooks;
 
 
 import java.util.ArrayList;
@@ -29,7 +28,7 @@ public class ZzimAdapter extends RecyclerView.Adapter<ZzimAdapter.ZzimViewHolder
         notifyDataSetChanged();
     }
 
-    public void addLikeList(ArrayList<LikeBooks> likeList) {
+    public void addLikeList(ArrayList<Book> likeList) {
         likeList.addAll(likeList.size(), likeList);
         notifyDataSetChanged();
     }

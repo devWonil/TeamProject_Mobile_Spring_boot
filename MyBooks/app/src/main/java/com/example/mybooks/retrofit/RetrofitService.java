@@ -1,7 +1,5 @@
 package com.example.mybooks.retrofit;
 
-import com.example.mybooks.repository.models.LikeBooks;
-
 import java.util.ArrayList;
 
 import retrofit2.Call;
