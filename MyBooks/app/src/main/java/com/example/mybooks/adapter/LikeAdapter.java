@@ -19,12 +19,13 @@ import com.example.mybooks.models.Book;
 
 import java.util.ArrayList;
 
-public class ZzimAdapter extends RecyclerView.Adapter<ZzimAdapter.ZzimViewHolder> {
+public class LikeAdapter extends RecyclerView.Adapter<LikeAdapter.LikeViewHolder> {
 
     public ArrayList<Book> likeList = new ArrayList<>();
 
     public void initLikeList(ArrayList<Book> likeList) {
         this.likeList = likeList;
+
         notifyDataSetChanged();
     }
 
@@ -34,14 +35,14 @@ public class ZzimAdapter extends RecyclerView.Adapter<ZzimAdapter.ZzimViewHolder
     }
     @NonNull
     @Override
-    public ZzimViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public LikeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.best_item, parent, false);
-        return new ZzimViewHolder(view);
+        return new LikeViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ZzimAdapter.ZzimViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull LikeViewHolder holder, int position) {
         Book book = likeList.get(position);
         Glide.with(holder.likeImageView.getContext()).load(book.getImageUrl())
                 .placeholder(R.drawable.image_loading).transform(new FitCenter(), new RoundedCorners(10))
@@ -57,14 +58,14 @@ public class ZzimAdapter extends RecyclerView.Adapter<ZzimAdapter.ZzimViewHolder
     }
 
     // 내부클래스
-    public class ZzimViewHolder extends RecyclerView.ViewHolder {
+    public class LikeViewHolder extends RecyclerView.ViewHolder {
         private View itemView;
         private ImageView likeImageView;
         private TextView likeTitleTextView;
         private TextView likeAuthorTextView;
         private TextView likePriceTextView;
 
-        public ZzimViewHolder(@NonNull View itemView) {
+        public LikeViewHolder(@NonNull View itemView) {
             super(itemView);
             this.itemView = itemView;
             likeImageView = itemView.findViewById(R.id.likeItemImageView);

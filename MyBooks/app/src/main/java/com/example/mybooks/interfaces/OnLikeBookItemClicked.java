@@ -1,5 +1,7 @@
 package com.example.mybooks.interfaces;
 
+import com.example.mybooks.models.Book;
+
 public interface OnLikeBookItemClicked {
-    void selectItem(LikeBooks books);
+    void selectItem(Book books);
 }
