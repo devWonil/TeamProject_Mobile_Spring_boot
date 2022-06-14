@@ -9,13 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.mybooks.adapter.LikeAdapter;
+import com.example.mybooks.adapter.LikeBookAdapter;
 import com.example.mybooks.databinding.FragmentLikeBinding;
 
 public class LikeFragment extends Fragment {
 
     private FragmentLikeBinding binding;
-    private LikeAdapter adapter;
+    private LikeBookAdapter adapter;
 
     public LikeFragment() {
 
@@ -42,7 +42,7 @@ public class LikeFragment extends Fragment {
     }
 
     private void setRecyclerView() {
-        adapter = new LikeAdapter();
+        adapter = new LikeBookAdapter();
         adapter.initLikeList(MainActivity.likeBookList);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());

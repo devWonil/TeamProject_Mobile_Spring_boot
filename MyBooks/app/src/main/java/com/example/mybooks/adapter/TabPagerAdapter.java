@@ -6,14 +6,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.mybooks.BestSellerFragment;
-import com.example.mybooks.DiaryHomeFragment;
 import com.example.mybooks.GenreFragment;
 import com.example.mybooks.HomeFragment;
 import com.example.mybooks.MainActivity;
-import com.example.mybooks.NewFragment;
+import com.example.mybooks.NewBookFragment;
 
-public class PagerAdapter extends FragmentPagerAdapter {
-    public PagerAdapter(@NonNull FragmentManager fm, int behavior) {
+public class TabPagerAdapter extends FragmentPagerAdapter {
+    public TabPagerAdapter(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);
     }
 
@@ -29,7 +28,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
                 fragment = BestSellerFragment.newInstance();
                 break;
             case 2:
-                fragment = new NewFragment(); // 신간
+                fragment = new NewBookFragment(); // 신간
                 break;
             case 3:
                 fragment = new GenreFragment(); // 장르별

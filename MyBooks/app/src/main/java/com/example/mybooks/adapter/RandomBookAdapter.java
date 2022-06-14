@@ -19,7 +19,7 @@ import com.example.mybooks.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RandomBookAdapter extends RecyclerView.Adapter<RandomBookAdapter.RandomViewHolder>{
+public class RandomBookAdapter extends RecyclerView.Adapter<RandomBookAdapter.RandomViewHolder> {
 
     private List<Book> bookList = new ArrayList<>();
     private OnBookItemClicked onBookItemClicked;

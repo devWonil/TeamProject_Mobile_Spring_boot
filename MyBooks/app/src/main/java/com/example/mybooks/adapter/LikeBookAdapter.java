@@ -4,7 +4,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,7 +19,7 @@ import com.example.mybooks.models.Book;
 
 import java.util.ArrayList;
 
-public class LikeAdapter extends RecyclerView.Adapter<LikeAdapter.LikeViewHolder> {
+public class LikeBookAdapter extends RecyclerView.Adapter<LikeBookAdapter.LikeViewHolder> {
 
     public ArrayList<Book> likeList = new ArrayList<>();
 

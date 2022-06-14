@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.mybooks.databinding.ActivityBookDetailBinding;
@@ -57,13 +58,25 @@ public class BookDetailActivity extends AppCompatActivity {
                 boolean isFavorite = sp.getBoolean("isFavorite", !(book.isFavorite()));
 
                 if (MainActivity.likeBookList.size() == 0) {
+                    Toast.makeText(this, "찜 목록에 추가되었습니다.", Toast.LENGTH_SHORT).show();
                     MainActivity.likeBookList.add(book);
+                    binding.likeButton.setChecked(true);
                 }
-                for (int i = 0; i < MainActivity.likeBookList.size(); i++) {
-                    if (!MainActivity.likeBookList.get(i).getImageUrl().equals(book.getImageUrl())) {
-                        MainActivity.likeBookList.add(book);
-                    }
-                }
+                    for (int i = 0; i < MainActivity.likeBookList.size(); i++) {
+                        if (!MainActivity.likeBookList.get(i).getImageUrl().equals(book.getImageUrl())) {
+                            Toast.makeText(this, "찜 목록에 추가되었습니다.", Toast.LENGTH_SHORT).show();
+                            MainActivity.likeBookList.add(book);
+                            Log.d("TAG", MainActivity.likeBookList.size() + "");
+                        }
+//                        } else {
+//                            Toast.makeText(this, "찜 목록에 삭제되었습니다.", Toast.LENGTH_SHORT).show();
+//                            MainActivity.likeBookList.remove(book);
+//                            binding.likeButton.setChecked(false);
+                        }
+//                    }
+
+
+
 
                 bookHttpService.clickFavorite(book).enqueue(new Callback<Book>() {
                     @Override
@@ -98,16 +111,16 @@ public class BookDetailActivity extends AppCompatActivity {
         binding.author.setText(book.getAuthor());
         binding.publishDate.setText(book.getPublicationDate());
         binding.summaryText.setText(book.getIntro());
-        binding.likeButton.setOnClickListener(v -> {
-            SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
-            boolean isFavorite;
-            if (book.isFavorite() == false) {
-                isFavorite = sp.getBoolean("isFavorite", false);
-            } else {
-                isFavorite = sp.getBoolean("isFavorite", true);
-            }
-            Log.d("TAG", "onDestroy isFavorite : " + isFavorite);
-        });
+//        binding.likeButton.setOnClickListener(v -> {
+//            SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
+//            boolean isFavorite;
+//            if (book.isFavorite() == false) {
+//                isFavorite = sp.getBoolean("isFavorite", false);
+//            } else {
+//                isFavorite = sp.getBoolean("isFavorite", true);
+//            }
+//            Log.d("TAG", "onDestroy isFavorite : " + isFavorite);
+//        });
 
         Log.d("TAG", String.valueOf(book.isFavorite()));
 

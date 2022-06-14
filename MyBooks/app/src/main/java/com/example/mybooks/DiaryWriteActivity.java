@@ -56,6 +56,7 @@ public class DiaryWriteActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.saveIcon:
+
                 int diaryNumber = Integer.parseInt(binding.diaryIdEditText.getText().toString());
 
                 String diaryTitle = binding.diaryTitleEditText.getText().toString();
@@ -87,6 +88,7 @@ public class DiaryWriteActivity extends AppCompatActivity {
             DiaryHomeFragment.newNote = false;
             finish();
         });
+
     }
 
 }

@@ -2,7 +2,6 @@ package com.example.mybooks;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -15,7 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.mybooks.adapter.PagerAdapter;
+import com.example.mybooks.adapter.TabPagerAdapter;
 import com.example.mybooks.databinding.ActivityMainBinding;
 import com.example.mybooks.models.Book;
 import com.example.mybooks.utils.FragmentType;
@@ -29,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     public static ArrayList<Book> likeBookList = new ArrayList<>();
 
     ActivityMainBinding binding;
-    private PagerAdapter pagerAdapter;
+    private TabPagerAdapter pagerAdapter;
     public static final int TAB_COUNT = 4;
     private String tabTitle[] = {"추천", "베스트", "신간", "장르별"};
     Fragment fragment;
@@ -42,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         for (String name : tabTitle) {
             binding.tabLayout.addTab(binding.tabLayout.newTab().setText(name));
         }
-        pagerAdapter = new PagerAdapter(getSupportFragmentManager(), TAB_COUNT);
+        pagerAdapter = new TabPagerAdapter(getSupportFragmentManager(), TAB_COUNT);
     }
 
     private void addEventListener() {

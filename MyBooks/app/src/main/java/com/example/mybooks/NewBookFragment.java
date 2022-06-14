@@ -24,9 +24,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class NewFragment extends Fragment implements IBookFragment, OnBookItemClicked {
+public class NewBookFragment extends Fragment implements IBookFragment, OnBookItemClicked {
 
-    private static NewFragment newFragment;
+    private static NewBookFragment newFragment;
 
     private ArrayList<Book> list = new ArrayList<>();
 
@@ -37,13 +37,13 @@ public class NewFragment extends Fragment implements IBookFragment, OnBookItemCl
     private int page = 3;
     private boolean isRequest = true;
 
-    public NewFragment() {
+    public NewBookFragment() {
         // Required empty public constructor
     }
 
-    public static NewFragment getInstance() {
+    public static NewBookFragment getInstance() {
         if (newFragment == null) {
-            newFragment = new NewFragment();
+            newFragment = new NewBookFragment();
         }
         return newFragment;
     }
