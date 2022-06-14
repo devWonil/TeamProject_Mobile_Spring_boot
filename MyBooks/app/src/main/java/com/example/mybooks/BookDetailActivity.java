@@ -56,6 +56,8 @@ public class BookDetailActivity extends AppCompatActivity {
                 SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
                 boolean isFavorite = sp.getBoolean("isFavorite", !(book.isFavorite()));
                 Log.d("TAG", "onDestroy isFavorite : " + isFavorite);
+
+
             });
 //            SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
 //            boolean isFavorite = sp.getBoolean("isFavorite", book.isFavorite());
