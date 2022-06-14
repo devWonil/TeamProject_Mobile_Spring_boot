@@ -69,8 +69,13 @@ public class MainActivity extends AppCompatActivity {
             fragment = DiaryHomeFragment.newInstance();
             transaction.replace(binding.fragmentContainer.getId(), fragment).addToBackStack(null);
         } else if (type == FragmentType.LIKE) {
+
+//            fragment = new ZzimFragment();
+//            transaction.replace(binding.fragmentContainer.getId(), fragment);
+
             fragment = new LikeFragment();
             transaction.replace(binding.fragmentContainer.getId(), fragment).addToBackStack(null);
+
         }
         transaction.commit();
     }

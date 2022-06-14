@@ -3,6 +3,7 @@ package com.example.mybooks;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -50,6 +51,15 @@ public class BookDetailActivity extends AppCompatActivity {
         if (getIntent() != null) {
             book = (Book) getIntent().getSerializableExtra(PARAM_NAME_1);
             initData();
+
+            binding.likeButton.setOnClickListener(v -> {
+                SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
+                boolean isFavorite = sp.getBoolean("isFavorite", !(book.isFavorite()));
+                Log.d("TAG", "onDestroy isFavorite : " + isFavorite);
+            });
+//            SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
+//            boolean isFavorite = sp.getBoolean("isFavorite", book.isFavorite());
+
         }
 
 //        setContentView(R.layout.activity_book_detail);
@@ -68,6 +78,56 @@ public class BookDetailActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        binding.likeButton.setOnClickListener(v -> {
+            SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
+            boolean isFavorite = sp.getBoolean("isFavorite", book.isFavorite());
+            Log.d("TAG", "onDestroy isFavorite : " + isFavorite);
+        });
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        binding.likeButton.setOnClickListener(v -> {
+            SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
+            boolean isFavorite = sp.getBoolean("isFavorite", book.isFavorite());
+            Log.d("TAG", "onDestroy isFavorite : " + isFavorite);
+        });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        binding.likeButton.setOnClickListener(v -> {
+            SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
+            boolean isFavorite = sp.getBoolean("isFavorite", book.isFavorite());
+            Log.d("TAG", "onDestroy isFavorite : " + isFavorite);
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        binding.likeButton.setOnClickListener(v -> {
+            SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
+            boolean isFavorite = sp.getBoolean("isFavorite", !(book.isFavorite()));
+            Log.d("TAG", "onDestroy isFavorite : " + isFavorite);
+        });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        binding.likeButton.setOnClickListener(v -> {
+            SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
+            boolean isFavorite = sp.getBoolean("isFavorite", book.isFavorite());
+            Log.d("TAG", "onDestroy isFavorite : " + isFavorite);
+        });
+    }
+
     public void onPurchaseBtnClicked(View view) { // 구매버튼 클릭 메소드
         // 여기에 구매 URL                                           여기에 넣기!!
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(book.getBuyUrl()));
@@ -83,12 +143,18 @@ public class BookDetailActivity extends AppCompatActivity {
         binding.author.setText(book.getAuthor());
         binding.publishDate.setText(book.getPublicationDate());
         binding.summaryText.setText(book.getIntro());
+        binding.likeButton.setOnClickListener(v -> {
+            SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
+            boolean isFavorite;
+            if (book.isFavorite() == false){
+                isFavorite = sp.getBoolean("isFavorite", false);
+            } else {
+                isFavorite = sp.getBoolean("isFavorite", true);
+            }
+            Log.d("TAG", "onDestroy isFavorite : " + isFavorite);
+        });
 
-        if (book.isFavorite() == false) {
-            binding.likeButton.setChecked(false);
-        } else {
-            binding.likeButton.setChecked(true);
-        }
+
 
         Log.d("TAG", String.valueOf(book.isFavorite()));
 
@@ -125,4 +191,19 @@ public class BookDetailActivity extends AppCompatActivity {
         binding.ratingBar.setRating((float) book.getRating());
 
     }
+
+//            if (book.isFavorite() == false) {
+//                //book.setFavorite(true);
+////                binding.likeButton.setChecked(true);
+//                SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
+//                SharedPreferences.Editor editor = sp.edit();
+//                editor.putBoolean("isFavorite", true);
+//                editor.apply();
+//            } else {
+//                //book.setFavorite(false);
+//                SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
+//                SharedPreferences.Editor editor = sp.edit();
+//                editor.putBoolean("isFavorite", false);
+//                editor.apply();
+
 }

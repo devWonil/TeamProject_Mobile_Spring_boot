@@ -14,7 +14,9 @@ import com.example.mybooks.adapter.BestSellerAdapter;
 import com.example.mybooks.databinding.FragmentBestSellerBinding;
 import com.example.mybooks.interfaces.IBookFragment;
 import com.example.mybooks.interfaces.OnBookItemClicked;
+
 import com.example.mybooks.models.Book;
+
 import com.example.mybooks.retrofit.BookHttpService;
 
 import java.util.ArrayList;
@@ -116,4 +118,6 @@ public class BestSellerFragment extends Fragment implements IBookFragment, OnBoo
         intent.putExtra(BookDetailActivity.PARAM_NAME_1, book);
         startActivity(intent);
     }
+
+
 }

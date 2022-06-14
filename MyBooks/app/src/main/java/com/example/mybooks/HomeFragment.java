@@ -18,7 +18,9 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.example.mybooks.adapter.RandomBookAdapter;
 import com.example.mybooks.adapter.SliderImageAdapter;
 import com.example.mybooks.interfaces.OnBookItemClicked;
+
 import com.example.mybooks.models.Book;
+
 import com.example.mybooks.retrofit.BookHttpService;
 
 import java.util.ArrayList;
