@@ -76,8 +76,6 @@ public class MainActivity extends AppCompatActivity {
             transaction.replace(binding.fragmentContainer.getId(), fragment);
             fragmentStack.push(fragment);
         } else if (type == FragmentType.LIKE) {
-//            fragment = new ZzimFragment();
-//            transaction.replace(binding.fragmentContainer.getId(), fragment);
             fragment = new LikeFragment();
             transaction.replace(binding.fragmentContainer.getId(), fragment);
             fragmentStack.push(fragment);
@@ -107,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-//        binding.tabLayout.setVisibility(View.GONE);
         initData();
         addEventListener();
         if (fragment != null) {
@@ -140,7 +137,6 @@ public class MainActivity extends AppCompatActivity {
         if (!fragmentStack.isEmpty()) {
             replaceFragment(FragmentType.HOME);
             fragmentStack.clear();
-            Log.d("TAG", "stack에 저장되어 있는 fragment 개수 : " + fragmentStack.size());
         } else {
             if (System.currentTimeMillis() > backPressedTime + 2000) {
                 backPressedTime = System.currentTimeMillis();
