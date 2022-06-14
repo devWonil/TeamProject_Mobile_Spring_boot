@@ -25,7 +25,6 @@ public class LikeAdapter extends RecyclerView.Adapter<LikeAdapter.LikeViewHolder
 
     public void initLikeList(ArrayList<Book> likeList) {
         this.likeList = likeList;
-
         notifyDataSetChanged();
     }
 
@@ -33,11 +32,12 @@ public class LikeAdapter extends RecyclerView.Adapter<LikeAdapter.LikeViewHolder
         likeList.addAll(likeList.size(), likeList);
         notifyDataSetChanged();
     }
+
     @NonNull
     @Override
     public LikeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.best_item, parent, false);
+        View view = inflater.inflate(R.layout.item_like, parent, false);
         return new LikeViewHolder(view);
     }
 
@@ -49,7 +49,7 @@ public class LikeAdapter extends RecyclerView.Adapter<LikeAdapter.LikeViewHolder
                 .into(holder.likeImageView);
         holder.likeTitleTextView.setText(book.getTitle());
         holder.likeAuthorTextView.setText(book.getAuthor());
-        holder.likePriceTextView.setText(book.getPrice());
+        holder.likePriceTextView.setText(String.valueOf(book.getPrice()));
     }
 
     @Override
@@ -59,19 +59,18 @@ public class LikeAdapter extends RecyclerView.Adapter<LikeAdapter.LikeViewHolder
 
     // 내부클래스
     public class LikeViewHolder extends RecyclerView.ViewHolder {
-        private View itemView;
+
         private ImageView likeImageView;
         private TextView likeTitleTextView;
         private TextView likeAuthorTextView;
         private TextView likePriceTextView;
 
-        public LikeViewHolder(@NonNull View itemView) {
-            super(itemView);
-            this.itemView = itemView;
-            likeImageView = itemView.findViewById(R.id.likeItemImageView);
-            likeTitleTextView = itemView.findViewById(R.id.likeItemTitle);
-            likeAuthorTextView = itemView.findViewById(R.id.likeItemAuthor);
-            likePriceTextView = itemView.findViewById(R.id.likeItemPrice);
+        public LikeViewHolder(@NonNull View view) {
+            super(view);
+            likeImageView = view.findViewById(R.id.likeItemImageView);
+            likeTitleTextView = view.findViewById(R.id.likeItemTitle);
+            likeAuthorTextView = view.findViewById(R.id.likeItemAuthor);
+            likePriceTextView = view.findViewById(R.id.likeItemPrice);
         }
     }
 }

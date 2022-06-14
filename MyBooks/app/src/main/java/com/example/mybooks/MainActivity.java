@@ -17,12 +17,16 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.mybooks.adapter.PagerAdapter;
 import com.example.mybooks.databinding.ActivityMainBinding;
+import com.example.mybooks.models.Book;
 import com.example.mybooks.utils.FragmentType;
 import com.google.android.material.tabs.TabLayout;
 
+import java.util.ArrayList;
 import java.util.Stack;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static ArrayList<Book> likeBookList = new ArrayList<>();
 
     ActivityMainBinding binding;
     private PagerAdapter pagerAdapter;
@@ -76,9 +80,7 @@ public class MainActivity extends AppCompatActivity {
             transaction.replace(binding.fragmentContainer.getId(), fragment);
             fragmentStack.push(fragment);
         } else if (type == FragmentType.LIKE) {
-//            fragment = new ZzimFragment();
-//            transaction.replace(binding.fragmentContainer.getId(), fragment);
-            fragment = new LikeFragment();
+            fragment = LikeFragment.newInstance();
             transaction.replace(binding.fragmentContainer.getId(), fragment);
             fragmentStack.push(fragment);
         }

@@ -55,83 +55,15 @@ public class BookDetailActivity extends AppCompatActivity {
             binding.likeButton.setOnClickListener(v -> {
                 SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
                 boolean isFavorite = sp.getBoolean("isFavorite", !(book.isFavorite()));
-                Log.d("TAG", "onDestroy isFavorite : " + isFavorite);
 
+                MainActivity.likeBookList.add(book);
 
             });
-//            SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
-//            boolean isFavorite = sp.getBoolean("isFavorite", book.isFavorite());
-
         }
-
-//        setContentView(R.layout.activity_book_detail);
-//
-//        scaleAnimation = new ScaleAnimation(0.7f, 1.0f, 0.7f, 1.0f,
-//                Animation.RELATIVE_TO_SELF, 0.7f, Animation.RELATIVE_TO_SELF, 0.7f);
-//
-//        scaleAnimation.setDuration(500);
-//        bounceInterpolator = new BounceInterpolator();
-//        scaleAnimation.setInterpolator(bounceInterpolator);
-//
-//        likeButton = findViewById(R.id.likeButton);
-//
-//        likeButton.setOnCheckedChangeListener((compoundButton, isChecked) ->
-//                compoundButton.startAnimation(scaleAnimation));
-
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        binding.likeButton.setOnClickListener(v -> {
-            SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
-            boolean isFavorite = sp.getBoolean("isFavorite", book.isFavorite());
-            Log.d("TAG", "onDestroy isFavorite : " + isFavorite);
-        });
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        binding.likeButton.setOnClickListener(v -> {
-            SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
-            boolean isFavorite = sp.getBoolean("isFavorite", book.isFavorite());
-            Log.d("TAG", "onDestroy isFavorite : " + isFavorite);
-        });
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        binding.likeButton.setOnClickListener(v -> {
-            SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
-            boolean isFavorite = sp.getBoolean("isFavorite", book.isFavorite());
-            Log.d("TAG", "onDestroy isFavorite : " + isFavorite);
-        });
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        binding.likeButton.setOnClickListener(v -> {
-            SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
-            boolean isFavorite = sp.getBoolean("isFavorite", !(book.isFavorite()));
-            Log.d("TAG", "onDestroy isFavorite : " + isFavorite);
-        });
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        binding.likeButton.setOnClickListener(v -> {
-            SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
-            boolean isFavorite = sp.getBoolean("isFavorite", book.isFavorite());
-            Log.d("TAG", "onDestroy isFavorite : " + isFavorite);
-        });
     }
 
     public void onPurchaseBtnClicked(View view) { // 구매버튼 클릭 메소드
-        // 여기에 구매 URL                                           여기에 넣기!!
+        // 여기에 구매 URL
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(book.getBuyUrl()));
         startActivity(intent);
     }
@@ -148,15 +80,13 @@ public class BookDetailActivity extends AppCompatActivity {
         binding.likeButton.setOnClickListener(v -> {
             SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
             boolean isFavorite;
-            if (book.isFavorite() == false){
+            if (book.isFavorite() == false) {
                 isFavorite = sp.getBoolean("isFavorite", false);
             } else {
                 isFavorite = sp.getBoolean("isFavorite", true);
             }
             Log.d("TAG", "onDestroy isFavorite : " + isFavorite);
         });
-
-
 
         Log.d("TAG", String.valueOf(book.isFavorite()));
 
@@ -193,19 +123,5 @@ public class BookDetailActivity extends AppCompatActivity {
         binding.ratingBar.setRating((float) book.getRating());
 
     }
-
-//            if (book.isFavorite() == false) {
-//                //book.setFavorite(true);
-////                binding.likeButton.setChecked(true);
-//                SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
-//                SharedPreferences.Editor editor = sp.edit();
-//                editor.putBoolean("isFavorite", true);
-//                editor.apply();
-//            } else {
-//                //book.setFavorite(false);
-//                SharedPreferences sp = getSharedPreferences("sp", MODE_PRIVATE);
-//                SharedPreferences.Editor editor = sp.edit();
-//                editor.putBoolean("isFavorite", false);
-//                editor.apply();
 
 }
