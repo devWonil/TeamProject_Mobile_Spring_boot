@@ -22,47 +22,25 @@
 4. 찜 기능
 
 ## 페이지 구성
+![Screenshot_31](https://user-images.githubusercontent.com/102580743/181202807-9082528f-6304-4c6b-9c7f-1a9c740dacd0.png)
 
-![메인 페이지 (추천)](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ad164739-f788-4177-bf66-1929eae3c5db/Screenshot_31.png)
+![Screenshot_32](https://user-images.githubusercontent.com/102580743/181202812-5dcd6b15-2f82-4b5b-81ca-8e21fad877e0.png)
 
-메인 페이지 (추천)
+![Screenshot_33](https://user-images.githubusercontent.com/102580743/181202816-cdb1e2ad-ae09-485d-88d0-6233bfd93e0f.png)
 
-![베스트셀러](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/83b5f15e-f9c9-466f-9b56-5d93a6bef03d/Screenshot_32.png)
+![Screenshot_34](https://user-images.githubusercontent.com/102580743/181202821-070932aa-6896-487b-8438-2fa9a42cf702.png)
 
-베스트셀러
+![Screenshot_35](https://user-images.githubusercontent.com/102580743/181202823-c4a38e4a-5619-4690-b006-35f536e2fd87.png)
 
-![신간 도서](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9cf71405-7ab4-4e5b-abc7-7527b075f8da/Screenshot_33.png)
+![Screenshot_36](https://user-images.githubusercontent.com/102580743/181202825-d9d03c5a-f193-4f5a-918b-46d0c55ca96e.png)
 
-신간 도서
+![Screenshot_37](https://user-images.githubusercontent.com/102580743/181202828-c08d1f3a-795c-4dec-b0eb-6feaa1178de2.png)
 
-![장르별 페이지 (소설, 추리소설, 에세이, 자기계발, 경제)](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bbc457bb-8c67-438e-9132-ec4a810060cf/Screenshot_34.png)
+![Screenshot_38](https://user-images.githubusercontent.com/102580743/181202830-a6c31d07-7ccb-4c84-b575-f4c6a567c2e4.png)
 
-장르별 페이지 (소설, 추리소설, 에세이, 자기계발, 경제)
+![Screenshot_41](https://user-images.githubusercontent.com/102580743/181202851-776bf512-4b66-40c9-8671-1b34dfdd1f18.png)
 
-![도서 상세페이지](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d3b18c89-0ec2-4fb1-a19c-ee88c2ab27a9/Screenshot_35.png)
+![Screenshot_39](https://user-images.githubusercontent.com/102580743/181202868-4d71c7de-67c7-47ea-9715-a2448ff1e82d.png)
 
-도서 상세페이지
+![Screenshot_40](https://user-images.githubusercontent.com/102580743/181202871-3d0738a3-f7ac-4dc7-b1d5-6c207d50002e.png)
 
-![구매링크](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/875747b9-8792-4732-9e98-e73e16638353/Screenshot_36.png)
-
-구매링크
-
-![검색페이지 (메인페이지 우상단 클릭시)](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/428ed368-a7b0-4b37-ab5d-691bb9cd205b/Screenshot_37.png)
-
-검색페이지 (메인페이지 우상단 클릭시)
-
-![다이어리 메인](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5193a52f-06c9-4f03-a342-af46a2ff3a6d/Screenshot_38.png)
-
-다이어리 메인
-
-![다이어리 작성](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/def2e719-e965-4864-bd70-109660255ed5/Screenshot_41.png)
-
-다이어리 작성
-
-![다이어리 작성목록](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4f09d480-4274-4fe2-ab2c-bb4b72812dc4/Screenshot_39.png)
-
-다이어리 작성목록
-
-![찜리스트 페이지 (도서 상세페이지 하트 클릭시 생성)](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/60584113-2a23-4efc-90c6-f4b7240af7db/Screenshot_40.png)
-
-찜리스트 페이지 (도서 상세페이지 하트 클릭시 생성)
