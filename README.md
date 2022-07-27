@@ -22,7 +22,7 @@
 4. 찜 기능
 
 ## 페이지 구성
-![Screenshot_31](https://user-images.githubusercontent.com/102580743/181202807-9082528f-6304-4c6b-9c7f-1a9c740dacd0.png)
+![메인페이지(추천)](https://user-images.githubusercontent.com/102580743/181202807-9082528f-6304-4c6b-9c7f-1a9c740dacd0.png)
 
 ![Screenshot_32](https://user-images.githubusercontent.com/102580743/181202812-5dcd6b15-2f82-4b5b-81ca-8e21fad877e0.png)
 
