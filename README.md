@@ -24,23 +24,23 @@
 ## 페이지 구성
 ![메인페이지(추천)](https://user-images.githubusercontent.com/102580743/181202807-9082528f-6304-4c6b-9c7f-1a9c740dacd0.png)
 
-![Screenshot_32](https://user-images.githubusercontent.com/102580743/181202812-5dcd6b15-2f82-4b5b-81ca-8e21fad877e0.png)
+![베스트셀러](https://user-images.githubusercontent.com/102580743/181202812-5dcd6b15-2f82-4b5b-81ca-8e21fad877e0.png)
 
-![Screenshot_33](https://user-images.githubusercontent.com/102580743/181202816-cdb1e2ad-ae09-485d-88d0-6233bfd93e0f.png)
+![신간 도서](https://user-images.githubusercontent.com/102580743/181202816-cdb1e2ad-ae09-485d-88d0-6233bfd93e0f.png)
 
-![Screenshot_34](https://user-images.githubusercontent.com/102580743/181202821-070932aa-6896-487b-8438-2fa9a42cf702.png)
+![장르별 페이지 (소설, 추리소설, 에세이, 자기계발, 경제)](https://user-images.githubusercontent.com/102580743/181202821-070932aa-6896-487b-8438-2fa9a42cf702.png)
 
-![Screenshot_35](https://user-images.githubusercontent.com/102580743/181202823-c4a38e4a-5619-4690-b006-35f536e2fd87.png)
+![도서 상세페이지](https://user-images.githubusercontent.com/102580743/181202823-c4a38e4a-5619-4690-b006-35f536e2fd87.png)
 
-![Screenshot_36](https://user-images.githubusercontent.com/102580743/181202825-d9d03c5a-f193-4f5a-918b-46d0c55ca96e.png)
+![구매링크](https://user-images.githubusercontent.com/102580743/181202825-d9d03c5a-f193-4f5a-918b-46d0c55ca96e.png)
 
-![Screenshot_37](https://user-images.githubusercontent.com/102580743/181202828-c08d1f3a-795c-4dec-b0eb-6feaa1178de2.png)
+![검색페이지 (메인페이지 우상단 클릭시)](https://user-images.githubusercontent.com/102580743/181202828-c08d1f3a-795c-4dec-b0eb-6feaa1178de2.png)
 
-![Screenshot_38](https://user-images.githubusercontent.com/102580743/181202830-a6c31d07-7ccb-4c84-b575-f4c6a567c2e4.png)
+![다이어리 메인](https://user-images.githubusercontent.com/102580743/181202830-a6c31d07-7ccb-4c84-b575-f4c6a567c2e4.png)
 
-![Screenshot_41](https://user-images.githubusercontent.com/102580743/181202851-776bf512-4b66-40c9-8671-1b34dfdd1f18.png)
+![다이어리 작성](https://user-images.githubusercontent.com/102580743/181202851-776bf512-4b66-40c9-8671-1b34dfdd1f18.png)
 
-![Screenshot_39](https://user-images.githubusercontent.com/102580743/181202868-4d71c7de-67c7-47ea-9715-a2448ff1e82d.png)
+![다이어리 작성목록](https://user-images.githubusercontent.com/102580743/181202868-4d71c7de-67c7-47ea-9715-a2448ff1e82d.png)
 
-![Screenshot_40](https://user-images.githubusercontent.com/102580743/181202871-3d0738a3-f7ac-4dc7-b1d5-6c207d50002e.png)
+![찜리스트 페이지 (도서 상세페이지 하트 클릭시 생성)](https://user-images.githubusercontent.com/102580743/181202871-3d0738a3-f7ac-4dc7-b1d5-6c207d50002e.png)
 
