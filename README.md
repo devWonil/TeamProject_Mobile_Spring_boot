@@ -1,14 +1,15 @@
 
 # Project - 우리의 서재
 
-###  3명이 한 팀이되어 만든 모바일 프로젝트입니다.
-- 도서 검색, 조회, 찜 기능을 구현하였으며, 기존의 도서 어플리케이션과 차별성을 두기 위해서 간단한 메모나 독후감, 글귀 저장이 가능한 다이어리 기능을 구현하였습니다.
+##  도서 정보 어플
+> ### 도서 정보를 조회하고 구매할 수 있는 어플입니다. 
+> ### 찜 기능과 다이어리 기능으로 나만의 공간을 느낄 수 있습니다.
 
 ## 🛠 프로젝트에 사용한 언어 및 프레임워크 / API / 라이브러리
 
-- [ ]  Backend : JAVA, Spring Boot
-- [ ]  Frontend : Android SDK
-- [ ]  버전관리 : Git
+- [ ]  Backend : <img src="https://img.shields.io/badge/JAVA-007396?style=for-the-badge&logo=JAVA&logoColor=white"> <img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=for-the-badge&logo=Spring Boot&logoColor=white">
+- [ ]  Frontend : <img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=Android&logoColor=white">
+- [ ]  버전관리 : <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white"> <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white">
 
 ## 프로젝트 기간
 
@@ -16,13 +17,60 @@
 
 ## 프로그램 기능
 
+### ✔️ 추천 도서
+
+추천 도서는 랜덤으로 랜더링해서 보여줍니다.
+
+### ✔️ 광고
+
+시간 indicator를 이용한 광고 효과를 냈습니다.
+
+### ✔️ 도서 조회
+
+베스트, 신간, 장르별 도서를 조회할 수 있습니다.
+
+id값을 정해두고 서버에 저장을 한 뒤, 
+
+각 카테고리에 해당하는 id 값으로 서버에 접근하여 Retrofit2를 이용하여 데이터를 불러왔습니다.
+
+### ✔️ 도서 제목 검색
+
+검색한 단어가 들어가는 제목의 책을 전부 검색해옵니다.
+
+### ✔️ 없는 값을 입력했을 때 예외 처리
+
+### ✔️ 도서 상세보기
+
+도서에 대한 모든 정보를 조회할 수 있습니다.
+
+도서 제목 / 작가 / 장르 / 발행일 / 출판사 / 판매가 
+
+별점 / 줄거리 / 구매링크
+
 | 도서 조회 (추천, 베스트, 신간, 장르별) | 도서 검색 |
 |--|--|
 | ![1](https://user-images.githubusercontent.com/102580742/181462313-46970891-c66b-4271-b707-7ec345d82d8f.gif) | ![search](https://user-images.githubusercontent.com/102580742/181463980-2fbec978-c693-4d9b-b1d7-0d5f7a2ca960.gif) |
 
+### ✔️ 독후감 기능의 다이어리
+
+독서를 하고 간단한 메모나 독후감을 기록할 수 있도록 다이어리 기능을 추가했습니다.
+
+SharedPreference를 이용하여 기기 자체에 데이터를 저장하였고, 여러 개 작성할 수 있습니다.
+
+### ✔️ 찜 기능
+
+관심 있는 도서에 하트를 눌러 찜 목록에 담을 수 있습니다.
+
+찜 목록에서 상세 페이지, 구매 사이트까지 연결됩니다.
+
 | 다이어리 | 찜 기능 |
 |--|--|
 | ![diary](https://user-images.githubusercontent.com/102580742/181462327-b1a155e0-5350-4fe6-9c33-211818ab0e04.gif) | ![likes](https://user-images.githubusercontent.com/102580742/181463929-b53af0fe-5bf1-4ca9-a980-045e3eb9b532.gif) |
+
+
+### ✔️ 실제 구매 사이트 연결
+
+도서를 직접 구매할 수 있도록 사이트를 연결합니다.
 
 | 도서 구매사이트 링크 |  
 |--|
