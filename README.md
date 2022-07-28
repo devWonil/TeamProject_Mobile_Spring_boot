@@ -21,6 +21,10 @@
 3. 다이어리 (도서에 대한 간단한 메모나 독후감, 글귀 저장)
 4. 찜 기능
 
+## 프로그램 구현 영상
+
+https://user-images.githubusercontent.com/102580743/181428934-0d1781b0-37d1-4290-9d28-2734b9e67c1f.mp4
+
 ## 페이지 구성
 
 ![메인페이지(추천)](https://user-images.githubusercontent.com/102580743/181202807-9082528f-6304-4c6b-9c7f-1a9c740dacd0.png)
