@@ -92,7 +92,9 @@ SharedPreference를 이용하여 기기 자체에 데이터를 저장하였고, 
 
 ---
 - ### 프로그램 구현 영상
-https://user-images.githubusercontent.com/102580743/181428934-0d1781b0-37d1-4290-9d28-2734b9e67c1f.mp4
+
+https://user-images.githubusercontent.com/102580743/181657044-b0dfaa60-22ca-41ea-9616-5db38b6f9d19.mp4
+
 ---
 
 <br><br><br><br>
